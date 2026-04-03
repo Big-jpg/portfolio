@@ -1,0 +1,1098 @@
+[
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "fuelwatch_signal",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2026-04-01T02:18:05Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/fuelwatch_signal",
+    "readme": "# FuelWatch Signals v1\n\nA Streamlit-based reporting and signal board for FuelWatch data.\n\nRun with:\n\n```bash\npython -m pip install -r requirements.txt\npython -m streamlit run app.py\n```\n"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "conformal-stencil-generator",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2026-03-16T16:48:35Z",
+    "stargazerCount": 5,
+    "url": "https://github.com/Big-jpg/conformal-stencil-generator",
+    "readme": "# Flexible Conformal Stencil Generator\n\nA localhost tool for converting 2D SVG vector art into watertight, 3D-printable STL files optimized for flexible materials (TPU, PETG, thin PLA).\n\n## Purpose\n\nThis is a **purpose-built fabrication tool** for paint masks and airbrushing stencils, not a generic SVG\u2192STL converter. It enables:\n\n- **Rapid stencil iteration** \u2014 Upload SVG, export STL in seconds\n- **Repeatable alignment** \u2014 Built-in alignment marks for consistent masking\n- **Clean airbrush edges** \u2014 Optimized geometry for flat or gently curved surfaces\n- **Reliable island handling** \u2014 Automatic detection and bridging of disconnected stencil regions\n\n## Core Workflow\n\n1. **Upload SVG** \u2014 Filled paths, pre-flattened (no live text, no strokes)\n2. **Configure parameters** \u2014 Plate margin, clearance, sprues, alignment marks\n3. **Preview 2D geometry** \u2014 Verify silhouette and cutouts\n4. **Generate 3D mesh** \u2014 Extrude to thickness, merge geometry\n5. **Export STL** \u2014 Watertight, manifold, ready for slicing\n\n## Installation\n\n### Prerequisites\n\n- Python 3.11+\n- pip or uv\n\n### Setup\n\n```bash\ngit clone https://github.com/Big-jpg/conformal-stencil-generator.git\ncd conformal-stencil-generator\npip install -r requirements.txt\n```\n\n## Usage\n\nLaunch the Streamlit app:\n\n```bash\nstreamlit run app.py\n```\n\nThe app opens at `http://localhost:8501`.\n\n### Workflow\n\n1. **Upload SVG** \u2014 Use the file uploader in the main panel\n2. **Configure parameters** \u2014 Adjust in the sidebar:\n   - **Plate margin** \u2014 Space around bounding box (mm)\n   - **Plate thickness** \u2014 Extrusion height (mm)\n   - **Clearance** \u2014 Offset around art (mm)\n   - **Sprues** \u2014 Width and max length for island bridges\n   - **Alignment marks** \u2014 Type, size, offset\n3. **Generate Mask Plate** \u2014 Click \"Generate Mask Plate\" to create 2D geometry\n4. **Preview** \u2014 2D geometry preview shows plate and cutouts\n5. **Generate STL** \u2014 Click \"Generate STL\" to extrude to 3D\n6. **Download** \u2014 Click \"Download STL\" to save the file\n\n## Parameters\n\n###"
+  },
+  {
+    "description": "Semantic Model Visualizer \u2014 Parse and diagram Power BI / Fabric TMDL models",
+    "homepageUrl": "https://modelviz-alpha.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "modelviz",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-03-15T08:42:28Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/modelviz",
+    "readme": "# ModelViz \u2014 Semantic Model Visualizer\n\nA Next.js web application that parses Power BI / Microsoft Fabric Semantic Model `.zip` archives and renders interactive diagrams.\n\n## Features (Phase 1)\n\n- **Upload & Validation** \u2014 Drag-and-drop `.zip` upload with structural validation (checks for `.SemanticModel/` directory, `model.tmdl`, `relationships.tmdl`, and table definitions)\n- **TMDL Parser** \u2014 Comprehensive deterministic parser for all TMDL file types: tables, columns, measures, relationships, expressions, roles, and model metadata\n- **Data Source Classification** \u2014 Automatic detection of Import, DirectQuery, Direct Lake, and Composite/Mixed Mode configurations\n- **Model Summary** \u2014 Interactive dashboard showing table counts, measure counts, column counts, relationships, and RLS roles\n- **AI Architecture Summary** \u2014 GPT-4.1-mini powered natural-language analysis of the model architecture (server-side API route)\n- **Reduce to Semantics** \u2014 Toggle to obfuscate sensitive column names, measures, and expressions for safe sharing\n- **RLS Visualization** \u2014 Display of Row-Level Security roles and their filter expressions\n\n## Tech Stack\n\n- **Framework:** Next.js 16 (App Router, TypeScript, Tailwind CSS v4)\n- **Diagram Rendering:** React Flow (`@xyflow/react`) + dagre (Phase 2+)\n- **File Handling:** Client-side zip extraction via `jszip`\n- **Notifications:** `sonner` toast notifications\n- **AI:** OpenAI SDK (GPT-4.1-mini via server-side API route)\n- **Analytics:** `@vercel/analytics`\n\n## Getting Started\n\n```bash\nnpm install\nnpm run dev\n```\n\nCreate a `.env.local` file with your OpenAI API key:\n\n```\nOPENAI_API_KEY=sk-...\n```\n\n## Testing\n\nA sample archive is included at `public/examples/Sales_Cube_DEV.SemanticModel_WithRLS.zip`.\n\nExpected parse results:\n- 15 tables, 98 measures, 275 columns\n- 14 relationships\n- 2 RLS roles (Branch Manager, Sales Rep)\n- Data source: Direct Lake (OneLake)\n\n## Roadmap\n\n- **Phase 2:** TMDL Parser refinements\n- **Phase 3:** ERD diagram (React Flow +"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "mtd-auto-album",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-03-13T05:32:43Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/mtd-auto-album",
+    "readme": ""
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://print-portfolio-five.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "print-portfolio",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-03-10T09:42:39Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/print-portfolio",
+    "readme": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).\n\n## Getting Started\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n# or\npnpm dev\n# or\nbun dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\nYou can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.\n\nThis project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.\n\n## Learn More\n\nTo learn more about Next.js, take a look at the following resources:\n\n- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.\n- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.\n\nYou can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!\n\n## Deploy on Vercel\n\nThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.\n\nCheck out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.\n"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://videoretarder.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "videoretarder",
+    "primaryLanguage": {
+      "name": "CSS"
+    },
+    "pushedAt": "2026-02-06T08:51:30Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/videoretarder",
+    "readme": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).\n\n## Getting Started\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n# or\npnpm dev\n# or\nbun dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\nYou can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.\n\nThis project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.\n\n## Learn More\n\nTo learn more about Next.js, take a look at the following resources:\n\n- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.\n- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.\n\nYou can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!\n\n## Deploy on Vercel\n\nThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.\n\nCheck out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.\n"
+  },
+  {
+    "description": "Multi-camera motion capture and voxel reconstruction system with web UI",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "pixeltovoxel-demo",
+    "primaryLanguage": {
+      "name": "C++"
+    },
+    "pushedAt": "2026-01-29T04:50:28Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/pixeltovoxel-demo",
+    "readme": "# Pixeltovoxel Demo\n\nA complete multi-camera motion capture and 3D voxel reconstruction system with web-based visualization.\n\n## Overview\n\nThis system captures synchronized frames from multiple camera sources (webcams, RTSP, HTTP streams), processes motion data through a high-performance C++ voxel pipeline, and visualizes the results in an interactive 3D web viewer.\n\n## Architecture\n\n### Components\n\n1. **Web Application** (`/home/ubuntu/pixeltovoxel-web`)\n   - Next.js frontend with React 19 + Tailwind 4\n   - Express backend with tRPC API\n   - MySQL database for camera configs, sessions, and calibration data\n   - Three.js-based 3D voxel viewer\n\n2. **Compute Node** (`/apps/compute-node`)\n   - FastAPI service for frame capture and processing\n   - OpenCV-based multi-camera capture\n   - C++ voxel pipeline integration (ray_voxel)\n   - Docker containerized for deployment\n\n3. **Core Pipeline** (`/core`)\n   - Original Pixeltovoxelprojector C++ implementation\n   - Ray-casting voxel reconstruction algorithm\n   - Metadata-driven multi-camera processing\n\n## Quick Start\n\n### Prerequisites\n\n- Node.js 22+ and pnpm\n- Docker and Docker Compose\n- MySQL/TiDB database (provided by Manus platform)\n\n### 1. Web Application Setup\n\n```bash\ncd /home/ubuntu/pixeltovoxel-web\n\n# Install dependencies\npnpm install\n\n# Push database schema\npnpm db:push\n\n# Start development server\npnpm dev\n```\n\nThe web UI will be available at the configured dev server URL.\n\n### 2. Compute Node Setup\n\n```bash\ncd /home/ubuntu/pixeltovoxel-demo\n\n# Build and start the compute node\ndocker-compose up -d\n\n# Check logs\ndocker-compose logs -f compute-node\n```\n\nThe compute node API will be available at `http://localhost:8000`.\n\n### 3. Configure Environment\n\nThe web application requires these environment variables (automatically provided by Manus):\n\n- `DATABASE_URL` - MySQL connection string\n- `JWT_SECRET` - Session signing secret\n- `VITE_APP_ID` - OAuth application ID\n\nFor local compute node testing, set:\n\n```bash\nexport SESSI"
+  },
+  {
+    "description": "Projects motion of pixels to a voxel",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "Pixeltovoxelprojector",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2026-01-29T03:13:46Z",
+    "stargazerCount": 1,
+    "url": "https://github.com/Big-jpg/Pixeltovoxelprojector",
+    "readme": "# Pixeltovoxelprojector\n\nA high-performance motion detection and 3D voxel visualization system that processes image sequences to detect motion and project pixel changes into a three-dimensional voxel grid for analysis and visualization.\n\n## Table of Contents\n\n- [Overview](#overview)\n- [Features](#features)\n- [System Requirements](#system-requirements)\n- [Installation](#installation)\n- [Project Structure](#project-structure)\n- [Usage](#usage)\n- [Configuration](#configuration)\n- [Troubleshooting](#troubleshooting)\n- [Contributing](#contributing)\n- [License](#license)\n\n## Overview\n\nPixeltovoxelprojector is a sophisticated computer vision and data visualization system designed to analyze motion in image sequences and represent that motion in three-dimensional space. The project combines high-performance C++ processing with Python-based visualization tools to create an end-to-end pipeline for motion analysis and 3D representation.\n\nThe system is particularly well-suited for astronomical image analysis, surveillance applications, and any scenario where understanding motion patterns in 3D space is crucial. By converting 2D pixel motion into 3D voxel representations, researchers and analysts can gain deeper insights into the spatial and temporal characteristics of moving objects.\n\nThe core architecture consists of two main processing components: a C++ backend that handles computationally intensive operations such as image loading, motion detection, and ray casting, and a Python frontend that provides flexible data processing, astronomical coordinate transformations, and interactive 3D visualization capabilities.\n\n## Features\n\n### Core Processing Capabilities\n\n**Motion Detection and Analysis**: The system implements sophisticated frame-to-frame motion detection algorithms that can identify pixel-level changes between consecutive images. This detection system uses configurable thresholds and noise reduction techniques to ensure accurate motion identification while minimizing "
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "mercy-az-ocr",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2026-01-19T05:20:43Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/mercy-az-ocr",
+    "readme": "# MercyCare Azure OCR Invoice Automation\n\n\ud83d\udc49 New to the repo? Start with: `docs/READ_ME_FIRST.md`\n## Project Overview\n\nThis repository contains the **MercyCare Invoice Automation** microservice:   \n\nA FastAPI-based Python service that wraps Azure's Content Understanding (Document Intelligence) service.  \nThe system ingests PDF invoices, extracts structured metadata, and exposes two API routes for integration.\n\nThe service is designed for containerized deployment on Azure Container Apps, with automated image build and deployment via the `deploy.sh` script.\n\n## \ud83d\udcc2 Project Structure\n\n```bash\nmercy-az-ocr/\n\u251c\u2500\u2500 app/                                    # Main application code\n\u2502   \u251c\u2500\u2500 __init__.py                         # Package init (empty, future expansion)\n\u2502   \u251c\u2500\u2500 azure_client.py                     # Azure Content Understanding client wrapper\n\u2502   \u251c\u2500\u2500 main.py                             # FastAPI application entrypoint\n\u2502   \u251c\u2500\u2500 models.py                           # Pydantic request/response models\n\u2502   \u251c\u2500\u2500 routes.py                           # API routes for PDF analysis\n\u251c\u2500\u2500 tests/                                  # PowerShell integration test scripts\n\u2502   \u251c\u2500\u2500 test_apim.ps1                       # Tests against Azure API Management gateway\n\u2502   \u251c\u2500\u2500 test_live.ps1                       # Tests against deployed Azure Container App\n\u2502   \u251c\u2500\u2500 test_local.ps1                      # Tests against local dev server\n\u251c\u2500\u2500 .env.local                              # Local environment variables (use values from GitHub Secrets)\n\u251c\u2500\u2500 .gitignore                              # Git ignore rules\n\u251c\u2500\u2500 custom-invoice-analyzer-id_schema.json  # Azure CU Analyzer schema\n\u251c\u2500\u2500 deploy.sh                               # Docker build + Azure Container App deployment\n\u251c\u2500\u2500 Dockerfile                              # Docker image build spec\n\u251c\u2500\u2500 requirements.txt                        # Python package dependencies\n```\n\n\n## \u2699 Azure Integration Architecture\n\n* Azure **Content Understanding** is used for PDF extraction vi"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "flow",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-01-09T08:16:07Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/flow",
+    "readme": "[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fcommerce&project-name=commerce&repo-name=commerce&demo-title=Next.js%20Commerce&demo-url=https%3A%2F%2Fdemo.vercel.store&demo-image=https%3A%2F%2Fbigcommerce-demo-asset-ksvtgfvnd.vercel.app%2Fbigcommerce.png&env=COMPANY_NAME,SHOPIFY_REVALIDATION_SECRET,SHOPIFY_STORE_DOMAIN,SHOPIFY_STOREFRONT_ACCESS_TOKEN,SITE_NAME)\n\n# Next.js Commerce\n\nA high-performance, server-rendered Next.js App Router ecommerce application.\n\nThis template uses React Server Components, Server Actions, `Suspense`, `useOptimistic`, and more.\n\n<h3 id=\"v1-note\"></h3>\n\n> Note: Looking for Next.js Commerce v1? View the [code](https://github.com/vercel/commerce/tree/v1), [demo](https://commerce-v1.vercel.store), and [release notes](https://github.com/vercel/commerce/releases/tag/v1).\n\n## Providers\n\nVercel will only be actively maintaining a Shopify version [as outlined in our vision and strategy for Next.js Commerce](https://github.com/vercel/commerce/pull/966).\n\nVercel is happy to partner and work with any commerce provider to help them get a similar template up and running and listed below. Alternative providers should be able to fork this repository and swap out the `lib/shopify` file with their own implementation while leaving the rest of the template mostly unchanged.\n\n- Shopify (this repository)\n- [BigCommerce](https://github.com/bigcommerce/nextjs-commerce) ([Demo](https://next-commerce-v2.vercel.app/))\n- [Ecwid by Lightspeed](https://github.com/Ecwid/ecwid-nextjs-commerce/) ([Demo](https://ecwid-nextjs-commerce.vercel.app/))\n- [Geins](https://github.com/geins-io/vercel-nextjs-commerce) ([Demo](https://geins-nextjs-commerce-starter.vercel.app/))\n- [Medusa](https://github.com/medusajs/vercel-commerce) ([Demo](https://medusa-nextjs-commerce.vercel.app/))\n- [Prodigy Commerce](https://github.com/prodigycommerce/nextjs-commerce) ([Demo](https://prodigy-nextjs-commerce.ver"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "hyperbolic_paraboloid_generator",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2026-01-07T14:42:17Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/hyperbolic_paraboloid_generator",
+    "readme": ""
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "take-the-wheel",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2026-01-04T15:01:56Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/take-the-wheel",
+    "readme": "# Take The Wheel \ud83c\udfa1\n\nA Chrome extension that acts as an authentication source for browser agents to securely access browser cookies for RPA (Robotic Process Automation) and automated actions.\n\n## Overview\n\n**Take The Wheel** enables browser agents to authenticate with a user's browser and retrieve cookies, allowing them to execute actions on behalf of the user with proper authorization. This is particularly useful for:\n\n- **Robotic Process Automation (RPA)**: Automate repetitive web tasks\n- **Browser Automation**: Execute scripts with user authentication\n- **Credential Management**: Securely manage and share browser credentials\n- **Agent Authorization**: Provide temporary access tokens for automated agents\n\n## Features\n\n\u2728 **Core Capabilities:**\n- \ud83d\udd10 Secure token-based authentication\n- \ud83d\udccb Export cookies in standard JSON format (compatible with cookies.txt extension)\n- \ud83c\udfaf Domain-specific cookie filtering\n- \u23f1\ufe0f Configurable token expiration (default: 24 hours)\n- \ud83d\udcbe Persistent storage of authentication state\n- \ud83d\udd0c Native messaging interface for external applications\n- \ud83d\udc0d Python client library for easy integration\n\n## Architecture\n\n### Components\n\n```\ntake-the-wheel/\n\u251c\u2500\u2500 manifest.json              # Chrome extension manifest\n\u251c\u2500\u2500 popup.html                 # Extension popup UI\n\u251c\u2500\u2500 popup.css                  # Popup styling\n\u251c\u2500\u2500 popup.js                   # Popup logic\n\u251c\u2500\u2500 background.js              # Service worker (background tasks)\n\u251c\u2500\u2500 content.js                 # Content script (page interaction)\n\u251c\u2500\u2500 native_host.py             # Native messaging host executable\n\u251c\u2500\u2500 client.py                  # Python client library\n\u2514\u2500\u2500 README.md                  # This file\n```\n\n### How It Works\n\n1. **User Interaction**: User opens the extension popup and clicks \"Authenticate for Agent Access\"\n2. **Token Generation**: Extension generates a secure authentication token\n3. **Storage**: Token is stored securely in Chrome storage with expiration time\n4. **Agent Request**: Browser agent requests cooki"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://www.invoicepipe.site/",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "invoicepipe",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-12-31T14:49:35Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/invoicepipe",
+    "readme": "# InvoicePipe \u2013 Streamlined Invoice Processing\n\n**InvoicePipe** is a full-stack TypeScript application for automated invoice ingestion, field extraction, and structured data presentation. It combines Azure AI, Next.js, Prisma, PostgreSQL, and modern frontend tooling to deliver a polished document processing experience with tenant-isolated security.\n\n---\n\n## \ud83d\ude80 Features\n\n* **Drag-and-drop PDF Ingestion** with checksum deduplication.\n* **Smart Field Extraction** using Azure's Document Intelligence.\n* **Custom CU Normalization** pipeline for Australian invoices.\n* **Typed API Routes** for secure auth, upload, processing.\n* **Instant Preview** with embedded PDF and extracted metadata.\n* **JSON/CSV Export Ready** for accounting or downstream pipelines.\n* **Auth via NextAuth** with Prisma adapter and bcrypt hashing.\n* **Responsive UI** with Tailwind CSS and Radix primitives.\n* **Dark Mode** with client-side theme persistence.\n\n---\n\n## \ud83d\udcc1 Project Structure\n\n```\ninvoicepipe/\n\u251c\u2500\u2500 app/                # Next.js app router (pages, layout, routes)\n\u2502   \u251c\u2500\u2500 api/            # API routes (auth, upload, CU, preview)\n\u2502   \u251c\u2500\u2500 dashboard/      # Authenticated client dashboard views\n\u2502   \u251c\u2500\u2500 invoice/        # Invoice display routes\n\u2502   \u2514\u2500\u2500 sign-in/        # Auth UI views\n\u251c\u2500\u2500 components/         # Shared UI & feature components\n\u251c\u2500\u2500 db/                 # SQL scripts: tables, views, stored procs\n\u251c\u2500\u2500 lib/                # Auth config, DB client, CU integration, utils\n\u251c\u2500\u2500 prisma/             # Prisma schema\n\u251c\u2500\u2500 public/             # Static assets (e.g., fonts)\n\u251c\u2500\u2500 styles/             # Tailwind/global CSS\n\u251c\u2500\u2500 types/              # Type declarations\n\u2514\u2500\u2500 ...\n```\n\n---\n\n## \u2699\ufe0f Tech Stack\n\n* **Frontend**: React 19, Next.js 15 (App Router), Tailwind CSS, Framer Motion\n* **Backend**: Next.js API routes, PostgreSQL, Prisma ORM\n* **Auth**: NextAuth + Prisma adapter\n* **AI Integration**: Azure Document Intelligence (via REST SDK)\n* **PDF Processing**: Native PDF ingestion, estimated page heuristics\n* **UI F"
+  },
+  {
+    "description": "PBN",
+    "homepageUrl": "https://drake7707.github.io/paintbynumbersgenerator/",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "PBN",
+    "primaryLanguage": {
+      "name": "JavaScript"
+    },
+    "pushedAt": "2025-12-21T21:34:21Z",
+    "stargazerCount": 1,
+    "url": "https://github.com/Big-jpg/PBN",
+    "readme": "# Paint by numbers generator\nGenerate paint by number images (vectorized with SVG) from any input image.\n\n*** This project was a proof of concept for fun back in the day, it is not being actively maintained but feel free to fork and make your own changes.  ***\n\n## Demo\n\nTry it out [here](https://drake7707.github.io/paintbynumbersgenerator/index.html)\n\n### CLI Version\n\nThe CLI version is a self contained node application that does the conversion from arguments, for example:\n```\npaint-by-numbers-generator-win.exe -i input.png -o output.svg\n```\nYou can change the settings in settings.json or optionally specify a specific settings.json with the `-c path_to_settings.json` argument.\n\nThe settings contain mostly the same settings in the web version:\n - randomSeed: the random seed to choose the initial starting points of the k-means clustering algorithm. This ensures that the same results are generated each time.\n - kMeansNrOfClusters: the number of colors to quantize the image to\n - kMeansMinDeltaDifference: the threshold delta distance of the k-means clustering to reach before stopping. Having a bigger value will speed up the clustering but may yield suboptimal clusters. Default 1\n - kMeansClusteringColorSpace: the color space to apply clustering in\n - kMeansColorRestrictions: Specify which colors should be used. An array of rgb values (as number array) or names of colors (reference to color aliases). If no colors are specified no restrictions are applied. Useful if you only have a few colors of paint on hand.\n - colorAliases: map of key/values where the keys are the color names and the values are the rgb colors (as number array). You can use the color names in the color restrictions above. The names are also mentioned in the output json that tells you how much % of the area is of that specific color.\n       ```\n       \"colorAliases\": {\n              \"A1\": [            0,            0,            0        ],\n              \"A2\": [            255,            0,            0"
+  },
+  {
+    "description": "DrawTalk - Communicate with AI through drawing only. A collaborative drawing application with three-layer stroke system and LLM vision integration.",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "drawtalk",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-12-11T05:39:08Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/drawtalk",
+    "readme": ""
+  },
+  {
+    "description": "Service Status Monitoring Platform - Real-time synthetic monitoring for the services you depend on",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "untap",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-12-10T04:37:42Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/untap",
+    "readme": "# untap\n\n**Real-time Service Status Monitoring Platform**\n\nuntap is an independent synthetic monitoring service that checks the health of various services every 60 seconds. It provides real-time status updates, incident detection with hysteresis-based thresholds, and a beautiful dark-themed dashboard.\n\n![untap Dashboard](https://img.shields.io/badge/status-operational-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue)\n\n## Features\n\n- **Synthetic Health Checks** - HTTP, TCP, and ICMP monitoring for 20+ services\n- **60-Second Intervals** - Frequent checks ensure you know immediately when something goes wrong\n- **Incident Detection** - Rolling failure rate with hysteresis (60% to open, 20% to close)\n- **Elegant Dark UI** - Beautiful, responsive dashboard with status pills and sparkline charts\n- **Service Categories** - Organized by AI, Social, Streaming, Developer, Cloud, and Productivity\n- **Incident Timeline** - Historical view of all incidents per service\n- **Owner Notifications** - Automatic alerts when critical services go down\n- **Data Export** - Export check results and incidents for external analytics\n\n## Tech Stack\n\n- **Frontend**: React 19 + TypeScript + Tailwind CSS 4 + Recharts\n- **Backend**: Express + tRPC 11 + Node.js\n- **Database**: MySQL/TiDB with Drizzle ORM\n- **Authentication**: Manus OAuth (optional)\n\n## Project Structure\n\n```\nuntap/\n\u251c\u2500\u2500 client/                 # Frontend React application\n\u2502   \u251c\u2500\u2500 src/\n\u2502   \u2502   \u251c\u2500\u2500 components/     # Reusable UI components\n\u2502   \u2502   \u251c\u2500\u2500 pages/          # Page components (Home, ServiceDetail)\n\u2502   \u2502   \u251c\u2500\u2500 lib/            # tRPC client setup\n\u2502   \u2502   \u2514\u2500\u2500 App.tsx         # Main app with routing\n\u251c\u2500\u2500 server/                 # Backend Express + tRPC\n\u2502   \u251c\u2500\u2500 routers.ts          # tRPC API endpoints\n\u2502   \u251c\u2500\u2500 db.ts               # Database query helpers\n\u2502   \u251c\u2500\u2500 worker.ts           # Health check worker\n\u2502   \u251c\u2500\u2500 seed.ts             # Initial services data\n\u2502   \u2514\u2500\u2500 _core/              # Framework internals\n\u251c\u2500\u2500 drizzl"
+  },
+  {
+    "description": "3D Printing Tier List",
+    "homepageUrl": "https://filament-tier-list.site",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "ftl",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-12-09T04:40:06Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/ftl",
+    "readme": "# 3D Printing Filament Tier List\n\nA richly visual guide to the strengths, compromises, and best-use scenarios for the most popular 3D printing filaments. The interface pairs tiered material groupings with detailed modal breakdowns so makers can quickly choose the right spool for the job.\n\n## Features\n- **Tier-first layout** \u2013 Each material tier occupies a dedicated row with an accent backdrop for quick scanning.\n- **Interactive filament cards** \u2013 Tap any Benchy card to open a modal covering pros, cons, safety notes, and recommended use cases.\n- **Curated sourcing links** \u2013 Every filament entry includes a hand-picked storefront link so you can buy immediately.\n- **Responsive dark theme** \u2013 The UI leans on a soft navy gradient, subtle glassmorphism, and fluid spacing that adapts from mobile through desktop.\n\n## Tech Stack\n- [Next.js 15](https://nextjs.org/) + React 18\n- [Tailwind CSS](https://tailwindcss.com/) v4 for styling primitives\n- [Framer Motion](https://www.framer.com/motion/) for tasteful hover and modal animations\n- [Lucide React](https://lucide.dev/) iconography\n\n## Getting Started\n```bash\n# Install dependencies\nnpm install\n\n# Run the development server\nnpm run dev\n\n# Run the production build\nnpm run build\n```\n\nThe app boots on [http://localhost:3000](http://localhost:3000). Any changes to `app/page.tsx`, the tier data in `data/filaments.ts`, or the supporting UI components hot-reload automatically in development.\n\n## Data Structure\nFilament metadata lives in [`data/filaments.ts`](./data/filaments.ts). Each entry provides:\n- `tier`: Tier bucket (`S`, `A`, `B`, etc.)\n- `material`: Primary filament name\n- `alias`: Alternate/common names for quick recognition\n- `pros`, `cons`, `useCases`, `safetyNotes`: Copy surfaced in the modal view\n- `link`: External storefront for fast purchasing\n\nTo add a new filament, append a record to the `FILAMENTS` array and reference the appropriate tier. The UI updates automatically.\n\n## Project Links\n- Live site: _Add your deploym"
+  },
+  {
+    "description": "Tinder-style job search platform with AI-powered matching",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "swipehire",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-12-07T17:27:28Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/swipehire",
+    "readme": "# SwipeHire - Tinder-Style Job Search Platform\n\nSwipeHire is a modern job search platform that brings the simplicity of dating apps to job hunting. Swipe right on opportunities you love, left on ones you don't, and let AI match you with the perfect role.\n\n## Features\n\n- **Swipe Interface**: Intuitive Tinder-style job browsing with left/right swipe actions\n- **AI-Powered Matching**: Get instant feedback on job qualification using LLM analysis\n- **Smart Filtering**: Jobs filtered by location, salary, experience, and work mode preferences\n- **Profile Management**: Comprehensive profile with skills, experience, and preferences\n- **CV Upload**: Upload and parse PDF/DOCX resumes for better matching\n- **Application Tracking**: Queue and track job applications with status updates\n- **History Dashboard**: View all swipes and application history\n- **Keyboard Shortcuts**: Use arrow keys to swipe, Z to undo\n- **Undo Functionality**: Change your mind? Undo your last swipe\n\n## Tech Stack\n\n- **Frontend**: React 19, TypeScript, Tailwind CSS 4, Wouter\n- **Backend**: Express 4, tRPC 11, Node.js\n- **Database**: MySQL/TiDB with Drizzle ORM\n- **Authentication**: Manus OAuth\n- **File Storage**: S3-compatible storage\n- **AI**: LLM integration for job matching\n- **Testing**: Vitest\n\n## Getting Started\n\n### Prerequisites\n\n- Node.js 22+\n- pnpm\n- MySQL/TiDB database\n\n### Installation\n\n1. Clone the repository:\n```bash\ngit clone https://github.com/Big-jpg/swipehire.git\ncd swipehire\n```\n\n2. Install dependencies:\n```bash\npnpm install\n```\n\n3. Set up environment variables:\nThe following environment variables are automatically provided by the Manus platform:\n- `DATABASE_URL` - MySQL/TiDB connection string\n- `JWT_SECRET` - Session cookie signing secret\n- `VITE_APP_ID` - Manus OAuth application ID\n- `OAUTH_SERVER_URL` - Manus OAuth backend base URL\n- `VITE_OAUTH_PORTAL_URL` - Manus login portal URL\n- `BUILT_IN_FORGE_API_URL` - Manus built-in APIs (LLM, storage, etc.)\n- `BUILT_IN_FORGE_API_KEY` - Beare"
+  },
+  {
+    "description": "3D-printed military kit cards e-commerce prototype with Next.js 15, Three.js 3D viewer, and custom livery selection",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "kitforge-military",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-12-05T08:57:07Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/kitforge-military",
+    "readme": "# KitForge Military - 3D Printed Military Kit Cards\n\nA modern Next.js 15 prototype e-commerce website for selling 3D-printed military kit cards with custom livery selection and 3D model previews.\n\n## Features\n\n- \ud83d\udce6 **Product Catalog** - Browse military kit cards by vehicle type and kit size\n- \ud83c\udfa8 **Custom Livery Selection** - Choose from multiple camouflage patterns for each model\n- \ud83c\udfae **3D Model Viewer** - Interactive Three.js viewer with texture-based livery preview\n- \ud83d\udd0d **Advanced Filtering** - Filter by vehicle type, kit size, and difficulty\n- \ud83d\udcf1 **Responsive Design** - Mobile-friendly layout with modern military aesthetic\n- \ud83d\uded2 **Shopify Integration Stubs** - Ready to connect to Shopify Storefront API\n\n## Tech Stack\n\n- **Framework:** Next.js 15 (App Router)\n- **Language:** TypeScript\n- **Styling:** Tailwind CSS 4\n- **3D Graphics:** Three.js\n- **UI Components:** Custom components with lucide-react icons\n- **Deployment:** Vercel-compatible\n\n## Getting Started\n\n### Prerequisites\n\n- Node.js 18+ and pnpm\n- A 3D printer (for customers)\n\n### Installation\n\n```bash\n# Install dependencies\npnpm install\n\n# Run development server\npnpm dev\n\n# Build for production\npnpm build\n\n# Start production server\npnpm start\n```\n\nOpen [http://localhost:3000](http://localhost:3000) to view the site.\n\n## Project Structure\n\n```\nkitforge/\n\u251c\u2500\u2500 app/                    # Next.js App Router pages\n\u2502   \u251c\u2500\u2500 catalog/           # Product catalog page\n\u2502   \u251c\u2500\u2500 product/[slug]/    # Product detail pages\n\u2502   \u251c\u2500\u2500 about/             # About page\n\u2502   \u251c\u2500\u2500 layout.tsx         # Root layout\n\u2502   \u2514\u2500\u2500 page.tsx           # Home page\n\u251c\u2500\u2500 components/            # Reusable React components\n\u2502   \u251c\u2500\u2500 site-header.tsx    # Navigation header\n\u2502   \u251c\u2500\u2500 site-footer.tsx    # Footer\n\u2502   \u251c\u2500\u2500 product-card.tsx   # Product grid card\n\u2502   \u251c\u2500\u2500 filter-bar.tsx     # Catalog filters\n\u2502   \u251c\u2500\u2500 badges.tsx         # Badge components\n\u2502   \u251c\u2500\u2500 model-viewer.tsx   # Three.js 3D viewer\n\u2502   \u2514\u2500\u2500 livery-selector.tsx # Livery/camo selector\n\u251c\u2500\u2500 lib/                "
+  },
+  {
+    "description": "KitForge MVP - 3D Printing Kit Card Builder with FastAPI + Streamlit",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "kitforge",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-12-03T08:39:42Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/kitforge",
+    "readme": "# \ud83d\udd27 KitForge - 3D Printing Kit Card Builder MVP\n\n**KitForge** is a powerful tool for 3D printing enthusiasts and professionals to analyze STL/3MF files, calculate material costs, estimate print times, and generate professional kit cards. Built with FastAPI, Streamlit, and trimesh for robust 3D model analysis.\n\n---\n\n## \ud83d\ude80 Features\n\n### Core Functionality\n* **3D Model Analysis** - Upload STL/3MF/OBJ files for automated analysis\n* **Geometric Extraction** - Volume, bounding box, surface area, mesh quality\n* **Material Cost Calculation** - Accurate cost estimation based on material type and infill\n* **Print Time Estimation** - Intelligent heuristics based on volume and complexity\n* **Complexity Scoring** - 0-10 rating based on geometry, aspect ratio, and mesh quality\n* **Kit Card Generation** - Export as Markdown, JSON, or PDF\n\n### Authentication & Tiers\n* **JWT Token Authentication** - Secure user sessions\n* **Freemium Model** - 5 free kit cards per month\n* **Paid Tier** - Unlimited cards + PDF export\n\n### Engineering Pipeline\n* **Trimesh Integration** - Professional-grade 3D mesh analysis\n* **Watertightness Detection** - Identify mesh repair needs\n* **Multi-shell Detection** - Analyze complex geometries\n* **Preview Generation** - Automatic 3D model thumbnails\n\n---\n\n## \ud83d\udcc1 Project Structure\n\n```\nkitforge/\n\u251c\u2500\u2500 backend/\n\u2502   \u251c\u2500\u2500 api/\n\u2502   \u2502   \u251c\u2500\u2500 main.py                # FastAPI backend service\n\u2502   \u2502   \u251c\u2500\u2500 compute_pipeline.py    # 3D model scanning & analysis\n\u2502   \u2502   \u251c\u2500\u2500 pricing_engine.py      # Cost & time estimation\n\u2502   \u2502   \u251c\u2500\u2500 card_generator.py      # Kit card output engine\n\u2502   \u2502   \u2514\u2500\u2500 auth.py                # JWT authentication\n\u2502   \u251c\u2500\u2500 models/\n\u2502   \u2502   \u251c\u2500\u2500 user.py                # User data models\n\u2502   \u2502   \u2514\u2500\u2500 kitcard.py             # KitCard data models\n\u2502   \u2514\u2500\u2500 storage/\n\u2502\n\u251c\u2500\u2500 frontend/\n\u2502   \u251c\u2500\u2500 app.py                     # Streamlit main application\n\u2502   \u251c\u2500\u2500 components/                # Modular UI blocks\n\u2502   \u2514\u2500\u2500 session/\n\u2502\n\u251c\u2500\u2500 uploads/                       # Uploaded 3D fil"
+  },
+  {
+    "description": "3D Print Cost Evaluator - Streamlit webapp to estimate the true cost of 3D printed models",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "print-cost-evaluator",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-11-27T17:45:25Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/print-cost-evaluator",
+    "readme": "# 3D Print Cost Evaluator (Streamlit)\n\nA small Streamlit webapp to estimate the true cost of 3D-printed models.\n\n## Features\n\n- Input model data (filament grams, print time, plate count, sale price)\n- Configure environment & preferences (filament cost, power, labour rate, automation)\n- Get a full breakdown of:\n  - Material cost\n  - Energy cost\n  - Labour cost (prep, cleanup, plate changes, remote checks)\n  - Total cost, profit, and profit margin\n  - Remote-friendliness flag (can the job run mostly unattended?)\n\n## Installation\n\n```bash\npip install -r requirements.txt\n```\n\n## Running the app\n\n```bash\nstreamlit run app.py\n```\n\nThen open the URL shown in your terminal (usually http://localhost:8501).\n\n## File overview\n\n- `app.py`         \u2014 Streamlit UI and wiring\n- `cost_model.py`  \u2014 Pure cost calculation logic\n- `requirements.txt` \u2014 Python dependencies\n- `README.md`      \u2014 This file\n"
+  },
+  {
+    "description": "Bitmap & tilemap generation from a single example with the help of ideas from quantum mechanics",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "WaveFunctionCollapse",
+    "primaryLanguage": {
+      "name": "C#"
+    },
+    "pushedAt": "2025-11-25T22:52:47Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/WaveFunctionCollapse",
+    "readme": "# WaveFunctionCollapse\nThis program generates bitmaps that are locally similar to the input bitmap.\n<p align=\"center\"><img alt=\"main collage\" src=\"images/wfc.png\"></p>\n<p align=\"center\"><img alt=\"main gif\" src=\"images/wfc.gif\"></p>\n\nLocal similarity means that\n\n* (C1) The output should contain only those NxN patterns of pixels that are present in the input.\n* (Weak C2) Distribution of NxN patterns in the input should be similar to the distribution of NxN patterns over a sufficiently large number of outputs. In other words, probability to meet a particular pattern in the output should be close to the density of such patterns in the input.\n\nIn the examples a typical value of N is 3.\n<p align=\"center\"><img alt=\"local similarity\" src=\"images/patterns.png\"></p>\n\nWFC initializes output bitmap in a completely unobserved state, where each pixel value is in superposition of colors of the input bitmap (so if the input was black & white then the unobserved states are shown in different shades of grey). The coefficients in these superpositions are real numbers, not complex numbers, so it doesn't do the actual quantum mechanics, but it was inspired by QM. Then the program goes into the observation-propagation cycle:\n\n* On each observation step an NxN region is chosen among the unobserved which has the lowest Shannon entropy. This region's state then collapses into a definite state according to its coefficients and the distribution of NxN patterns in the input.\n* On each propagation step new information gained from the collapse on the previous step propagates through the output.\n\nOn each step the number of non-zero coefficients decreases and in the end we have a completely observed state, the wave function has collapsed.\n\nIt may happen that during propagation all the coefficients for a certain pixel become zero. That means that the algorithm has run into a contradiction and can not continue. The problem of determining whether a certain bitmap allows other nontrivial bitmaps satis"
+  },
+  {
+    "description": "Probabilistic language based on pattern matching and constraint propagation, 153 examples",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "MarkovJunior",
+    "primaryLanguage": {
+      "name": "C#"
+    },
+    "pushedAt": "2025-11-22T23:51:36Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/MarkovJunior",
+    "readme": "# MarkovJunior\nMarkovJunior is a probabilistic programming language where programs are combinations of rewrite rules and inference is performed via constraint propagation. MarkovJunior is named after mathematician [Andrey Andreyevich Markov](https://en.wikipedia.org/wiki/Andrey_Markov,_Jr.), who defined and studied what is now called [Markov algorithms](https://en.wikipedia.org/wiki/Markov_algorithm).\n<p align=\"center\">\n<img src=\"images/top-iso.gif\"/>\n<img src=\"images/top-mv.gif\"/>\n</p>\n\nIn its basic form, a MarkovJunior program is an ordered list of rewrite rules. For example, [MazeBacktracker](models/MazeBacktracker.xml) (animation on the left below) is a list of 2 rewrite rules:\n1. `RBB=GGR` or \"replace red-black-black with green-green-red\".\n2. `RGG=WWR` or \"replace red-green-green with white-white-red\".\n\nOn each execution step MJ interpreter finds the first rule in the list that has a match on the grid, finds all matches for that rule and applies that rule for a random match. In the [maze backtracker](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Depth-first_search) example, interpreter first applies a bunch of `RBB=GGR` rules. But eventually the green self-avoiding walk gets stuck. At this point the first rule has no matches, so interpreter applies the second rule `RGG=WWR` until the walk gets unstuck. Then it can apply the first rule again, and so on. Interpreter stops when there are no matches for any rule.\n<p align=\"center\">\n<img src=\"images/MazeBacktracker.gif\"/>\n<img src=\"images/multisokoban.gif\"/>\n</p>\n\nProbabilistic inference in MarkovJunior allows to impose constraints on the future state, and generate only those runs that lead to the constrained future. For example, inference in Sokoban rules `{RWB=BRW RB=BR}` makes a group of (red) agents organize (white) crates into specified shapes.\n\nUsing these ideas, we construct [many probabilistic generators](models/) of dungeons, architecture, puzzles and fun simulations.\n<p align=\"center\"><a href=\"im"
+  },
+  {
+    "description": "OpenSCAD Keychain Maker - A Streamlit web app for generating customized keychain files from OpenSCAD templates",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "keychain-maker",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-11-22T15:54:02Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/keychain-maker",
+    "readme": "# \ud83d\udd11 OpenSCAD Keychain Maker\n\nA Streamlit web application that generates customized OpenSCAD keychain files from templates. Upload your template and font, enter your text, and download the generated SCAD and STL files ready for 3D printing.\n\n## \ud83d\udccb Overview\n\nThis tool allows you to:\n\n- Pick a base OpenSCAD template (`.scad` file) for a keychain\n- Pick a font file (`.ttf` / `.otf`)\n- Type the text for the keychain\n- Get back:\n  - A generated `.scad` file with the text & font wired in\n  - Optionally, an STL rendered via the OpenSCAD CLI\n  - **NEW**: Multi-color STL files optimized for two-color 3D printing!\n\nThe tool works with any OpenSCAD template that follows a simple placeholder convention.\n\n### \ud83c\udfa8 Multi-Color Printing Support\n\nThe app now includes templates specifically designed for **multi-color 3D printing**:\n\n- **Two-layer design**: Base layer (2.5mm) + Text layer (1.5mm)\n- **Single STL mesh**: Easy to slice with color changes\n- **Slicer-ready**: Set color change at Z=2.5mm\n- **Perfect for**: Dual-color keychains with contrasting base and text\n\nSee [MULTICOLOR_PRINTING.md](MULTICOLOR_PRINTING.md) for detailed instructions.\n\n## \ud83d\ude80 Prerequisites\n\n### Required\n\n- **Python 3.10+**\n- **pip** (Python package installer)\n\n### Optional (for STL rendering)\n\n- **OpenSCAD CLI** - Download from [openscad.org](https://openscad.org/downloads.html)\n  - The app automatically detects OpenSCAD in common installation locations\n  - No PATH configuration required on most systems!\n  - See [OPENSCAD_SETUP.md](OPENSCAD_SETUP.md) for detailed setup instructions\n  - Without OpenSCAD, you can still generate `.scad` files\n\n## \ud83d\udce6 Installation\n\n1. **Clone the repository:**\n\n```bash\ngit clone https://github.com/yourusername/keychain-maker.git\ncd keychain-maker\n```\n\n2. **Install Python dependencies:**\n\n```bash\npip install -r requirements.txt\n```\n\n3. **Verify OpenSCAD installation (optional):**\n\n```bash\nopenscad --version\n```\n\n## \ud83c\udfaf Usage\n\n### Running the Streamlit App\n\nStart the application with:\n\n`"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://gsap-parallax-scroll.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "gsap-parallax-scroll",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-30T04:35:59Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/gsap-parallax-scroll",
+    "readme": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).\n\n## Getting Started\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n# or\npnpm dev\n# or\nbun dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\nYou can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.\n\nThis project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.\n\n## Learn More\n\nTo learn more about Next.js, take a look at the following resources:\n\n- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.\n- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.\n\nYou can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!\n\n## Deploy on Vercel\n\nThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.\n\nCheck out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.\n"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://linkedin-post-generator-pied.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "linkedin-post-generator",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-26T08:17:22Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/linkedin-post-generator",
+    "readme": "# LinkedIn Post Generator\n\nTransform GitHub repositories into professional LinkedIn posts using AI. This application analyzes your code, generates insights, and creates publish-ready content with automatic PII redaction, commit visualizations, and AI-generated images.\n\n## Features\n\n- **GitHub Repository Analysis**: Clone and analyze any public GitHub repository\n- **Multi-Layer PII Redaction**: Regex patterns, dictionary replacements, and AI semantic analysis\n- **AI-Powered Post Generation**: Three variants (short, long, thread/carousel)\n- **LinkedIn Polish**: Automatic formatting optimization with hashtags and engagement hooks\n- **Commit Graph Visualization**: Visual timeline of development history\n- **AI-Generated Images**: Title images and technical diagrams\n- **Provenance Tracking**: Cryptographic verification of source material\n- **User Authentication**: Secure OAuth-based authentication\n- **Job Queue System**: Track and manage multiple generation jobs\n\n## Tech Stack\n\n- **Frontend**: React 19 + Vite + Tailwind CSS 4\n- **Backend**: Express 4 + tRPC 11\n- **Database**: PostgreSQL (Neon) via Drizzle ORM\n- **Storage**: Vercel Blob\n- **AI**: OpenAI GPT-4 for content generation and DALL-E for images\n- **Authentication**: OAuth 2.0\n\n## Prerequisites\n\n- Node.js 18+ and pnpm\n- PostgreSQL database (Neon recommended)\n- OpenAI API key\n- Vercel account (for Blob storage)\n- GitHub CLI (optional, for deployment)\n\n## Quick Start\n\n### 1. Clone the Repository\n\n```bash\ngit clone https://github.com/yourusername/linkedin-post-generator.git\ncd linkedin-post-generator\n```\n\n### 2. Install Dependencies\n\n```bash\npnpm install\n```\n\n### 3. Set Up Environment Variables\n\nCopy `.env.example` to `.env` and fill in your values:\n\n```bash\ncp .env.example .env\n```\n\nRequired environment variables:\n\n```env\n# Database (Neon PostgreSQL)\nDATABASE_URL=postgresql://user:password@host/database?sslmode=require\n\n# Vercel Blob Storage\nBLOB_READ_WRITE_TOKEN=vercel_blob_rw_xxxxxxxxxxxxx\n\n# OpenAI API\nOPENAI_API_"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "video-agent-v1",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-10-20T17:45:07Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/video-agent-v1",
+    "readme": "# Video Inference Agent - V1 MVP\n\n**Minimum Viable Product for video analysis with LLM-powered Q&A**\n\n## Features\n\n### Core Capabilities\n- \u2705 **YouTube video ingestion** with yt-dlp\n- \u2705 **Deterministic frame extraction** at fixed intervals\n- \u2705 **Labeled collage generation** (timestamp + frame number)\n- \u2705 **Transcript-based analysis** (when available)\n- \u2705 **Vision-based fallback** (higher frame rate when no transcript)\n- \u2705 **Semantic search** with FAISS vector indexing\n- \u2705 **LLM-powered Q&A** with evidence retrieval\n- \u2705 **REST API** with async job processing\n\n### V1 Enhancements\n- \u2705 **Smart fallback**: No transcript \u2192 capture more frames for vision analysis\n- \u2705 **Description flag**: `USE_DESCRIPTION` env var to control description usage\n- \u2705 **Vision-only mode**: LLM analyzes frame progression when no transcript\n- \u2705 **Clean architecture**: Minimal, focused implementation\n\n---\n\n## Quick Start\n\n### 1. Install Dependencies\n\n```bash\n# Create virtual environment\npython -m venv .venv\n\n# Activate (Windows)\n.venv\\Scripts\\activate\n\n# Activate (Linux/Mac)\nsource .venv/bin/activate\n\n# Install packages\npip install -r requirements.txt\n```\n\n### 2. Install System Dependencies\n\n**ffmpeg and ffprobe** are required:\n\n- **Windows**: Download from https://www.gyan.dev/ffmpeg/builds/ and add to PATH\n- **Mac**: `brew install ffmpeg`\n- **Linux**: `sudo apt install ffmpeg`\n\n### 3. Set Up YouTube Cookies\n\nYouTube requires authentication for most videos. Export your cookies:\n\n1. Install browser extension:\n   - Chrome: [Get cookies.txt LOCALLY](https://chrome.google.com/webstore/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)\n   - Firefox: [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/)\n\n2. Go to https://www.youtube.com (logged in)\n3. Click extension \u2192 Export\n4. Save as `youtube_cookies.txt` in project directory\n\n### 4. Set Environment Variables\n\n```bash\n# Required: OpenAI API key\nexport OPENAI_API_KEY=\"sk-proj-...\"\n\n# Optional: Control description usag"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "infinite-scroll-gsap",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-18T05:59:59Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/infinite-scroll-gsap",
+    "readme": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).\n\n## Getting Started\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n# or\npnpm dev\n# or\nbun dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\nYou can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.\n\nThis project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.\n\n## Learn More\n\nTo learn more about Next.js, take a look at the following resources:\n\n- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.\n- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.\n\nYou can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!\n\n## Deploy on Vercel\n\nThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.\n\nCheck out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.\n"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "video-agent-main",
+    "primaryLanguage": null,
+    "pushedAt": "2025-10-17T07:11:29Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/video-agent-main",
+    "readme": ""
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "video-agent",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-10-17T04:08:40Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/video-agent",
+    "readme": "# Video Inference Agent\n\nA research-only YouTube video analysis system that creates \"LLM-ready memory snapshots\" of videos through frame extraction, collaging, transcript indexing, and semantic search with LLM-powered Q&A.\n\n## Features\n\n- **Deterministic Frame Extraction**: Extract frames at fixed intervals with consistent aspect ratios\n- **Collage Generation**: Create labeled grid collages for efficient visual analysis\n- **Transcript Indexing**: Semantic search over video transcripts using FAISS\n- **LLM-Powered Q&A**: Ask questions about videos and get evidence-based answers\n- **Async Job Processing**: Non-blocking ingestion with progress tracking\n- **REST API**: Clean FastAPI interface for integration\n\n## Architecture\n\n### Core Components\n\n1. **Ingestion Pipeline** (`ingest_youtube.py`)\n   - Downloads videos via yt-dlp\n   - Extracts frames at deterministic intervals\n   - Creates labeled collage grids\n   - Fetches transcripts (with fallback)\n   - Generates metadata and vision prompts\n\n2. **Vector Indexing** (`vectordb.py`)\n   - Chunks transcripts into ~800 character windows\n   - Embeds using sentence-transformers\n   - Indexes with FAISS for fast retrieval\n   - Links chunks to nearby frame indices\n\n3. **FastAPI Service** (`app.py`)\n   - REST API for ingestion and querying\n   - LLM synthesis using OpenAI API\n   - Job queue for async processing\n   - SQLite database for metadata\n\n### Output Structure\n\n```\nout/{video_id}/\n\u251c\u2500\u2500 video.mp4                    # Downloaded video\n\u251c\u2500\u2500 info.json                    # yt-dlp metadata\n\u251c\u2500\u2500 frames/\n\u2502   \u251c\u2500\u2500 000000.jpg              # Frame 0\n\u2502   \u251c\u2500\u2500 000001.jpg              # Frame 1\n\u2502   \u2514\u2500\u2500 ...\n\u251c\u2500\u2500 collages/\n\u2502   \u251c\u2500\u2500 collage_000.jpg         # Grid with #index labels\n\u2502   \u251c\u2500\u2500 collage_001.jpg\n\u2502   \u2514\u2500\u2500 ...\n\u251c\u2500\u2500 transcript.json              # Segments: {text, start, duration}\n\u251c\u2500\u2500 metadata.json                # Frame-timestamp-collage mapping\n\u251c\u2500\u2500 vision_prompt.txt            # Instructions for Vision models\n\u251c\u2500\u2500 index.faiss                  # Ve"
+  },
+  {
+    "description": "Smart vehicle affordability calculator powered by the 20/4/10 rule and personalized financial modeling",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "vehicle-affordability-finder",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-10-16T13:10:20Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/vehicle-affordability-finder",
+    "readme": "# \ud83d\ude97 Affordability-First Vehicle Finder\n\nA smart vehicle affordability calculator powered by the **20/4/10 rule** and personalized financial modeling. This Streamlit application helps users determine what vehicle they can truly afford based on their income, expenses, and spending habits.\n\n## \ud83c\udf1f Features\n\n### Core Functionality\n- **20/4/10 Rule Compliance**: Strict guideline (20% down, 4 years, 10% of income)\n- **Personalized Affordability Assessment**: Three budget presets (Tight, Neutral, Relaxed)\n- **Discipline Modeling**: Accounts for spending behavior and budget adherence\n- **Income Volatility Buffer**: Extra safety margin for income fluctuations\n- **Enhanced Cost Models**: Age and profile-based insurance and maintenance calculations\n\n### Advanced Features\n- **Path to Affordability**: Actionable recommendations when a vehicle isn't affordable\n  - Increase down payment options\n  - Shorter loan term alternatives\n  - Lower price target suggestions\n- **Alternative Vehicle Recommendations**: Ranked by affordability within same class/powertrain\n- **Best Fit Suggestions**: Automatically identifies most affordable matching vehicles\n- **Comprehensive Financing Breakdown**: Total interest, monthly costs, and cash flow analysis\n\n### Integration Ready\n- **API Payload Export**: JSON format for middleware integration\n- **Affiliate Link Ready**: Structure supports partner integration\n- **Lead Generation**: Framework for dealer contact and financing pre-approval\n- **Extensible Schema**: Ready for real-time inventory API integration\n\n## \ud83d\udccb Requirements\n\n```\nstreamlit>=1.28.0\npandas>=2.0.0\n```\n\n## \ud83d\ude80 Quick Start\n\n### Local Development\n\n1. **Clone or download this repository**\n\n2. **Install dependencies**:\n   ```bash\n   pip install -r requirements.txt\n   ```\n\n3. **Run the application**:\n   ```bash\n   streamlit run app.py\n   ```\n\n4. **Open your browser** to `http://localhost:8501`\n\n### Deployment to Streamlit Cloud\n\n1. **Push to GitHub**:\n   ```bash\n   git init\n   git add .\n   git comm"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://convergent-six.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "convergent",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-16T05:46:03Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/convergent",
+    "readme": "# \ud83e\udded Convergent v0.2 \u2014 Emergent Consensus Simulation\n\n**Convergent** explores how multiple AI agents form consensus through structured conversation and visualized collective behaviour.\nEach agent represents a unique persona, reasoning style, and viewpoint \u2014 all interacting within a shared \u201csemantic ecosystem\u201d rendered as an evolving **flocking simulation**.\n\n---\n\n## \ud83e\udde0 Concept\n\n> *\u201cWhen intelligent systems discuss a problem, do their thoughts converge?\u201d*\n\nThis system models that question.\nA group of AI agents (OpenAI GPT-4o, Anthropic Claude-3.5, and Google Gemini 1.5 Pro) engage in structured, rule-driven dialogue toward a shared goal.\nTheir exchanges are analyzed for **semantic similarity** (via OpenAI embeddings) and **visualized as boids**, where proximity equals conceptual alignment.\n\nWhen consensus emerges \u2014 similarity > 0.9 \u2014 the agents visually **converge** in 3D space.\n\n---\n\n## \ud83e\udde9 Architecture\n\n| Layer             | Component                                                            | Purpose                                                                                                                |\n| ----------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |\n| **Backend**       | `/app/api/agents/route.ts`                                           | Orchestrates agent turns, generates responses, computes embeddings, streams updates via Server-Sent Events (SSE).      |\n| **Frontend**      | `/app/flock/page.tsx`                                                | React client for simulation control and real-time visualization.                                                       |\n| **Visualization** | `components/BoidCanvas.tsx`                                          | React-Three-Fiber canvas rendering agents as animated boids, positioned by semantic similarity and interaction \u201cheat.\u201d |\n| **Controls/UI*"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://openai-key-guardian.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "openai-key-guardian",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-15T09:16:46Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/openai-key-guardian",
+    "readme": "# OpenAI-Key-Guardian (v0.1)\n\nPolite GitHub scanner for leaked OpenAI keys (`OPENAI_API_KEY=sk-*`, `sk-proj-*`) and similar secrets.\n\n## Modes\n\nThe scanner operates in three distinct modes, each with different levels of interaction with target repositories:\n\n**Safe (default):** This mode performs scanning only and writes detections to local JSONL files or artifacts. It does not create forks, open issues, or submit pull requests. This is the recommended mode for initial testing and data collection.\n\n**Notify:** In this mode, the scanner opens GitHub Issues on repositories where exposed keys are detected. The issues contain redacted evidence and recommended remediation steps. This mode requires appropriate GitHub token permissions and must have `ALLOW_WRITES=true` configured.\n\n**Remediate (guarded):** This advanced mode can fork repositories and open pull requests that add a `SECURITY_NOTICE.md` file. This mode is disabled by default and should only be enabled after careful consideration of the ethical and legal implications. It requires `ALLOW_WRITES=true` and appropriate GitHub permissions.\n\n## Quick start\n\nTo get started with OpenAI-Key-Guardian, follow these steps:\n\nFirst, copy the example environment file and configure your GitHub token. The token requires at minimum `code:read` and `search:read` scopes for safe mode. For notify or remediate modes, you'll also need `public_repo` scope or a GitHub App with appropriate permissions.\n\n```bash\ncp .env.example .env\n# Edit .env and set GH_TOKEN\n```\n\nNext, install dependencies using your preferred package manager:\n\n```bash\npnpm i  # or npm install / yarn install\n```\n\nTo run a safe scan that only collects data locally:\n\n```bash\npnpm scan\n```\n\nTo view the dashboard showing detected keys and metrics:\n\n```bash\npnpm dev\n# Open http://localhost:3000 in your browser\n```\n\nTo enable Issue notifications, set `RUN_MODE=notify` in your `.env` file. For pull request creation, set `RUN_MODE=remediate` and confirm `ALLOW_WRITES=true`.\n"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "key-guardian-sandbox",
+    "primaryLanguage": null,
+    "pushedAt": "2025-10-15T08:42:06Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/key-guardian-sandbox",
+    "readme": "test\n"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "expressive-state-mapper",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-15T02:50:05Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/expressive-state-mapper",
+    "readme": "# Expressive State Mapper (ESM)\n\nA longitudinal drawing analysis system that captures vector drawings with self-notes, extracts objective features, tracks within-person deviations from personal baselines, and visualizes trajectories over time.\n\n## Core Principles\n\n- **Objective Features Only**: Analyzes geometry, color, and dynamics\u2014not interpretations\n- **Interpretation Humility**: Surfaces signals (e.g., \"more pen lifts than usual\"), not labels (e.g., \"anxious\")\n- **Within-Person Comparisons**: You're only compared to yourself, never to others\n- **Privacy First**: Granular consent and sharing controls\n\n## Architecture\n\n### Frontend\n- **Next.js 15** with App Router and TypeScript\n- **Paper.js** for vector drawing canvas with stroke-level capture\n- **Recharts** for time-series visualizations\n- **Tailwind CSS** for styling\n\n### Backend\n- **Next.js API Routes** for RESTful endpoints\n- **PostgreSQL** for data persistence\n- **Python** for feature extraction and baseline analysis\n\n### Data Flow\n\n1. User creates a drawing on the canvas\n2. Stroke data (points, pressure, timing) is captured in real-time\n3. Drawing + metadata is sent to `/api/drawing/ingest`\n4. Feature extraction service extracts ~25 objective features\n5. Baseline analyzer computes z-scores against personal history\n6. Dashboard visualizes anomaly scores and feature trajectories\n\n## Features Extracted\n\n### A. Composition & Layout\n- Normalized centroid\n- Spatial entropy\n- Rule-of-thirds occupancy\n- Symmetry scores\n\n### B. Geometry & Stroke Dynamics\n- Total ink length\n- Stroke length statistics\n- Curvature statistics\n- Velocity and acceleration\n- Pressure statistics\n- Pen-lift rate\n\n### C. Color & Texture\n- Palette size\n- Hue diversity\n- Saturation and value statistics\n- Color temperature\n- Opacity usage\n\n### D. Layering & Ordering\n- Layer depth variance\n- Eraser usage ratio\n\n## Setup Instructions\n\n### Prerequisites\n\n- Node.js 22+\n- Python 3.11+\n- PostgreSQL 14+\n\n### Installation\n\n1. Install dependencies:\n\n```b"
+  },
+  {
+    "description": "Fork to update readme and provide suggestions for improvements",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "databricks-lakehouse-pipeline",
+    "primaryLanguage": {
+      "name": "Jupyter Notebook"
+    },
+    "pushedAt": "2025-10-14T03:37:46Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/databricks-lakehouse-pipeline",
+    "readme": "# \ud83c\udfd7\ufe0f Azure Databricks Lakehouse Project  \n**End-to-End Retail Data Pipeline (Bronze \u2192 Silver \u2192 Gold)**  \nby [Bita Ashoori](https://github.com/bashoori)\n\n---\n\n## \ud83d\ude80 Project Overview\nThis project demonstrates an **end-to-end Azure Databricks Lakehouse architecture** using Delta Lake, built to simulate a **Retail Analytics** environment.  \nIt includes all stages of the **Medallion Architecture** \u2014 Bronze (raw), Silver (cleaned), and Gold (aggregated) layers.\n\nThe solution is implemented with **Databricks Notebooks** using **PySpark**, **Delta Lake**, and **SQL**, showcasing:\n- Incremental ETL processing  \n- Data validation and cleansing  \n- Business metric aggregation  \n- Cloud-based visualization (Databricks SQL Dashboard / Power BI)\n\n---\n\n## \ud83e\udde9 Architecture Diagram\n\n### \ud83d\udccc Preferred (SVG)\n![Medallion Architecture](assets/architecture-diagram.svg)\n\n### \ud83d\uddbc\ufe0f Fallback (PNG)\n![Medallion Architecture PNG](assets/architecture-diagram.png)\n\n### \ud83d\udcdd Mermaid (inline, GitHub-renderable)\n> GitHub does **not** support \u201cinclude from file,\u201d so the full Mermaid source is pasted here.  \n> To update, edit both this block and `assets/architecture-diagram.mmd` (they should match).\n\n```mermaid\nflowchart LR\n  classDef bronze fill:#8c6239,stroke:#5c3b22,color:#fff,stroke-width:1px;\n  classDef silver fill:#7f8c8d,stroke:#4b5557,color:#fff,stroke-width:1px;\n  classDef gold fill:#b7950b,stroke:#7d6608,color:#fff,stroke-width:1px;\n  classDef svc fill:#1f618d,stroke:#154360,color:#fff,stroke-width:1px;\n  classDef meta fill:#6c3483,stroke:#4a235a,color:#fff,stroke-width:1px;\n  classDef ext fill:#117a65,stroke:#0b5345,color:#fff,stroke-width:1px;\n  classDef store fill:#283747,stroke:#212f3d,color:#fff,stroke-width:1px;\n\n  subgraph S[External Sources]\n    direction TB\n    s1[(CSV: customer.csv)]:::ext\n    s2[(JSON: products.json)]:::ext\n    s3[(Parquet: transaction.snappy.parquet)]:::ext\n  end\n\n  subgraph ING[Ingestion - Databricks Notebooks]\n    direction TB\n    i0[[Bronze DB init<br/>Bronze_layer_DB_c"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://closegate.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "closegate",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-09T18:02:14Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/closegate",
+    "readme": "# \ud83e\uddf0 CLOSEGATE - Corporate LinkedIn Meme Engine\n\n> **Transform your LinkedIn presence with AI-powered corporate memes**\n\nA Next.js-based meme generator designed for creating professional LinkedIn memes using OpenAI's image editing API. Built for corporate meme lords, startup founders, and LinkedIn content creators.\n\n![Next.js](https://img.shields.io/badge/Next.js-15.5.4-black)\n![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)\n![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38bdf8)\n![License](https://img.shields.io/badge/License-MIT-green)\n\n## \u2728 Features\n\n- \ud83c\udfa8 **5 Popular Templates**: Drake, Distracted Boyfriend, Confused Travolta, Money Printer, This Is Fine\n- \u270d\ufe0f **Custom Captions**: Add up to 4 text captions with flexible positioning (top, bottom, left, right, center)\n- \ud83e\udd16 **AI-Powered**: Uses OpenAI's DALL-E 2 API for professional meme generation\n- \ud83c\udfaf **Corporate Focus**: Designed specifically for LinkedIn content\n- \ud83d\udcf1 **Responsive Design**: Works seamlessly on desktop and mobile\n- \ud83d\udd12 **Security Built-in**: Prompt injection protection and input sanitization\n- \u26a1 **Fast & Modern**: Built with Next.js 15 and Tailwind CSS\n- \ud83d\udcbc **Professional UI**: Clean, corporate-friendly design\n\n## \ud83d\ude80 Quick Start\n\n### Prerequisites\n\n- Node.js 22.x or higher\n- npm or yarn\n- OpenAI API key ([Get one here](https://platform.openai.com/api-keys))\n\n### Installation\n\n```bash\n# Clone the repository\ngit clone https://github.com/Big-jpg/closegate.git\ncd closegate\n\n# Install dependencies\nnpm install\n\n# Set up environment variables\ncp .env.local.example .env.local\n# Edit .env.local and add your OPENAI_API_KEY\n\n# Run the development server\nnpm run dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) to see the app.\n\n## \ud83d\udcd6 Usage\n\n1. **Select a Template** - Choose from 5 popular meme formats\n2. **Add Captions** - Enter your text and choose positioning\n3. **Generate** - Click the button and wait for AI magic (10-30 seconds)\n4. **Share** - Download or post directly to LinkedIn"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "Big-jpg",
+    "primaryLanguage": null,
+    "pushedAt": "2025-10-08T02:41:43Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/Big-jpg",
+    "readme": "<h1 align=\"center\">Hi \ud83d\udc4b, I'm Ross Farrell</h1>\n<h3 align=\"center\">Software & Data Automation Architect | Perth, Australia</h3>\n\n<p align=\"center\">\n  <a href=\"https://github.com/Big-jpg/Big-jpg/actions/workflows/big-jpg-ci.yml\">\n    <img src=\"https://github.com/Big-jpg/Big-jpg/actions/workflows/big-jpg-ci.yml/badge.svg?event=push\" alt=\"Big Jpg CI\" />\n  </a>\n  <img src=\"https://komarev.com/ghpvc/?username=big-jpg&label=Profile%20views&color=0e75b6&style=flat\" alt=\"Profile Views\" />\n</p>\n\n---\n\n### \ud83d\ude80 Current Projects\n\n- \ud83e\udde0 [**Convergent**](https://github.com/Big-jpg/convergent) \u2014 Multi-agent reasoning sandbox using `ai-sdk` and emergent behavior systems  \n- \ud83d\udc26 [**next-boids-text**](https://github.com/Big-jpg/next-boids-text) \u2014 Generative text-flocking visualization in Next.js 15  \n- \ud83e\ude90 [**OrbitMe**](https://github.com/Big-jpg/orbitme) \u2014 Newtonian orbital simulator for Quest 3 inspired by *The Expanse*  \n- \ud83e\udde9 [**NeuralNet**](https://github.com/Big-jpg/NeuralNet) \u2014 Visual neural computation and network propagation experiments  \n- \ud83e\uddca [**Pixel-to-Voxel Projector**](https://github.com/Big-jpg/Pixeltovoxelprojector) \u2014 2D-to-3D projection pipeline for image-based spatial reconstruction  \n- \ud83d\udcc4 [**Recupare**](https://github.com/Big-jpg/recupare) \u2014 Azure + Next.js SaaS for invoice intelligence and automated document workflows  \n\n---\n\n### \ud83e\uddf0 Languages & Tools\n\n<p align=\"left\">\n  <a href=\"https://nextjs.org/\" target=\"_blank\"><img src=\"https://cdn.worldvectorlogo.com/logos/nextjs-2.svg\" width=\"40\" height=\"40\" alt=\"Next.js\" /></a>\n  <a href=\"https://www.python.org/\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg\" width=\"40\" height=\"40\" alt=\"Python\" /></a>\n  <a href=\"https://pytorch.org/\" target=\"_blank\"><img src=\"https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg\" width=\"40\" height=\"40\" alt=\"PyTorch\" /></a>\n  <a href=\"https://azure.microsoft.com\" target=\"_blank\"><img src=\"https://www.vectorlogo.zone/logos/microsof"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://next-boids-text.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "next-boids-text",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-06T16:16:47Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/next-boids-text",
+    "readme": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).\n\n## Getting Started\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n# or\npnpm dev\n# or\nbun dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\nYou can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.\n\nThis project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.\n\n## Learn More\n\nTo learn more about Next.js, take a look at the following resources:\n\n- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.\n- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.\n\nYou can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!\n\n## Deploy on Vercel\n\nThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.\n\nCheck out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.\n"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://orbitme.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "orbitme",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-09-27T16:30:05Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/orbitme",
+    "readme": "# orbitme# Orbit Visualizer\n\nA real-time 3D solar system simulation built with Next.js, TypeScript, and Three.js, featuring accurate Newtonian n-body physics and interactive controls.\n\n## \ud83c\udf1f Features\n\n### Physics Simulation\n- **Newtonian n-body gravity** with proper gravitational forces between all bodies\n- **Dual integrators**: Symplectic Euler (fast, stable) and RK4 (high accuracy)\n- **Configurable parameters**: time scale, mass scale, velocity scale\n- **Softening parameter** to prevent singularities in close encounters\n- **Units**: AU (distance), days (time), solar masses (mass)\n\n### 3D Visualization\n- **Real-time 3D rendering** using Three.js and React Three Fiber\n- **Orbital trails** showing historical paths of celestial bodies\n- **Interactive camera** with orbit controls (zoom, pan, rotate)\n- **Proper lighting** with ambient and point light sources\n- **Orbital plane grid** for spatial reference\n\n### Interactive Controls\n- **Play/Pause/Reset** simulation controls\n- **Time scale slider** (0.1\u00d7 to 1000\u00d7 speed)\n- **Integration method selector** (Symplectic Euler vs RK4)\n- **Trail toggle** to show/hide orbital paths\n- **Mass and velocity scaling** for experimental scenarios\n- **Time step adjustment** for simulation precision\n\n### Solar System Bodies\n- **Sun** (1 solar mass) - gravitational center\n- **8 Planets** with realistic mass ratios:\n  - Mercury, Venus, Earth, Mars (inner planets)\n  - Jupiter, Saturn, Uranus, Neptune (outer planets)\n- **Color-coded** for easy identification\n- **Exaggerated visual sizes** for visibility at astronomical scales\n\n## \ud83d\ude80 Getting Started\n\n### Prerequisites\n- Node.js 18+ \n- npm or yarn\n\n### Installation\n```bash\n# Clone or download the project\ncd orbit-visualizer\n\n# Install dependencies\nnpm install --legacy-peer-deps\n\n# Start development server\nnpm run dev\n```\n\nVisit `http://localhost:3000` to see the simulation.\n\n### Build for Production\n```bash\nnpm run build\nnpm start\n```\n\n## \ud83c\udfae Usage\n\n### Basic Controls\n1. **Play/Pause**: Start or sto"
+  },
+  {
+    "description": "Implementation of Multilayer Perceptron (MLP) from scratch",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "NeuralNet",
+    "primaryLanguage": {
+      "name": "JavaScript"
+    },
+    "pushedAt": "2025-09-08T04:56:06Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/NeuralNet",
+    "readme": "# Implementation of Neural Network from Scratch (in JavaScript)\n\nA fully functional deep neural network built from scratch using **vanilla JavaScript** no frameworks, no libraries. Just pure math, logic, and a lot of debugging.\n\nThis project includes:\n* A modular neural network architecture\n* Support for sigmoid and ReLU activations\n* Backpropagation\n* Stochastic and mini-batch gradient descent(only in single hidden layer architecture)\n* Custom loss function support (MSE, Cross-Entropy)\n* Training support for classic datasets like **XOR**, **Iris**, and **MNIST**\n\n---\n\n## \ud83d\ude80 Overview\n\nThis project was created to learn how neural networks work internally: weight updates, activation functions, and most importantly backpropagation.\nStarting with a simple XOR network, I scaled it to the Iris dataset and eventually to MNIST, all while building layer-by-layer abstractions and a custom training loop.\n\nLive Demo: [here](https://mohd-shamoon-04.github.io/NeuralNet/)\n\n---\n\n## \ud83e\uddea Technical Highlights\n\n* **Initial XOR Network**\n  Input: 2 neurons \u2192 Hidden: 2 neurons \u2192 Output: 1 neuron\n  Proved why XOR is a classic test case (non-linearly separable).\n\n* **Iris Dataset**\n  Used a single hidden layer with 6 neurons and mini-batch gradient descent. Achieved **97% accuracy**.\n  Then re-trained using a **deep NN** (two hidden layers: 6 and 4 neurons) and maintained the same accuracy.\n\n* **Deep NN for MNIST**\n  After refactoring layers into reusable components and adding support for softmax/cross-entropy, I trained on MNIST:\n\n  ```\n  Input: 784 neurons\n  Hidden Layers: [18 (ReLU), 16 (ReLU)]\n  Output: 10 neurons (Softmax)\n  Loss: Cross-Entropy\n  Accuracy: 96.5%\n  ```\n\n---\n\n## \ud83e\udde9 Problems Faced & Learnings\n\n1. **Backpropagation**: Understanding and debugging gradients manually was the steepest learning curve.\n2. **Hyperparameter Tuning**: Especially tricky with Iris, needed multiple learning rate and neuron count tweaks.\n3. **Activation/Loss Mismatch**: Initially used sigmoid + MSE for MN"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://recupare.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "recupare",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-09-06T14:10:55Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/recupare",
+    "readme": "# Recupare + InvoicePipe Integration\n\n## Overview\n\nThis project successfully integrates InvoicePipe's Azure Content Understanding invoice processing capabilities into Recupare's existing Stack Auth + Neon architecture. The result is a unified platform that combines:\n\n- **Recupare's clean Stack Auth architecture** for secure user authentication\n- **InvoicePipe's powerful Azure OCR capabilities** for invoice processing\n- **Unified Neon database** for both user data and invoice storage\n\n## \ud83c\udfaf Key Features\n\n### Invoice Processing\n- **PDF Upload & Processing**: Drag-and-drop interface for invoice uploads\n- **Azure Content Understanding**: Automatic field extraction from invoices\n- **Structured Data**: Vendor, amounts, dates, PO numbers, and more\n- **PDF Preview**: In-browser PDF viewing with download capabilities\n- **User Isolation**: All invoices are user-specific and secure\n\n### Authentication & Security\n- **Stack Auth Integration**: Modern authentication with magic links and social login\n- **Route Protection**: Middleware-based protection for sensitive routes\n- **User-Scoped Data**: All invoice data is isolated per user\n- **Secure API Endpoints**: All API routes require authentication\n\n### Dashboard & UI\n- **Unified Dashboard**: Tabbed interface for both invoice processing and AI agent tasks\n- **Real-time Processing**: Live status updates during invoice analysis\n- **Responsive Design**: Works on desktop and mobile devices\n- **Modern UI Components**: Built with Radix UI and Tailwind CSS\n\n## \ud83d\udcc1 Project Structure\n\n```\nworkspace/recupare/\n\u251c\u2500\u2500 app/\n\u2502   \u251c\u2500\u2500 api/\n\u2502   \u2502   \u251c\u2500\u2500 upload/route.ts              # File upload endpoint\n\u2502   \u2502   \u2514\u2500\u2500 invoice/\n\u2502   \u2502       \u251c\u2500\u2500 cu-process/route.ts      # Azure CU processing\n\u2502   \u2502       \u2514\u2500\u2500 card/[slug]/route.ts     # Invoice data retrieval\n\u2502   \u251c\u2500\u2500 dashboard/page.tsx               # Main dashboard with tabs\n\u2502   \u251c\u2500\u2500 invoice/card/[slug]/page.tsx     # Individual invoice view\n\u2502   \u251c\u2500\u2500 layout.tsx                       # Root layout with Stack Auth\n\u2502"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "explain-this",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-09-01T06:30:54Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/explain-this",
+    "readme": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).\n\n## Getting Started\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n# or\npnpm dev\n# or\nbun dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\nYou can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.\n\nThis project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.\n\n## Learn More\n\nTo learn more about Next.js, take a look at the following resources:\n\n- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.\n- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.\n\nYou can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!\n\n## Deploy on Vercel\n\nThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.\n\nCheck out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.\n"
+  },
+  {
+    "description": "Ever\u00ae Gauzy\u2122 - Open Business Management Platform (ERP/CRM/HRM/ATS/PM) - https://gauzy.co",
+    "homepageUrl": "https://gauzy.co",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "ever-gauzy",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-08-27T17:37:15Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/ever-gauzy",
+    "readme": "# Ever Gauzy Platform\n\n[uri_gauzy]: https://gauzy.co\n[uri_license]: https://www.gnu.org/licenses/agpl-3.0.html\n[uri_license_image]: https://img.shields.io/badge/License-AGPL%20v3-blue.svg\n\n![visitors](https://visitor-badge.laobi.icu/badge?page_id=ever-co.gauzy-platform)\n[![License: AGPL v3][uri_license_image]][uri_license]\n[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ever-co/ever-gauzy)\n\n## \ud83d\udca1 What's New\n\nWe released [Ever Teams](https://github.com/ever-co/ever-teams) platform for Work & Project Management.\nPlease check <https://github.com/ever-co/ever-teams> and make it \u2b50 on GitHub!\nIt's built with a React (NextJs) / ReactNative (Expo) stack and connects to headless [Ever Gauzy Platform APIs](https://api.gauzy.co/docs).\n\n## \ud83c\udf1f What is it\n\n[Ever\u00ae Gauzy\u2122][uri_gauzy] - **Open Business Management Platform** for Collaborative, On-Demand and Sharing Economies.\n\n-   **Enterprise Resource Planning** (ERP)\n-   **Customer Relationship Management** (CRM)\n-   **Human Resource Management** (HRM)\n-   **Applicant Tracking System** (ATS)\n-   **Work and Project Management** (PM)\n-   **Employee Time-Tracking, Activity & Productivity Tracking**\n\n![overview](https://docs.gauzy.co/overview.png)\n\nEver\u00ae Gauzy\u2122 Platform is a part of our larger Open Platform for **Collaborative, On-Demand and Sharing Economies** - [Ever\u00ae Platform\u2122](https://ever.co).\n\n## \u2728 Features\n\nMain features:\n\n-   Human Resources Management (HRM) with Time Management / Tracking and Employees Performance Monitoring\n-   Customer Relationship Management (CRM)\n-   Enterprise Resource Planning (ERP)\n-   Projects / Tasks Management\n-   Sales Management\n-   Financial and Cost Management (including _Accounting_, _Invoicing_, etc)\n-   Inventory, Supply Chain Management, and Production Management\n\nA more detailed list of the features available in the platform:\n\n-   [Headless APIs](https://api.gauzy.co/docs)\n-   Dashboard (provides an overview "
+  },
+  {
+    "description": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "the-book-of-secret-knowledge",
+    "primaryLanguage": null,
+    "pushedAt": "2025-08-27T15:32:58Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/the-book-of-secret-knowledge",
+    "readme": "<p align=\"center\">\n  <a href=\"https://github.com/trimstray/the-book-of-secret-knowledge\">\n    <img src=\"https://github.com/trimstray/the-book-of-secret-knowledge/blob/master/static/img/the-book-of-secret-knowledge-preview.png\" alt=\"Master\">\n  </a>\n</p>\n\n<p align=\"center\">\"<i>Knowledge is powerful, be careful how you use it!</i>\"</p>\n\n<h4 align=\"center\">A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools, and more.</h4>\n\n<br>\n\n<p align=\"center\">\n  <a href=\"https://github.com/trimstray/the-book-of-secret-knowledge/pulls\">\n    <img src=\"https://img.shields.io/badge/PRs-welcome-brightgreen.svg?longCache=true\" alt=\"Pull Requests\">\n  </a>\n  <a href=\"LICENSE.md\">\n    <img src=\"https://img.shields.io/badge/License-MIT-lightgrey.svg?longCache=true\" alt=\"MIT License\">\n  </a>\n</p>\n\n<br>\n\n****\n\n## :notebook_with_decorative_cover: &nbsp;What is it?\n\nThis repository is a collection of various materials and tools that I use every day in my work. It contains a lot of useful information gathered in one piece. It is an invaluable source of knowledge for me that I often look back on.\n\n## :restroom: &nbsp;For whom?\n\nFor everyone, really. Here everyone can find their favourite tastes. But to be perfectly honest, it is aimed towards System and Network administrators, DevOps, Pentesters, and Security Researchers.\n\n## :information_source: &nbsp;Contributing\n\nIf you find something which doesn't make sense, or something doesn't seem right, please make a pull request and please add valid and well-reasoned explanations about your changes or comments.\n\nA few simple rules for this project:\n\n- inviting and clear\n- not tiring\n- useful\n\nThese below rules may be better:\n\n- easy to contribute to (Markdown + HTML ...)\n- easy to find (simple TOC, maybe it's worth extending them?)\n\nUrl marked **\\*** is temporary unavailable. Please don't delete it without confirming that it has permanently expired.\n\nBefore adding a pull request, please see the **[contributing g"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "minima",
+    "primaryLanguage": {
+      "name": "PowerShell"
+    },
+    "pushedAt": "2025-08-26T17:39:34Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/minima",
+    "readme": ""
+  },
+  {
+    "description": "AI Elements is a component library and custom registry built on top of shadcn/ui to help you build AI-native applications faster.",
+    "homepageUrl": "https://ai-sdk.dev/elements/overview",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "ai-elements",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-08-25T21:02:50Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/ai-elements",
+    "readme": "# \u25b2 AI Elements\n\n[AI Elements](https://ai-sdk.dev/elements) is a component library built on top of [shadcn/ui](https://ui.shadcn.com/) to help you build AI-native applications faster.\n\n## Overview\n\nAI Elements provides pre-built, customizable React components specifically designed for AI applications, including conversations, messages, code blocks, reasoning displays, and more. The CLI makes it easy to add these components to your Next.js project.\n\n## Installation\n\nYou can use the AI Elements CLI directly with npx, or install it globally:\n\n```bash\n# Use directly (recommended)\nnpx ai-elements@latest\n\n# Or using shadcn cli\nnpx shadcn@latest add https://registry.ai-sdk.dev/all.json\n```\n\n## Prerequisites\n\nBefore using AI Elements, ensure your project meets these requirements:\n\n- **Node.js** 18 or later\n- **Next.js** project with [AI SDK](https://ai-sdk.dev/) installed\n- **shadcn/ui** initialized in your project (`npx shadcn@latest init`)\n- **Tailwind CSS** configured (AI Elements supports CSS Variables mode only)\n\n## Usage\n\n### Install All Components\n\nInstall all available AI Elements components at once:\n\n```bash\nnpx ai-elements@latest\n```\n\nThis command will:\n- Set up shadcn/ui if not already configured\n- Install all AI Elements components to your configured components directory\n- Add necessary dependencies to your project\n\n### Install Specific Components\n\nInstall individual components using the `add` command:\n\n```bash\nnpx ai-elements@latest add <component-name>\n```\n\nExamples:\n```bash\n# Install the message component\nnpx ai-elements@latest add message\n\n# Install the conversation component\nnpx ai-elements@latest add conversation\n\n# Install the code-block component\nnpx ai-elements@latest add code-block\n```\n\n### Alternative: Use with shadcn CLI\n\nYou can also install components using the standard shadcn/ui CLI:\n\n```bash\n# Install all components\nnpx shadcn@latest add https://registry.ai-sdk.dev/all.json\n\n# Install a specific component\nnpx shadcn@latest add https://registry.ai"
+  },
+  {
+    "description": "youtube video renderer",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "swaptube",
+    "primaryLanguage": {
+      "name": "C++"
+    },
+    "pushedAt": "2025-08-25T14:38:37Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/swaptube",
+    "readme": "# SwapTube\n\nThis is the repository I use to render [my YouTube videos](https://www.youtube.com/@twoswap).\n\n## Overview\n\nSwapTube is built on FFMPEG, but most of the functionalities above the layer of video and audio encoding are custom-written. The project does not use any fancy graphics libraries, with a few exceptions for particular functionalities.\n\n## Setup\n### External Dependencies\n\nThe following external dependencies are required for specific functionalities within the project. These dependencies must be installed if you want to use the related features.\n\n| Item | What functionality is it needed for? | Used Where? | Used How? | Sample Ubuntu Installation |\n|------------|---------|---------|----------------|--------------|\n| CMake | Everything | go.sh script | Compiles the project | `sudo apt install cmake` |\n| FFMPEG 5.0 or higher, and associated development libraries | Everything | audio_video folder | Encoding and processing video and audio streams | `sudo apt install ffmpeg libswscale-dev libavcodec-dev libavformat-dev libavdevice-dev libavutil-dev libavfilter-dev` Note: compiling ffmpeg from source, it will likely be compiled with support for extra features detected on your system, which are not baked into my CMake config. I suggest installing a precompiled binary. |\n| CUDA | Accelerating simulations and video rendering | Anything that references the CUDA src dir (most computationally expensive scenes) | Various | Hardware-dependent |\n| gnuplot | Debug plot generation | DebugPlot.h | Data dumped in out/ is rendered to a PNG | `sudo apt install gnuplot` |\n| GLM | Graphs and 3D Graphics | 3d_scene.cpp, Graph.cpp | Vectors and quaternions to represent and rotate objects in space | `sudo apt install libglm-dev` |\n| MicroTeX | In-Video LaTeX, LatexScene | visual_media.cpp | Converts LaTeX equations into SVG files for rendering | Instructions are here: https://github.com/NanoMichael/MicroTeX/ You should install MicroTeX in MicroTeX-master alongside the swaptube "
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://on-prem-to-cloud-data-lineage.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "on-prem-to-cloud-data-lineage",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-08-14T15:02:57Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/on-prem-to-cloud-data-lineage",
+    "readme": "# On-Prem to Cloud Data Lineage\n\nA full-stack TypeScript web application designed to visualize and trace data lineage from on-premise systems to cloud-based architecture. This project provides rich insights into data flows using Mermaid.js, API-based lineage queries, and a developer-friendly UI/UX powered by Next.js.\n\n## \ud83c\udf10 Overview\n\nThis project facilitates understanding of:\n\n- How datasets are transformed from raw (Bronze) through staging (Silver) to curated (Gold) layers.\n- Where datasets originate, where they flow, and how they're shaped along the way.\n- How developers and data stewards can interactively trace and verify column-level lineage in real time.\n\n## \ud83d\udee0\ufe0f Tech Stack\n\n- **Frontend**: Next.js 14+ (App Router), Tailwind CSS\n- **Backend**: API routes with TypeScript\n- **Database**: Postgres (Neon)\n- **Visualization**: Mermaid.js (GitGraph, Flowchart)\n- **Authentication**: Stack Auth (Magic Link)\n- **Deployment**: Vercel\n\n## \ud83d\udcc2 Project Structure\n\n```\n\napp/\n\u251c\u2500 layout.tsx             # Main layout with navigation and auth logic\n\u251c\u2500 page.tsx               # Dashboard landing page\n\u251c\u2500 api/\n\u2502  \u2514\u2500 lineage/\n\u2502     \u251c\u2500 columns/route.ts  # Column-level metadata extraction\n\u2502     \u251c\u2500 flow/route.ts     # Data flow relationships\n\u2502     \u251c\u2500 mermaid/route.ts  # Mermaid-compatible lineage rendering\n\u2502     \u2514\u2500 ping/route.ts     # Health check route\npublic/\ncomponents/\nlib/\nutils/\n\n````\n\n## \ud83d\udd0d Features\n\n- \ud83d\udcc8 **Lineage Diagrams**: Real-time Mermaid.js flowcharts and GitGraph rendering\n- \ud83d\udd0e **Column-Level Metadata**: Understand how individual fields transform and propagate\n- \ud83d\udd10 **Magic Link Auth**: Minimal friction authentication using Stack Auth\n- \ud83e\uddea **Extensible APIs**: Easily add support for additional lineage types (e.g., DAGs, Data Contracts)\n\n## \u2699\ufe0f Setup Instructions\n\n1. **Clone the repo**  \n   ```bash\n   git clone https://github.com/your-org/on-prem-to-cloud-data-lineage.git\n   cd on-prem-to-cloud-data-lineage\n````\n\n2. **Install dependencies**\n\n   ```bash\n   pnpm install\n   ```\n\n3. **Crea"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://roundtable-brown.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "roundtable",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-08-12T15:57:11Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/roundtable",
+    "readme": "Roundtable\nWhere minds\u2014human and machine\u2014meet in real time.\n\nRoundtable uses the power of the Vercel AI Gateway to orchestrate a mixture-of-experts conversational environment, enabling multiple AI instances and human participants to collaborate in a single shared dialogue.\n\nInstead of a one-on-one chat, Roundtable functions like a dynamic, always-on panel\u2014each participant contributing their own perspective, style, and expertise. This human-in-the-loop approach injects creativity, nuance, and real-world context into AI reasoning, while simultaneously breaking through scaling and complexity barriers.\n\nThe result:\n\nSmarter conversations that blend multiple inference paths.\n\nFaster ideation without losing depth.\n\nCreative breakthroughs powered by human context and AI diversity.\n\nThink of it as an Algonquin Round Table for the AI era\u2014snappy repartee, deep insight, and no limits on where the discussion can go.\n\n"
+  },
+  {
+    "description": "A lightweight, powerful framework for multi-agent workflows and voice agents",
+    "homepageUrl": "https://openai.github.io/openai-agents-js/",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "openai-agents-js",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-08-04T18:06:28Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/openai-agents-js",
+    "readme": "# OpenAI Agents SDK (JavaScript/TypeScript)\n\n[![npm version](https://badge.fury.io/js/@openai%2Fagents.svg)](https://badge.fury.io/js/@openai%2Fagents)\n[![CI](https://github.com/openai/openai-agents-js/actions/workflows/test.yml/badge.svg)](https://github.com/openai/openai-agents-js/actions/workflows/test.yml)\n\nThe OpenAI Agents SDK is a lightweight yet powerful framework for building multi-agent workflows in JavaScript/TypeScript. It is provider-agnostic, supporting OpenAI APIs and more.\n\n<img src=\"https://cdn.openai.com/API/docs/images/orchestration.png\" alt=\"Image of the Agents Tracing UI\" style=\"max-height: 803px;\">\n\n> [!NOTE]\n> Looking for the Python version? Check out [Agents SDK Python](https://github.com/openai/openai-agents-python).\n\n## Core concepts\n\n1. **Agents**: LLMs configured with instructions, tools, guardrails, and handoffs.\n2. **Handoffs**: Specialized tool calls for transferring control between agents.\n3. **Guardrails**: Configurable safety checks for input and output validation.\n4. **Tracing**: Built-in tracking of agent runs, allowing you to view, debug, and optimize your workflows.\n\nExplore the [`examples/`](examples/) directory to see the SDK in action.\n\n## Supported Features\n\n- [x] **Multi-Agent Workflows**: Compose and orchestrate multiple agents in a single workflow.\n- [x] **Tool Integration**: Seamlessly call tools/functions from within agent responses.\n- [x] **Handoffs**: Transfer control between agents dynamically during a run.\n- [x] **Structured Outputs**: Support for both plain text and schema-validated structured outputs.\n- [x] **Streaming Responses**: Stream agent outputs and events in real time.\n- [x] **Tracing & Debugging**: Built-in tracing for visualizing and debugging agent runs.\n- [x] **Guardrails**: Input and output validation for safety and reliability.\n- [x] **Parallelization**: Run agents or tool calls in parallel and aggregate results.\n- [x] **Human-in-the-Loop**: Integrate human approval or intervention into workflows.\n- "
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "pyscraper",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-08-01T08:54:12Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/pyscraper",
+    "readme": "# PDF Processing Pipeline\n\nA robust, async PDF processing pipeline that intelligently chunks PDFs, performs OCR extraction, and exports results to multiple formats.\n\n## Features\n\n- **Intelligent PDF Chunking**: Analyzes content density and logical document structure\n- **Async OCR Processing**: Supports multiple providers (OpenAI, Azure, Google)\n- **Multiple Export Formats**: HTML, Markdown, JSON, CSV, Excel, and plain text\n- **Robust Error Handling**: Retry logic, timeout handling, and graceful failures\n- **Progress Tracking**: Real-time progress updates and detailed logging\n- **CLI Interface**: Easy-to-use command-line interface\n- **Configurable**: Extensive configuration options for all components\n\n## Installation\n\n### Prerequisites\n\n- Python 3.11+\n- Required packages (install via pip):\n\n```bash\npip install -r requirements.txt\n```\n\n### API Keys\n\nConfigure your OCR provider API keys:\n\n```bash\n# Copy the environment template\ncp .env.template .env\n\n# Edit .env and add your API keys\nOPENAI_API_KEY=your_openai_api_key_here\nOPENAI_API_BASE=https://api.openai.com/v1\n```\n\n## Quick Start\n\n### Command Line Interface\n\n```bash\n# Process a PDF with default settings\npython cli.py process document.pdf\n\n# Quick processing to HTML\npython cli.py quick document.pdf -f html\n\n# Test your configuration\npython cli.py test\n\n# Show pipeline information\npython cli.py info\n```\n\n### Python API\n\n```python\nimport asyncio\nfrom src.pipeline import process_pdf\n\n# Simple processing\nresult = asyncio.run(process_pdf(\n    pdf_path=\"document.pdf\",\n    ocr_provider=\"openai\",\n    export_formats=[\"html\", \"json\"]\n))\n\nif result.success:\n    print(f\"Processing completed! Success rate: {result.success_rate:.1%}\")\n    print(f\"Exported files: {result.exported_files}\")\nelse:\n    print(f\"Processing failed: {result.error_message}\")\n```\n\n## Usage Examples\n\n### Basic Processing\n\n```bash\n# Process with OpenAI OCR and export to HTML and JSON\npython cli.py process document.pdf --ocr-provider openai -f html -f json\n\n# "
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://crud-webapp-review-sql.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "crud-webapp-review-sql",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-07-23T02:53:39Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/crud-webapp-review-sql",
+    "readme": "# Data Lineage Tracker\n\nA Next.js application for tracking data transformations through ETL pipeline layers from source systems to semantic models.\n\n## Overview\n\nThis application provides visualization and tracking of data lineage across your data architecture layers:\n\n- **Source Systems**: On-premises SQL Server databases (MotherLoad, SQLDATA_M)\n- **Bronze Lakehouse**: Raw 1:1 copies with metadata-driven ingestion\n- **Silver Lakehouse**: Cleaned, deduped, AS-only records with business filters\n- **Gold Lakehouse**: Business-ready star/snowflake schema with conformed dimensions\n- **Semantic Model**: Power BI SalesData model with DAX measures and relationships\n\n## Features\n\n### Current Implementation (Phase 2 Complete)\n\n\u2705 **Azure SQL Database Integration**\n- Connection to Azure SQL Database with Active Directory authentication\n- Automatic fallback to mock data when database is not accessible\n- Connection status monitoring and testing\n\n\u2705 **Core Infrastructure**\n- Next.js 15 with TypeScript and Tailwind CSS\n- Type-safe data models for all layers\n- RESTful API endpoints for database operations\n- Responsive UI components with layer-specific styling\n\n\u2705 **Data Layer Configuration**\n- Complete mapping of your transformation pipeline\n- Column-level transformation rules based on your dataflow files\n- Mock data representing actual table schemas from each layer\n\n### Planned Features (Next Phases)\n\n\ud83d\udd04 **Data Lineage Mapping Engine** (Phase 3)\n- Parse transformation logic from dataflow files\n- Build column-level lineage mapping system\n- Forward and backward tracing algorithms\n\n\ud83d\udd04 **Interactive UI Components** (Phase 4)\n- Table browser with schema inspection\n- Column detail panels with data type information\n- Search and filter functionality\n\n\ud83d\udd04 **Lineage Visualization** (Phase 5)\n- Visual flow diagrams showing data movement\n- Interactive column highlighting across layers\n- Transformation step details with code snippets\n\n\ud83d\udd04 **Wizard Interface** (Phase 6)\n- Layer-by-layer navigation\n- Pr"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "firegeo",
+    "primaryLanguage": null,
+    "pushedAt": "2025-07-22T01:48:04Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/firegeo",
+    "readme": ""
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://i-knowledge-base.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "i-knowledge-base",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-07-17T01:21:18Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/i-knowledge-base",
+    "readme": "# Internal Knowledge Base Preview\n\nThis template demonstrates the usage of the [Language Model Middleware](https://sdk.vercel.ai/docs/ai-sdk-core/middleware#language-model-middleware) to perform retrieval augmented generation and enforce guardrails using the [AI SDK](https://sdk.vercel.ai/docs) and [Next.js](https://nextjs.org/).\n\n## Deploy your own\n\n[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-sdk-preview-internal-knowledge-base&env=OPENAI_API_KEY%2CAUTH_SECRET&envDescription=API%20keys%20needed%20for%20application&envLink=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-sdk-preview-internal-knowledge-base%2Fblob%2Fmain%2F.env.example&stores=%5B%7B%22type%22%3A%22blob%22%7D%2C%7B%22type%22%3A%22postgres%22%7D%5D)\n\n## How to use\n\nRun [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:\n\n```bash\nnpx create-next-app --example https://github.com/vercel-labs/ai-sdk-preview-internal-knowledge-base ai-sdk-preview-internal-knowledge-base-example\n```\n\n```bash\nyarn create next-app --example https://github.com/vercel-labs/ai-sdk-preview-internal-knowledge-base ai-sdk-preview-internal-knowledge-base-example\n```\n\n```bash\npnpm create next-app --example https://github.com/vercel-labs/ai-sdk-preview-internal-knowledge-base ai-sdk-preview-internal-knowledge-base-example\n```\n\nTo run the example locally you need to:\n\n1. Sign up for accounts with the AI providers you want to use (e.g., OpenAI, Anthropic).\n2. Obtain API keys for each provider.\n3. Set the required environment variables as shown in the `.env.example` file, but in a new file called `.env`.\n4. `npm install` to install the required dependencies.\n5. `npm run dev` to launch the development server.\n\n\n## Learn More\n\nTo learn more about the AI SDK or Nex"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "side-projects",
+    "primaryLanguage": {
+      "name": "JavaScript"
+    },
+    "pushedAt": "2025-06-27T18:49:39Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/side-projects",
+    "readme": "# side-projects"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "slidePacker",
+    "primaryLanguage": {
+      "name": "JavaScript"
+    },
+    "pushedAt": "2025-06-27T03:20:07Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/slidePacker",
+    "readme": "# Search to Slides\n\nCreate presentation slides from search results using Firecrawl's search endpoint.\n\n## How it Works\n\n```mermaid\nflowchart LR\n    A[Topic] --> B{Firecrawl<br/>Search}\n    B --> C[Results +<br/>Content]\n    C --> D[Extract<br/>Points]\n    D --> E[Generate<br/>Slides]\n    E --> F[HTML +<br/>JSON]\n    \n    style B fill:#ff6b6b,stroke:#333,stroke-width:2px,color:#fff\n    style C fill:#4ecdc4,stroke:#333,stroke-width:2px\n    style F fill:#95e1d3,stroke:#333,stroke-width:2px\n```\n\n## Quick Start\n\n1. Install dependencies:\n```bash\nnpm install\n```\n\n2. Set up API keys in `.env`:\n```\nFIRECRAWL_API_KEY=your_firecrawl_api_key\nOPENAI_API_KEY=your_openai_api_key\n```\n\n3. Run:\n```bash\nnpm start\n```\n\nEnter a search query when prompted to generate presentation slides.\n\n## Get API Keys\n- Firecrawl: https://firecrawl.dev\n- OpenAI: https://platform.openai.com\n\n## Features\n- Auto-generated presentation slides\n- Search-powered content creation\n- Interactive HTML slideshow\n- Export to JSON outline\n"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://iseven.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "iseven",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-06-20T08:23:00Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/iseven",
+    "readme": "\nThis is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and designed to be fun and easy to get your hands dirty with the AI SDK.\n\n## Getting Started\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n# or\npnpm dev\n# or\nbun dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\nYou can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.\n\nThis project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.\n\n## Learn More\n\nTo learn more about Next.js, take a look at the following resources:\n\n- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.\n- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.\n\nYou can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!\n\n## Deploy on Vercel\n\nThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.\n\nCheck out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.\n"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://invoicepipe-landing.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "invoicepipe-landing",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-06-18T13:45:25Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/invoicepipe-landing",
+    "readme": "[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnexi-launch%2Ffinwise-landing-page)\n\n# Finwise - Next.js + Tailwind Landing Page Template\n\nFinwise is a lightweight, easily configurable, and customizable **Next.js** and **Tailwind CSS** landing page template. It\u2019s built to be adaptable, performant, and perfect for any product launch, portfolio, or promotional site.\n\nTry out the demo here: [https://finwise-omega.vercel.app](https://finwise-omega.vercel.app).\n\nPlease check out the documentation below to get started.\n\n---\n\n## Features\n\n- **Next.js** app router with **TypeScript**\n- **Tailwind CSS** v3 for flexible styling customization\n- Smooth transitions powered by **Framer Motion**\n- Built-in **font optimization** with [next/font](https://nextjs.org/docs/app/api-reference/components/font)\n- Automatic **image optimization** via [next/image](https://nextjs.org/docs/app/building-your-application/optimizing/images)\n- Access to **31+ icon packs** via [React Icons](https://react-icons.github.io/react-icons/)\n- Near-perfect **Lighthouse score**\n- Modular, responsive, and **scalable components**\n- **Free lifetime updates**\n\n---\n\n## Sections\n\n- Hero\n- Partners or Clients Logos\n- Features\n- Pricing\n- Testimonials\n- FAQ\n- Statistics\n- CTA\n- Footer\n\n---\n\n## Getting Started\n\n### Prerequisites\n\nBefore starting, make sure you have the following installed:\n\n- **Node.js**: Version 18 or later\n- **npm**: Version 8 or later (bundled with Node.js)\n- **Code editor**: [VS Code](https://code.visualstudio.com/) is recommended.\n\n### Steps\n\n1. **Install dependencies**: Run `npm install`\n2. **Run the development server**: `npm run dev`\n3. **View your project**: Open [localhost:3000](http://localhost:3000)\n\n---\n\n## Customization\n\n1. **Edit colors**: Update `globals.css` for primary, secondary, background, and accent colors.\n2. **Update site details**: Customize `siteDetails.ts` in `/src/data` to reflect your brand and sit"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://tools.firecrawl.dev/firestarter",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "inference-knowledge-engine",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-06-18T13:39:09Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/inference-knowledge-engine",
+    "readme": "# Firestarter - Instant AI Chatbots for Any Website\n\n<div align=\"center\">\n  <img src=\"https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGVhOTdxaDhxZGJ6bnAwaDB3bWp3bXpnYzN1NDBrazJ1MGpvOG51aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZAOM1psWWVQYeAaS38/giphy.gif\" alt=\"Firestarter Demo\" width=\"100%\" />\n</div>\n\nInstantly create a knowledgeable AI chatbot for any website. Firestarter crawls your site, indexes the content, and provides a ready-to-use RAG-powered chat interface and an OpenAI-compatible API endpoint.\n\n## Technologies\n\n- **Firecrawl**: Web scraping and content aggregation\n- **Upstash Search**: High-performance vector database for semantic search\n- **Vercel AI SDK**: For streaming AI responses\n- **Next.js 15**: Modern React framework with App Router\n- **Groq, OpenAI, Anthropic**: Flexible LLM provider support\n\n[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmendableai%2Ffirestarter&env=FIRECRAWL_API_KEY,UPSTASH_SEARCH_REST_URL,UPSTASH_SEARCH_REST_TOKEN,OPENAI_API_KEY&envDescription=API%20keys%20for%20Firecrawl,%20Upstash,%20and%20OpenAI%20are%20required.&envLink=https%3A%2F%2Fgithub.com%2Fmendableai%2Ffirestarter%23required-api-keys)\n\n## Setup\n\n### Required API Keys\n\nYou need a key from Firecrawl, Upstash, and at least one LLM provider.\n\n| Service          | Purpose                               | Get Key                                      |\n| ---------------- | ------------------------------------- | -------------------------------------------- |\n| Firecrawl        | Web scraping and content aggregation  | [firecrawl.dev/app/api-keys](https://www.firecrawl.dev/app/api-keys) |\n| Upstash          | Vector DB for semantic search         | [console.upstash.com](https://console.upstash.com) |\n| OpenAI           | AI model provider (default)          | [platform.openai.com/api-keys](https://platform.openai.com/api-keys) |\n\n### Quick Start\n\n1. Clone this repository\n2. Create a `.env.local` f"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://qr-me-rho.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "oneline-next",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-06-18T04:44:04Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/oneline-next",
+    "readme": "onelink-next  \n    \u251c\u2500\u2500 app  \n    \u2502   \u251c\u2500\u2500 [template]  \n    \u2502   \u251c\u2500\u2500 globals.css  \n    \u2502   \u251c\u2500\u2500 layout.tsx  \n    \u2502   \u251c\u2500\u2500 page.tsx  \n    \u251c\u2500\u2500 components  \n    \u2502   \u251c\u2500\u2500 Base  \n    \u2502   \u2502   \u251c\u2500\u2500 FormSection.tsx  \n    \u2502   \u251c\u2500\u2500 form  \n    \u2502   \u2502   \u251c\u2500\u2500 Links.tsx  \n    \u2502   \u2502   \u251c\u2500\u2500 Profile.tsx  \n    \u2502   \u2502   \u251c\u2500\u2500 SocialLinks.tsx  \n    \u2502   \u251c\u2500\u2500 Templates  \n    \u2502   \u2502   \u251c\u2500\u2500 Simple.tsx  \n    \u2502   \u251c\u2500\u2500 ExternalLink.tsx  \n    \u251c\u2500\u2500 lib  \n    \u2502   \u251c\u2500\u2500 transformer.ts  \n    \u251c\u2500\u2500 .gitignore  \n    \u251c\u2500\u2500 eslint.config.mjs  \n    \u251c\u2500\u2500 next.config.ts  \n    \u251c\u2500\u2500 next-env.d.ts  \n    \u251c\u2500\u2500 package.json  \n    \u251c\u2500\u2500 package-lock.json  \n    \u251c\u2500\u2500 postcss.config.mjs  \n    \u251c\u2500\u2500 README.md  \n    \u251c\u2500\u2500 tsconfig.json  \n    \u251c\u2500\u2500 vercel.json  "
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "mercycare-hypercare",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-06-16T17:18:45Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/mercycare-hypercare",
+    "readme": ""
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "EnterpriseData",
+    "primaryLanguage": null,
+    "pushedAt": "2025-06-10T04:10:29Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/EnterpriseData",
+    "readme": ""
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "render-unto-caesar",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-06-06T06:53:40Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/render-unto-caesar",
+    "readme": ""
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "azure-content-understanding-api",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-06-04T15:53:11Z",
+    "stargazerCount": 1,
+    "url": "https://github.com/Big-jpg/azure-content-understanding-api",
+    "readme": "### Key Files\n\n- **`function_app.py`**: Defines the HTTP-triggered Azure Function that handles PDF uploads from Power Automate and orchestrates the analysis process.\n- **`azure_client.py`**: Implements the `AzureContentUnderstandingClient` class, handling API calls to Azure Content Understanding, including initiating analysis and polling for results.\n- **`settings.py`**: Manages configuration settings, such as endpoint, API version, and credentials.\n- **`requirements.txt`**: Lists Python dependencies required for the project.\n\n## How It Works\n\n1. **API Request**: Power Automate sends a POST request to the Azure Function endpoint with a PDF file in the request body.\n2. **Authentication**: The function authenticates with Azure Content Understanding using either a subscription key or an Azure AD token.\n3. **Analysis Initiation**: The function sends the PDF to the Content Understanding service, specifying the analyzer ID and file location.\n4. **Polling**: The function polls the service using the operation location from the initial response until the analysis is complete or times out.\n5. **Response**: Once the analysis is complete, the JSON results are returned to Power Automate.\n\nThe endpoint expects a binary PDF in the request body and returns a JSON response with the analysis results or an error message.\n\n## Tech Stack\n\n- **Python 3.9+**: Core programming language.\n- **Azure Functions**: Serverless compute platform for hosting the API endpoint.\n- **Azure Content Understanding**: AI service for document analysis.\n- **Requests**: Python library for HTTP requests to the Azure API.\n- **Azure AD**: Optional authentication using Azure Active Directory tokens.\n- **Power Automate**: Integration for workflow automation.\n\n## Installation\n\n1. **Clone the Repository**:\n   ```bash\n   git clone https://github.com/Big-jpg/azure-content-understanding-api.git\n\n   cd azure-content-understanding-api\n   ```\n   "
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://redlit.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "tilder",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-06-04T03:11:54Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/tilder",
+    "readme": ""
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://mercy-invoices.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "mercyInvoices",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-06-03T18:33:25Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/mercyInvoices",
+    "readme": "# MercyCare Automated Invoice Processing\n\n## Overview\n\nThis system enables automated extraction and structuring of metadata from uploaded PDF invoices using Azure Document Intelligence (Content Understanding) and displays them through a custom-built, fullstack Next.js application deployed on Vercel.\n\n---\n\n## \ud83c\udfd7 Architecture Summary\n\n### Frontend\n\n* **Framework**: Next.js (v15)\n* **Deployment**: Vercel\n* **Theme**: Dynamic light/dark mode with user preferences\n* **Branding**: Custom MercyCare styling (logo, pill badges, gradient CTA buttons)\n* **User Flow**:\n\n  1. User uploads a PDF invoice (drag & drop or file picker)\n  2. Invoice is stored in Neon Postgres (blob + metadata)\n  3. Extraction is triggered via CU endpoint (`/api/invoice/cu-process`)\n  4. Extracted fields are normalized and inserted into the `invoices` table\n  5. User is redirected to a `/invoice/card/[slug]` page showing parsed fields and PDF preview\n\n### Backend\n\n* **Storage**: Neon Postgres (binary blob, original filename, extracted fields)\n* **Extraction API**: Azure Document Intelligence (Content Understanding)\n\n  * Model ID (default): `custom-tax-invoice-advanced`\n  * API Version: `2024-12-01-preview`\n  * Analyzer ID can be overridden via `AZURE_CU_ANALYZER_ID`\n* **Normalization**: Handles field discovery from multiple CU result paths\n* **Routes**:\n\n  * `/api/upload`: Handles file upload and inserts into DB\n  * `/api/invoice/cu-process`: Extracts invoice fields and stores structured metadata\n\n### CU Response Normalization\n\n* Supports CU response structures from:\n\n  * `result.documents[0].fields`\n  * `documents[0].fields`\n  * `result.contents[0].fields`\n  * `contents[0].fields`\n  * `fields`\n* Types parsed:\n\n  * `valueString`\n  * `content`\n  * `valueNumber`\n\n---\n\n## \ud83e\uddfe Extracted Invoice Fields\n\n| Field           | Type               |\n| --------------- | ------------------ |\n| `invoiceId`     | `string`           |\n| `purchaseOrder` | `string`           |\n| `amountDue`     | `number or string` |\n| `ve"
+  },
+  {
+    "description": "\ud83d\udd25 This repository contains complete application examples, including websites and other projects, developed using Firecrawl.",
+    "homepageUrl": "https://www.firecrawl.dev/",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "firecrawl-app-examples",
+    "primaryLanguage": {
+      "name": "Jupyter Notebook"
+    },
+    "pushedAt": "2025-06-02T20:54:05Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/firecrawl-app-examples",
+    "readme": "# Firecrawl App Examples Repository\n\nThis repository contains example applications developed using Firecrawl. These examples demonstrate various implementations and use cases for Firecrawl.\n\n## Getting Started\n\nTo explore these examples:\n\n1. Clone this repository to your local machine.\n2. Navigate to the specific example directory you're interested in.\n3. Follow the README instructions within each project directory for setup and running the application.\n"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://comic-gen-six.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "comic-gen",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-06-01T16:49:13Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/comic-gen",
+    "readme": "# Comic Gen\n\n**Visual Storyline Generator powered by AI**\n\n> Comic Gen is an open-source web application that transforms narrative prompts into illustrated comic strips using advanced AI image generation.  \nYou provide a scene summary and choose a visual style; Comic Gen orchestrates panel-by-panel script interpretation and image creation, then stitches everything together into a seamless comic strip.\n\n\n## Features\n\n- **Natural Language to Comic:** Enter a story or summary, and watch AI turn it into visual panel scripts.\n- **Multiple Art Styles:** Choose from editorial, manga, cyberpunk, and more.\n- **Panel-by-Panel AI Generation:** Approve or regenerate each panel, with context-aware prompts for narrative continuity.\n- **AI-Driven Image Generation:** Powered by OpenAI's GPT-based image models (`gpt-image-1` or DALL-E 3 ready).\n- **Full Strip Stitching:** Automatically combines panels into a single image.\n- **Modern UI:** Built with Next.js 15, React 19, TailwindCSS, and TypeScript.\n\n---\n\n## API Access\nCopy the `.env.example` to the same directory as `.env.local` and place your API Key as 'OPENAI_API_KEY=sk-proj...'\nNote - your platform organisation might need to be verified in order to use the gpt-image-1 model via the API\n\n## Architecture\n\ncomic-gen  \n    \u251c\u2500\u2500 app  \n    \u2502    \u251c\u2500\u2500 api  \n    \u2502    \u2502    \u251c\u2500\u2500 generate-image  \n    \u2502    \u2502    \u2502    \u2514\u2500\u2500 route.ts  \n    \u2502    \u2502    \u251c\u2500\u2500 interpret-image  \n    \u2502    \u2502    \u2502    \u2514\u2500\u2500 route.ts  \n    \u2502    \u2502    \u2514\u2500\u2500 stitch-panels  \n    \u2502    \u2502         \u2514\u2500\u2500 route.ts  \n    \u2502    \u251c\u2500\u2500 favicon.ico  \n    \u2502    \u251c\u2500\u2500 globals.css  \n    \u2502    \u251c\u2500\u2500 layout.tsx  \n    \u2502    \u2514\u2500\u2500 page.tsx  \n    \u251c\u2500\u2500 components  \n    \u2502    \u251c\u2500\u2500 PanelEditor.tsx  \n    \u2502    \u251c\u2500\u2500 PanelLayout.tsx  \n    \u2502    \u2514\u2500\u2500 StoryPanel.tsx  \n    \u251c\u2500\u2500 lib  \n    \u2502    \u2514\u2500\u2500 openai.ts  \n    \u251c\u2500\u2500 .env.example   \n    \u251c\u2500\u2500 .gitignore  \n    \u251c\u2500\u2500 eslint.config.mjs  \n    \u251c\u2500\u2500 next.config.ts  \n    \u251c\u2500\u2500 next-env.d.ts  \n    \u251c\u2500\u2500 package.json  \n    \u251c\u2500\u2500 package-lock.json  \n    \u251c\u2500\u2500 postcss.config.mjs  \n    \u251c\u2500\u2500 README.md  \n---\n\n## "
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://mp4towebm-big-team.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "mp4towebm",
+    "primaryLanguage": {
+      "name": "CSS"
+    },
+    "pushedAt": "2025-05-30T10:03:13Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/mp4towebm",
+    "readme": ""
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "webm_to_mp4",
+    "primaryLanguage": null,
+    "pushedAt": "2025-05-30T09:12:40Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/webm_to_mp4",
+    "readme": ""
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://dougs-the-name.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "dougs-the-name",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-05-29T09:13:49Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/dougs-the-name",
+    "readme": "# OpenAI Assistants API Quickstart\n\nA quick-start template using the OpenAI [Assistants API](https://platform.openai.com/docs/assistants/overview) with [Next.js](https://nextjs.org/docs).\n<br/>\n<br/>\n![OpenAI Assistants API Quickstart](https://github.com/openai/openai-assistants-quickstart/assets/27232/755e85e9-3ea4-421f-b202-3b0c435ea270)\n\n## Quickstart Setup\n\n### 1. Clone repo\n\n```shell\ngit clone https://github.com/openai/openai-assistants-quickstart.git\ncd openai-assistants-quickstart\n```\n\n### 2. Set your [OpenAI API key](https://platform.openai.com/api-keys)\n\n```shell\nexport OPENAI_API_KEY=\"sk_...\"\n```\n\n(or in `.env.example` and rename it to `.env`).\n\n### 3. Install dependencies\n\n```shell\nnpm install\n```\n\n### 4. Run\n\n```shell\nnpm run dev\n```\n\n### 5. Navigate to [http://localhost:3000](http://localhost:3000).\n\n## Deployment\n\nYou can deploy this project to Vercel or any other platform that supports Next.js.\n\n[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fopenai%2Fopenai-assistants-quickstart&env=OPENAI_API_KEY,OPENAI_ASSISTANT_ID&envDescription=API%20Keys%20and%20Instructions&envLink=https%3A%2F%2Fgithub.com%2Fopenai%2Fopenai-assistants-quickstart%2Fblob%2Fmain%2F.env.example)\n\n## Overview\n\nThis project is intended to serve as a template for using the Assistants API in Next.js with [streaming](https://platform.openai.com/docs/assistants/overview/step-4-create-a-run), tool use ([code interpreter](https://platform.openai.com/docs/assistants/tools/code-interpreter) and [file search](https://platform.openai.com/docs/assistants/tools/file-search)), and [function calling](https://platform.openai.com/docs/assistants/tools/function-calling). While there are multiple pages to demonstrate each of these capabilities, they all use the same underlying assistant with all capabilities enabled.\n\nThe main logic for chat will be found in the `Chat` component in `app/components/chat.tsx`, and the handlers sta"
+  },
+  {
+    "description": "This project aims to maintain Wappalyzer technologies",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "webappanalyzer",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-05-20T05:26:19Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/webappanalyzer",
+    "readme": "# webappanalyzer\n\n[![Validator Status](https://github.com/enthec/webappanalyzer/actions/workflows/validate.yml/badge.svg)](https://github.com/enthec/webappanalyzer/actions/workflows/validate.yml)\n[![License](https://img.shields.io/github/license/enthec/webappanalyzer.svg)](https://opensource.org/license/gpl-3-0/)\n\n> [!NOTE]\n> This project is a continuation of the iconic [**Wappalyzer**](https://github.com/wappalyzer/wappalyzer) that went private in August 2023.\n> \n> First and foremost, Enthec is committed not to set this repo private at any moment since this would be out of the scope of the company's business.\n> \n> Our interest is to keep it growing, so it can be helpful to the community as it has been until now.\n> \n> There are no changes to be expected in the library. We will update it with the same JSON structure currently in use so the user experience will not be modified.\n\n## Specification\n\nA long list of [regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) is used to identify technologies on web pages. Wappalyzer inspects HTML code, as well as JavaScript variables, response headers and more.\n\nPatterns (regular expressions) are kept in [`src/technologies/`](https://github.com/enthec/webappanalyzer/blob/master/src/technologies). The following is an example of an application fingerprint.\n\n#### Example\n\n```json5\n{\n  \"Example\": {\n    \"description\": \"A short description of the technology.\",\n    \"cats\": [\n      1\n    ],\n    \"cookies\": {\n      \"cookie_name\": \"Example\"\n    },\n    \"dom\": {\n      \"#example-id\": {\n        \"exists\": \"\",\n        \"attributes\": {\n          \"class\": \"example-class\"\n        },\n        \"properties\": {\n          \"example-property\": \"\"\n        },\n        \"text\": \"Example text content\"\n      }\n    },\n    \"dns\": {\n      \"MX\": [\n        \"example\\\\.com\"\n      ]\n    },\n    \"icon\": \"Example.svg\",\n    \"cpe\": \"cpe:2.3:a:example:example:*:*:*:*:*:*:*:*\",\n    \"js\": {\n      \"Example.method\": \"\"\n    },\n    \"e"
+  },
+  {
+    "description": "helper to estimate and log 2024-25 tax deductions for Australians using Subscription Services",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": true,
+    "name": "taxti",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-04-29T06:38:41Z",
+    "stargazerCount": 1,
+    "url": "https://github.com/Big-jpg/taxti",
+    "readme": "## taxti.me\n \n# \ud83d\udcdc Subscription Tax Deduction Calculator (Australia)\nA simple, fast, and useful Streamlit app for estimating your ***2024-25** financial year tax deductions* for business-related subscription services in Australia.\n\nThis app allows individuals (especially **freelancers**, **independent consultants**, **small business owners**, and **remote workers**) to log, categorize, and calculate the deductible value of software and service subscriptions that are partially or fully work-related.\n\n# \ud83d\ude80 Features\n1. **Predefined Subscription Categories:** \n\n   Choose from curated groups like AI Assistants, Office & Productivity, Creative Tools, Cloud Services, and more.\n\n2. **Manual Entry Support:**\n   \n   Log custom or lesser-known subscriptions with \"Other (Manual Entry)\".\n\n3. **Work Usage Percentage:**\n   \n   Allocate how much of a subscription's use was business-related (0\u2013100%).\n\n4. **Real-time Deduction Calculation:**\n   \n   See live updates of estimated deductible amounts.\n\n5. **Downloadable CSV Export:**\n   \n   Export your logged subscriptions for your accountant or personal record-keeping.\n\n6. **One-click Copy to Clipboard:**\n   \n   Easily copy your subscription data for pasting elsewhere.\n\n7. **Session Persistence:**\n   \n   Add multiple subscriptions without losing previous entries during the session.\n\n8. **Reset All Button:**\n   \n   Quickly start fresh when needed.\n\n\n# \ud83d\udccb How It Works\n1. Select a Subscription Group: \n   \n   (e.g. AI Assistants, Office & Productivity, etc.)\n2. Select a Subscription from the preloaded options or choose \"Other (Manual Entry)\" to type your own.\n\n3. Input:\n   1. Monthly cost in AUD\n   2. Number of months paid\n   3. Work use percentage\n   \n4. Add Subscription \u2192 It will be logged and the deductible value automatically calculated.\n5. Download your results as a CSV file or copy them to your clipboard for easy use.\n"
+  }
+]
