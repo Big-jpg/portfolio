@@ -5,9 +5,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "pnpm refresh:repos --if-token && vite build",
+    "build:static": "vite build",
     "start": "vite preview --host 0.0.0.0",
     "preview": "vite preview --host",
+    "refresh:repos": "tsx scripts/fetch-github-repos.ts",
     "check": "tsc --noEmit",
     "format": "prettier --write ."
   },
