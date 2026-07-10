@@ -1,17 +1,18 @@
 // client/src/lib/repo-utils.ts
 
-import type { Repo, Filters } from "./types";
+import type { Filters, RepoSummary } from "./types";
 
 // GitHub-canonical language colors
 export const LANGUAGE_COLORS: Record<string, string> = {
-  TypeScript: "#3178c6",
-  Python: "#3572A5",
-  JavaScript: "#f1e05a",
-  "C++": "#f34b7d",
-  "C#": "#178600",
-  CSS: "#563d7c",
-  "Jupyter Notebook": "#DA5B0B",
-  PowerShell: "#012456",
+  TypeScript: "#86B6D9",
+  Python: "#93BEA4",
+  JavaScript: "#E5C866",
+  "C++": "#D9A1B0",
+  "C#": "#9FC493",
+  CSS: "#B4A5D6",
+  HTML: "#DFA28E",
+  "Jupyter Notebook": "#D8AA82",
+  PowerShell: "#8FAEC8",
 };
 
 // Highlighted repos (have live deployments and are most impressive)
@@ -30,9 +31,9 @@ export const HIGHLIGHTED_REPOS = new Set([
   "pixeltovoxel-demo",
 ]);
 
-export function getLanguages(repos: Repo[]): string[] {
+export function getLanguages(repos: RepoSummary[]): string[] {
   const langSet = new Set<string>();
-  repos.forEach((r) => {
+  repos.forEach(r => {
     if (r.primaryLanguage?.name) {
       langSet.add(r.primaryLanguage.name);
     }
@@ -40,38 +41,28 @@ export function getLanguages(repos: Repo[]): string[] {
   return Array.from(langSet).sort();
 }
 
-export function filterRepos(repos: Repo[], filters: Filters): Repo[] {
-  return repos.filter((repo) => {
+export function filterRepos(
+  repos: RepoSummary[],
+  filters: Filters
+): RepoSummary[] {
+  return repos.filter(repo => {
     // Language filter
     if (filters.language !== "All") {
       const lang = repo.primaryLanguage?.name || "";
       if (lang !== filters.language) return false;
     }
 
-    // Type filter
-    switch (filters.type) {
-      case "Deployed":
-        if (!repo.homepageUrl) return false;
-        break;
-      case "Private":
-        if (!repo.isPrivate) return false;
-        break;
-      case "Fork":
-        if (!repo.isFork) return false;
-        break;
-      case "Original":
-        if (repo.isFork) return false;
-        break;
-      case "All":
-      default:
-        break;
-    }
+    if (filters.availability === "Live" && !repo.homepageUrl) return false;
+    if (filters.availability === "Workshop" && repo.homepageUrl) return false;
+
+    if (filters.provenance === "Original" && repo.isFork) return false;
+    if (filters.provenance === "Fork" && !repo.isFork) return false;
 
     return true;
   });
 }
 
-export function sortByPushedAt(repos: Repo[]): Repo[] {
+export function sortByPushedAt<T extends RepoSummary>(repos: T[]): T[] {
   return [...repos].sort(
     (a, b) => new Date(b.pushedAt).getTime() - new Date(a.pushedAt).getTime()
   );

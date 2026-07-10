@@ -1,108 +1,97 @@
-// client/src/components/ProjectCard.tsx
-// Design: Architectural Blueprint — slate card with blue glow hover, depth layers
-
 import { Link } from "wouter";
-import { Badge } from "@/components/ui/badge";
-import { LANGUAGE_COLORS, HIGHLIGHTED_REPOS, formatDate } from "@/lib/repo-utils";
-import type { Repo } from "@/lib/types";
-import { Lock, GitFork, Globe, Star, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import {
+  ArrowUpRight,
+  CheckCircle2,
+  GitFork,
+  Radio,
+  Star,
+  Wrench,
+} from "lucide-react";
+import { formatDate, LANGUAGE_COLORS } from "@/lib/repo-utils";
+import type { RepoSummary } from "@/lib/types";
 
 interface ProjectCardProps {
-  repo: Repo;
+  repo: RepoSummary;
   interpretation?: string;
   index: number;
 }
 
+const CARD_TINTS = ["#DFF3EB", "#FFF2C9", "#E4F1FA", "#EEE7F8", "#FBE7E1"];
+
 export function ProjectCard({ repo, interpretation, index }: ProjectCardProps) {
-  const langColor = repo.primaryLanguage?.name
-    ? LANGUAGE_COLORS[repo.primaryLanguage.name] || "#6b7280"
-    : "#6b7280";
-  const isHighlighted = HIGHLIGHTED_REPOS.has(repo.name);
+  const language = repo.primaryLanguage?.name || "Mixed stack";
+  const languageColor = LANGUAGE_COLORS[language] || "#B7C8BD";
+  const description =
+    interpretation ||
+    repo.description ||
+    "A repository waiting for its field notes.";
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, delay: Math.min(index * 0.04, 0.8) }}
-    >
-      <Link href={`/project/${encodeURIComponent(repo.name)}`}>
-        <div
-          className={`group relative flex flex-col h-full rounded-lg border transition-all duration-250 cursor-pointer
-            ${isHighlighted
-              ? "border-primary/30 bg-[oklch(0.19_0.04_255)]"
-              : "border-border/60 bg-card"
-            }
-            hover:border-primary/50 hover:shadow-[0_0_20px_oklch(0.62_0.19_255_/_0.08)] hover:-translate-y-0.5`}
-        >
-          {/* Top accent line for highlighted repos */}
-          {isHighlighted && (
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-transparent rounded-t-lg" />
-          )}
+    <li className="repo-rail-item">
+      <Link
+        href={`/project/${encodeURIComponent(repo.name)}`}
+        className="project-card"
+        aria-label={`Open ${repo.name} project`}
+        style={
+          {
+            "--card-tint": CARD_TINTS[index % CARD_TINTS.length],
+          } as React.CSSProperties
+        }
+      >
+        <span className="project-card-wash" aria-hidden="true" />
 
-          <div className="p-5 flex flex-col gap-3 flex-1">
-            {/* Header: name + badges */}
-            <div className="flex items-start justify-between gap-2">
-              <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors text-[15px] leading-tight truncate">
-                {repo.name}
-              </h3>
-              {repo.stargazerCount > 0 && (
-                <span className="flex items-center gap-1 text-xs text-muted-foreground shrink-0">
-                  <Star className="size-3" />
-                  {repo.stargazerCount}
-                </span>
-              )}
-            </div>
+        <div className="project-card-topline">
+          <span className="project-index">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <span className="project-open-icon" aria-hidden="true">
+            <ArrowUpRight />
+          </span>
+        </div>
 
-            {/* Badge row */}
-            <div className="flex flex-wrap gap-1.5">
-              {repo.primaryLanguage?.name && (
-                <Badge variant="outline" className="text-[11px] px-2 py-0 h-5 gap-1.5 border-border/50">
-                  <span
-                    className="size-2 rounded-full shrink-0"
-                    style={{ backgroundColor: langColor }}
-                  />
-                  {repo.primaryLanguage.name}
-                </Badge>
-              )}
-              {repo.homepageUrl && (
-                <Badge variant="outline" className="text-[11px] px-2 py-0 h-5 gap-1 border-emerald-500/30 text-emerald-400">
-                  <Globe className="size-2.5" />
-                  Deployed
-                </Badge>
-              )}
-              {repo.isPrivate && (
-                <Badge variant="outline" className="text-[11px] px-2 py-0 h-5 gap-1 border-amber-500/30 text-amber-400">
-                  <Lock className="size-2.5" />
-                  Private
-                </Badge>
-              )}
-              {repo.isFork && (
-                <Badge variant="outline" className="text-[11px] px-2 py-0 h-5 gap-1 border-border/50 text-muted-foreground">
-                  <GitFork className="size-2.5" />
-                  Fork
-                </Badge>
-              )}
-            </div>
-
-            {/* Description */}
-            <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 flex-1">
-              {interpretation || repo.description || "No description available"}
-            </p>
-
-            {/* Footer */}
-            <div className="flex items-center justify-between pt-1 mt-auto">
-              <span className="text-xs text-muted-foreground/70">
-                {formatDate(repo.pushedAt)}
-              </span>
-              <span className="flex items-center gap-1 text-xs text-primary/70 group-hover:text-primary transition-colors">
-                View
-                <ArrowRight className="size-3 group-hover:translate-x-0.5 transition-transform" />
-              </span>
-            </div>
+        <div className="project-card-copy">
+          <div className="project-language">
+            <span
+              style={{ backgroundColor: languageColor }}
+              aria-hidden="true"
+            />
+            {language}
           </div>
+          <h3>{repo.name}</h3>
+          <p>{description}</p>
+        </div>
+
+        <div className="project-checklist" aria-label="Project status">
+          <span>
+            {repo.homepageUrl ? (
+              <Radio aria-hidden="true" />
+            ) : (
+              <Wrench aria-hidden="true" />
+            )}
+            {repo.homepageUrl ? "Live on the web" : "In the workshop"}
+          </span>
+          <span>
+            {repo.isFork ? (
+              <GitFork aria-hidden="true" />
+            ) : (
+              <CheckCircle2 aria-hidden="true" />
+            )}
+            {repo.isFork ? "Built on open source" : "Original build"}
+          </span>
+          {repo.stargazerCount > 0 && (
+            <span>
+              <Star aria-hidden="true" />
+              {repo.stargazerCount}{" "}
+              {repo.stargazerCount === 1 ? "star" : "stars"}
+            </span>
+          )}
+        </div>
+
+        <div className="project-card-footer">
+          <span>Updated {formatDate(repo.pushedAt)}</span>
+          <strong>Open project</strong>
         </div>
       </Link>
-    </motion.div>
+    </li>
   );
 }

@@ -1,178 +1,193 @@
-// client/src/pages/Home.tsx
-// Design: Architectural Blueprint — asymmetric hero, sticky filters, 3-col grid
-
-import { useState, useMemo } from "react";
-import { motion } from "framer-motion";
-import { Github, ExternalLink, Code2, Rocket, Lock, GitFork } from "lucide-react";
-import repos from "@/data/repos.json";
+import { useMemo, useRef, useState } from "react";
+import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
+import repoSummaries from "@/data/repo-summaries.json";
 import interpretations from "@/data/ai-interpretations.json";
-import { ProjectCard } from "@/components/ProjectCard";
 import { FilterBar } from "@/components/FilterBar";
-import { getLanguages, filterRepos, sortByPushedAt } from "@/lib/repo-utils";
-import type { Repo, FilterLanguage, FilterType } from "@/lib/types";
+import { ProjectCard } from "@/components/ProjectCard";
+import { RepositoryTree } from "@/components/RepositoryTree";
+import { filterRepos, getLanguages, sortByPushedAt } from "@/lib/repo-utils";
+import type {
+  FilterAvailability,
+  FilterLanguage,
+  FilterProvenance,
+  RepoSummary,
+} from "@/lib/types";
 
-const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663056684383/K4rNGwLWbubJLq7tbzoQv8/hero-bg-Z4BagEehF8SFQhwf8YEgFR.webp";
-
-const allRepos = sortByPushedAt(repos as Repo[]);
+const allRepos = sortByPushedAt(repoSummaries as RepoSummary[]);
 const allLanguages = getLanguages(allRepos);
-const interpMap = interpretations as Record<string, string>;
+const interpretationMap = interpretations as Record<string, string>;
 
-// Stats
-const deployedCount = allRepos.filter((r) => r.homepageUrl).length;
-const languageCount = allLanguages.length;
-const privateCount = allRepos.filter((r) => r.isPrivate).length;
-const forkCount = allRepos.filter((r) => r.isFork).length;
+const deployedCount = allRepos.filter(repo => repo.homepageUrl).length;
+const originalCount = allRepos.filter(repo => !repo.isFork).length;
 
 export default function Home() {
   const [language, setLanguage] = useState<FilterLanguage>("All");
-  const [type, setType] = useState<FilterType>("All");
+  const [availability, setAvailability] = useState<FilterAvailability>("All");
+  const [provenance, setProvenance] = useState<FilterProvenance>("All");
+  const railRef = useRef<HTMLUListElement>(null);
 
   const filtered = useMemo(
-    () => filterRepos(allRepos, { language, type }),
-    [language, type]
+    () => filterRepos(allRepos, { language, availability, provenance }),
+    [availability, language, provenance]
   );
 
+  const resetFilters = () => {
+    setLanguage("All");
+    setAvailability("All");
+    setProvenance("All");
+  };
+
+  const moveRail = (direction: -1 | 1) => {
+    const rail = railRef.current;
+    if (!rail) return;
+    rail.scrollBy({
+      left: direction * Math.min(rail.clientWidth * 0.78, 520),
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        {/* Background image with overlay */}
-        <div className="absolute inset-0">
-          <img
-            src={HERO_BG}
-            alt=""
-            className="w-full h-full object-cover opacity-40"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/60 to-background" />
+    <main id="top" className="portfolio-shell">
+      <a href="#work" className="skip-link">
+        Skip to all projects
+      </a>
+
+      <header className="site-nav-shell">
+        <nav className="site-nav" aria-label="Primary navigation">
+          <a
+            href="#top"
+            className="site-wordmark"
+            aria-label="Big-jpg portfolio home"
+          >
+            <span aria-hidden="true" />
+            BIG—JPG
+          </a>
+          <div>
+            <a href="#work">Work</a>
+            <a
+              href="https://github.com/Big-jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+              <ExternalLink aria-hidden="true" />
+            </a>
+          </div>
+        </nav>
+      </header>
+
+      <RepositoryTree repos={allRepos} interpretations={interpretationMap} />
+
+      <section
+        id="work"
+        className="work-section"
+        aria-labelledby="work-heading"
+      >
+        <div className="work-heading-row">
+          <div>
+            <p className="eyebrow">The whole garden</p>
+            <h1 id="work-heading">Seventy-five ways of asking “what if?”</h1>
+          </div>
+          <p className="work-intro">
+            Data systems, playful experiments, agent workflows, geometry tools,
+            and production apps—kept together in one gently sortable place.
+          </p>
         </div>
 
-        <div className="relative container py-16 sm:py-20 lg:py-24">
-          <div className="grid lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-end">
-            {/* Left: Name + Bio */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="size-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-xs text-muted-foreground uppercase tracking-widest font-medium">
-                  Developer Portfolio
-                </span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground tracking-tight mb-5">
-                Big-jpg
-              </h1>
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                Data and automation architect building across the full stack — from Power BI semantic model parsers
-                and Azure OCR pipelines to interactive 3D web experiences and computational geometry tools.
-                Fluent in TypeScript, Python, and C++, with a bias toward explicit control and system-level reasoning.
-              </p>
-              <div className="flex items-center gap-4 mt-6">
-                <a
-                  href="https://github.com/Big-jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-md bg-secondary/80 text-foreground text-sm font-medium hover:bg-secondary transition-colors"
-                >
-                  <Github className="size-4" />
-                  GitHub
-                </a>
-              </div>
-            </motion.div>
+        <dl className="repository-stats" aria-label="Portfolio overview">
+          <div>
+            <dt>Repositories</dt>
+            <dd>{allRepos.length}</dd>
+          </div>
+          <div>
+            <dt>Live now</dt>
+            <dd>{deployedCount}</dd>
+          </div>
+          <div>
+            <dt>Original builds</dt>
+            <dd>{originalCount}</dd>
+          </div>
+          <div>
+            <dt>Languages</dt>
+            <dd>{allLanguages.length}</dd>
+          </div>
+        </dl>
 
-            {/* Right: Stats grid */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              className="grid grid-cols-2 gap-3 lg:gap-4"
+        <FilterBar
+          languages={allLanguages}
+          activeLanguage={language}
+          activeAvailability={availability}
+          activeProvenance={provenance}
+          onLanguageChange={setLanguage}
+          onAvailabilityChange={setAvailability}
+          onProvenanceChange={setProvenance}
+          onReset={resetFilters}
+          totalCount={allRepos.length}
+          filteredCount={filtered.length}
+        />
+
+        <div className="rail-heading">
+          <p>Swipe, scroll, or use the soft arrow keys.</p>
+          <div className="rail-controls" aria-label="Repository rail controls">
+            <button
+              type="button"
+              onClick={() => moveRail(-1)}
+              aria-label="Previous projects"
             >
-              <StatCard icon={<Code2 className="size-4" />} value={allRepos.length} label="Repositories" />
-              <StatCard icon={<Rocket className="size-4" />} value={deployedCount} label="Deployed" />
-              <StatCard icon={<Lock className="size-4" />} value={privateCount} label="Private" />
-              <StatCard icon={<GitFork className="size-4" />} value={forkCount} label="Forks" />
-            </motion.div>
+              <ArrowLeft aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              onClick={() => moveRail(1)}
+              aria-label="Next projects"
+            >
+              <ArrowRight aria-hidden="true" />
+            </button>
           </div>
         </div>
 
-        {/* Thin accent line */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-      </section>
-
-      {/* Filter + Grid Section */}
-      <section className="container py-10 sm:py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-        >
-          <FilterBar
-            languages={allLanguages}
-            activeLanguage={language}
-            activeType={type}
-            onLanguageChange={setLanguage}
-            onTypeChange={setType}
-            totalCount={allRepos.length}
-            filteredCount={filtered.length}
-          />
-        </motion.div>
-
-        {/* Project Grid */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filtered.map((repo, i) => (
-            <ProjectCard
-              key={repo.name}
-              repo={repo}
-              interpretation={interpMap[repo.name]}
-              index={i}
-            />
-          ))}
-        </div>
-
-        {filtered.length === 0 && (
-          <div className="text-center py-20 text-muted-foreground">
-            <p className="text-lg">No repositories match the current filters.</p>
-            <button
-              onClick={() => { setLanguage("All"); setType("All"); }}
-              className="mt-3 text-primary hover:underline text-sm"
-            >
-              Clear filters
+        {filtered.length > 0 ? (
+          <ul
+            ref={railRef}
+            className="repository-rail"
+            aria-label="Repository projects"
+          >
+            {filtered.map((repo, index) => (
+              <ProjectCard
+                key={repo.name}
+                repo={repo}
+                interpretation={interpretationMap[repo.name]}
+                index={index}
+              />
+            ))}
+          </ul>
+        ) : (
+          <div className="empty-projects">
+            <span aria-hidden="true">○</span>
+            <h2>No projects in this branch—yet.</h2>
+            <p>Reset the filters to return to the full collection.</p>
+            <button type="button" onClick={resetFilters}>
+              Show everything
             </button>
           </div>
         )}
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border/50">
-        <div className="container py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground/60">
-            {allRepos.length} repositories across {languageCount} languages
-          </p>
-          <a
-            href="https://github.com/Big-jpg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs text-muted-foreground/60 hover:text-foreground transition-colors"
-          >
-            <Github className="size-3.5" />
-            github.com/Big-jpg
-            <ExternalLink className="size-3" />
-          </a>
+      <footer className="site-footer">
+        <div>
+          <p className="eyebrow">Still curious?</p>
+          <h2>Follow the next branch.</h2>
         </div>
+        <a
+          href="https://github.com/Big-jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Github aria-hidden="true" />
+          github.com/Big-jpg
+          <ExternalLink aria-hidden="true" />
+        </a>
       </footer>
-    </div>
-  );
-}
-
-function StatCard({ icon, value, label }: { icon: React.ReactNode; value: number; label: string }) {
-  return (
-    <div className="flex flex-col gap-1 p-4 rounded-lg bg-card/80 border border-border/50 backdrop-blur-sm">
-      <div className="flex items-center gap-2 text-muted-foreground">
-        {icon}
-        <span className="text-xs uppercase tracking-wider font-medium">{label}</span>
-      </div>
-      <span className="text-2xl font-bold text-foreground tabular-nums">{value}</span>
-    </div>
+    </main>
   );
 }

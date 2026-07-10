@@ -1,86 +1,142 @@
-// client/src/components/FilterBar.tsx
-// Design: Architectural Blueprint — horizontal filter chips with active state
-
-import { LANGUAGE_COLORS } from "@/lib/repo-utils";
-import type { FilterLanguage, FilterType } from "@/lib/types";
+import { motion, useReducedMotion } from "framer-motion";
+import { RotateCcw } from "lucide-react";
+import type {
+  FilterAvailability,
+  FilterLanguage,
+  FilterProvenance,
+} from "@/lib/types";
 
 interface FilterBarProps {
   languages: string[];
   activeLanguage: FilterLanguage;
-  activeType: FilterType;
-  onLanguageChange: (lang: FilterLanguage) => void;
-  onTypeChange: (type: FilterType) => void;
+  activeAvailability: FilterAvailability;
+  activeProvenance: FilterProvenance;
+  onLanguageChange: (language: FilterLanguage) => void;
+  onAvailabilityChange: (availability: FilterAvailability) => void;
+  onProvenanceChange: (provenance: FilterProvenance) => void;
+  onReset: () => void;
   totalCount: number;
   filteredCount: number;
 }
 
-const TYPE_OPTIONS: FilterType[] = ["All", "Deployed", "Original", "Private", "Fork"];
+const AVAILABILITY_OPTIONS: FilterAvailability[] = ["All", "Live", "Workshop"];
+const PROVENANCE_OPTIONS: FilterProvenance[] = ["All", "Original", "Fork"];
 
 export function FilterBar({
   languages,
   activeLanguage,
-  activeType,
+  activeAvailability,
+  activeProvenance,
   onLanguageChange,
-  onTypeChange,
+  onAvailabilityChange,
+  onProvenanceChange,
+  onReset,
   totalCount,
   filteredCount,
 }: FilterBarProps) {
+  const reduceMotion = useReducedMotion();
+  const isFiltered =
+    activeLanguage !== "All" ||
+    activeAvailability !== "All" ||
+    activeProvenance !== "All";
+
   return (
-    <div className="space-y-4">
-      {/* Type filters */}
-      <div className="flex flex-wrap gap-2 items-center">
-        <span className="text-xs text-muted-foreground uppercase tracking-wider font-medium mr-1">Type</span>
-        {TYPE_OPTIONS.map((type) => (
-          <button
-            key={type}
-            onClick={() => onTypeChange(type)}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all duration-200
-              ${activeType === type
-                ? "bg-primary text-primary-foreground shadow-sm"
-                : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
-              }`}
-          >
-            {type}
-          </button>
-        ))}
-      </div>
+    <div className="repo-toolbar" aria-label="Repository filters">
+      <SegmentControl
+        label="Availability"
+        options={AVAILABILITY_OPTIONS}
+        active={activeAvailability}
+        onChange={onAvailabilityChange}
+        layoutId="availability-filter"
+        reduceMotion={Boolean(reduceMotion)}
+      />
 
-      {/* Language filters */}
-      <div className="flex flex-wrap gap-2 items-center">
-        <span className="text-xs text-muted-foreground uppercase tracking-wider font-medium mr-1">Lang</span>
-        <button
-          onClick={() => onLanguageChange("All")}
-          className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all duration-200
-            ${activeLanguage === "All"
-              ? "bg-primary text-primary-foreground shadow-sm"
-              : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
-            }`}
+      <SegmentControl
+        label="Source"
+        options={PROVENANCE_OPTIONS}
+        active={activeProvenance}
+        onChange={onProvenanceChange}
+        layoutId="provenance-filter"
+        reduceMotion={Boolean(reduceMotion)}
+        labels={{ All: "Any", Fork: "Forks" }}
+      />
+
+      <label className="filter-select-wrap">
+        <span>Language</span>
+        <select
+          value={activeLanguage}
+          onChange={event => onLanguageChange(event.target.value)}
+          aria-label="Filter repositories by language"
         >
-          All
-        </button>
-        {languages.map((lang) => (
+          <option value="All">All languages</option>
+          {languages.map(language => (
+            <option key={language} value={language}>
+              {language}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      <div className="repo-filter-result">
+        <output aria-live="polite">
+          <strong>{filteredCount}</strong>
+          <span>of {totalCount}</span>
+        </output>
+        {isFiltered && (
+          <button type="button" onClick={onReset} className="filter-reset">
+            <RotateCcw aria-hidden="true" />
+            Reset
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+interface SegmentControlProps<T extends string> {
+  label: string;
+  options: T[];
+  active: T;
+  onChange: (value: T) => void;
+  layoutId: string;
+  reduceMotion: boolean;
+  labels?: Partial<Record<T, string>>;
+}
+
+function SegmentControl<T extends string>({
+  label,
+  options,
+  active,
+  onChange,
+  layoutId,
+  reduceMotion,
+  labels,
+}: SegmentControlProps<T>) {
+  return (
+    <div className="filter-group">
+      <span className="filter-label">{label}</span>
+      <div className="segment-control" role="group" aria-label={label}>
+        {options.map(option => (
           <button
-            key={lang}
-            onClick={() => onLanguageChange(lang)}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all duration-200 flex items-center gap-1.5
-              ${activeLanguage === lang
-                ? "bg-primary text-primary-foreground shadow-sm"
-                : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
-              }`}
+            key={option}
+            type="button"
+            aria-pressed={active === option}
+            onClick={() => onChange(option)}
           >
-            <span
-              className="size-2 rounded-full shrink-0"
-              style={{ backgroundColor: LANGUAGE_COLORS[lang] || "#6b7280" }}
-            />
-            {lang}
+            {active === option && (
+              <motion.span
+                layoutId={layoutId}
+                className="segment-active"
+                transition={
+                  reduceMotion
+                    ? { duration: 0 }
+                    : { duration: 0.42, ease: [0.25, 1, 0.5, 1] }
+                }
+              />
+            )}
+            <span className="segment-label">{labels?.[option] ?? option}</span>
           </button>
         ))}
-      </div>
-
-      {/* Count indicator */}
-      <div className="text-xs text-muted-foreground/70">
-        Showing <span className="text-foreground font-medium">{filteredCount}</span> of{" "}
-        <span className="text-foreground font-medium">{totalCount}</span> repositories
       </div>
     </div>
   );

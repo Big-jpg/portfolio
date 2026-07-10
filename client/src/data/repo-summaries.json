@@ -1,0 +1,1036 @@
+[
+  {
+    "description": "Developer portfolio for Big-jpg — 74 repos with AI-generated interpretations",
+    "homepageUrl": "https://case-studies-big-team.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "portfolio",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-07-09T13:18:50Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/portfolio"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://github-motion-graph.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "github-motion-graph",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-07-09T08:25:41Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/github-motion-graph"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://paint-by.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "paint_by",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-06-28T13:50:27Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/paint_by"
+  },
+  {
+    "description": "Client-side sensitive data operations POC using PGlite WASM - Patient Risk Review Demo",
+    "homepageUrl": "https://private-compute.vercel.app",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "private-compute",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-06-25T08:17:08Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/private-compute"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://www.invoicepipe.site/",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "invoicepipe",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-06-23T09:15:27Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/invoicepipe"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://arcvane-studio.com",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "arcvane-studio",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-06-19T14:21:00Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/arcvane-studio"
+  },
+  {
+    "description": "React starter for Microsoft Fabric Apps that connects to a Power BI semantic model and renders live metadata via DAX.",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "fabric-apps-react-webapp-starter",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-06-08T16:29:35Z",
+    "stargazerCount": 2,
+    "url": "https://github.com/Big-jpg/fabric-apps-react-webapp-starter"
+  },
+  {
+    "description": "test",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "test",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-06-08T15:53:09Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/test"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://plankzdeckz.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "plankzdeckz",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-06-08T09:22:40Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/plankzdeckz"
+  },
+  {
+    "description": "Semantic Model Visualizer — Parse and diagram Power BI / Fabric TMDL models",
+    "homepageUrl": "https://modelviz-alpha.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "modelviz",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-06-07T11:56:54Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/modelviz"
+  },
+  {
+    "description": "Backend-as-a-Service with built-in auth, data, and more",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "rayfin",
+    "primaryLanguage": null,
+    "pushedAt": "2026-06-02T18:55:16Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/rayfin"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "next-sim",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-05-07T16:33:57Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/next-sim"
+  },
+  {
+    "description": "Browser-based IDE for browsing and editing Power BI PBIR report files stored in Azure DevOps Git repositories",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "ModelViz-PowerBI",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-04-28T13:27:52Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/ModelViz-PowerBI"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "conformal-stencil-generator",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2026-04-25T14:58:42Z",
+    "stargazerCount": 5,
+    "url": "https://github.com/Big-jpg/conformal-stencil-generator"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "fuelwatch_signal",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2026-04-22T08:22:13Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/fuelwatch_signal"
+  },
+  {
+    "description": "Projects motion of pixels to a voxel",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "Pixeltovoxelprojector",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2026-01-29T03:13:46Z",
+    "stargazerCount": 1,
+    "url": "https://github.com/Big-jpg/Pixeltovoxelprojector"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "hyperbolic_paraboloid_generator",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2026-01-07T14:42:17Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/hyperbolic_paraboloid_generator"
+  },
+  {
+    "description": "DrawTalk - Communicate with AI through drawing only. A collaborative drawing application with three-layer stroke system and LLM vision integration.",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "drawtalk",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-12-11T05:39:08Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/drawtalk"
+  },
+  {
+    "description": "Service Status Monitoring Platform - Real-time synthetic monitoring for the services you depend on",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "untap",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-12-10T04:37:42Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/untap"
+  },
+  {
+    "description": "3D Printing Tier List",
+    "homepageUrl": "https://filament-tier-list.site",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "ftl",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-12-09T04:40:06Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/ftl"
+  },
+  {
+    "description": "Tinder-style job search platform with AI-powered matching",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "swipehire",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-12-07T17:27:28Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/swipehire"
+  },
+  {
+    "description": "3D-printed military kit cards e-commerce prototype with Next.js 15, Three.js 3D viewer, and custom livery selection",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "kitforge-military",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-12-05T08:57:07Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/kitforge-military"
+  },
+  {
+    "description": "KitForge MVP - 3D Printing Kit Card Builder with FastAPI + Streamlit",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "kitforge",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-12-03T08:39:42Z",
+    "stargazerCount": 1,
+    "url": "https://github.com/Big-jpg/kitforge"
+  },
+  {
+    "description": "3D Print Cost Evaluator - Streamlit webapp to estimate the true cost of 3D printed models",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "print-cost-evaluator",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-11-27T17:45:25Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/print-cost-evaluator"
+  },
+  {
+    "description": "Bitmap & tilemap generation from a single example with the help of ideas from quantum mechanics",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "WaveFunctionCollapse",
+    "primaryLanguage": {
+      "name": "C#"
+    },
+    "pushedAt": "2025-11-25T22:52:47Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/WaveFunctionCollapse"
+  },
+  {
+    "description": "Probabilistic language based on pattern matching and constraint propagation, 153 examples",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "MarkovJunior",
+    "primaryLanguage": {
+      "name": "C#"
+    },
+    "pushedAt": "2025-11-22T23:51:36Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/MarkovJunior"
+  },
+  {
+    "description": "OpenSCAD Keychain Maker - A Streamlit web app for generating customized keychain files from OpenSCAD templates",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "keychain-maker",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-11-22T15:54:02Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/keychain-maker"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://gsap-parallax-scroll.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "gsap-parallax-scroll",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-30T04:35:59Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/gsap-parallax-scroll"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://linkedin-post-generator-pied.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "linkedin-post-generator",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-26T08:17:22Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/linkedin-post-generator"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "video-agent-v1",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-10-20T17:45:07Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/video-agent-v1"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "infinite-scroll-gsap",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-18T05:59:59Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/infinite-scroll-gsap"
+  },
+  {
+    "description": "Smart vehicle affordability calculator powered by the 20/4/10 rule and personalized financial modeling",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "vehicle-affordability-finder",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-10-16T13:10:20Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/vehicle-affordability-finder"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://convergent-six.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "convergent",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-16T05:46:03Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/convergent"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://openai-key-guardian.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "openai-key-guardian",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-15T09:16:46Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/openai-key-guardian"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "key-guardian-sandbox",
+    "primaryLanguage": null,
+    "pushedAt": "2025-10-15T08:42:06Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/key-guardian-sandbox"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "expressive-state-mapper",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-15T02:50:05Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/expressive-state-mapper"
+  },
+  {
+    "description": "Fork to update readme and provide suggestions for improvements",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "databricks-lakehouse-pipeline",
+    "primaryLanguage": {
+      "name": "Jupyter Notebook"
+    },
+    "pushedAt": "2025-10-14T03:37:46Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/databricks-lakehouse-pipeline"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://closegate.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "closegate",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-09T18:02:14Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/closegate"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "Big-jpg",
+    "primaryLanguage": null,
+    "pushedAt": "2025-10-08T02:41:43Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/Big-jpg"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://next-boids-text.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "next-boids-text",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-10-06T16:16:47Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/next-boids-text"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://orbitme.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "orbitme",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-09-27T16:30:05Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/orbitme"
+  },
+  {
+    "description": "Implementation of Multilayer Perceptron (MLP) from scratch",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "NeuralNet",
+    "primaryLanguage": {
+      "name": "JavaScript"
+    },
+    "pushedAt": "2025-09-08T04:56:06Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/NeuralNet"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://recupare.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "recupare",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-09-06T14:10:55Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/recupare"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "explain-this",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-09-01T06:30:54Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/explain-this"
+  },
+  {
+    "description": "Ever® Gauzy™ - Open Business Management Platform (ERP/CRM/HRM/ATS/PM) - https://gauzy.co",
+    "homepageUrl": "https://gauzy.co",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "ever-gauzy",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-08-27T17:37:15Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/ever-gauzy"
+  },
+  {
+    "description": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "the-book-of-secret-knowledge",
+    "primaryLanguage": null,
+    "pushedAt": "2025-08-27T15:32:58Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/the-book-of-secret-knowledge"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "minima",
+    "primaryLanguage": {
+      "name": "PowerShell"
+    },
+    "pushedAt": "2025-08-26T17:39:34Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/minima"
+  },
+  {
+    "description": "AI Elements is a component library and custom registry built on top of shadcn/ui to help you build AI-native applications faster.",
+    "homepageUrl": "https://ai-sdk.dev/elements/overview",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "ai-elements",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-08-25T21:02:50Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/ai-elements"
+  },
+  {
+    "description": "youtube video renderer",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "swaptube",
+    "primaryLanguage": {
+      "name": "C++"
+    },
+    "pushedAt": "2025-08-25T14:38:37Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/swaptube"
+  },
+  {
+    "description": "A lightweight, powerful framework for multi-agent workflows and voice agents",
+    "homepageUrl": "https://openai.github.io/openai-agents-js/",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "openai-agents-js",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-08-04T18:06:28Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/openai-agents-js"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "firegeo",
+    "primaryLanguage": null,
+    "pushedAt": "2025-07-22T01:48:04Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/firegeo"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "side-projects",
+    "primaryLanguage": {
+      "name": "JavaScript"
+    },
+    "pushedAt": "2025-06-27T18:49:39Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/side-projects"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "slidePacker",
+    "primaryLanguage": {
+      "name": "JavaScript"
+    },
+    "pushedAt": "2025-06-27T03:20:07Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/slidePacker"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://tools.firecrawl.dev/firestarter",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "inference-knowledge-engine",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-06-18T13:39:09Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/inference-knowledge-engine"
+  },
+  {
+    "description": "🔥 This repository contains complete application examples, including websites and other projects, developed using Firecrawl.",
+    "homepageUrl": "https://www.firecrawl.dev/",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "firecrawl-app-examples",
+    "primaryLanguage": {
+      "name": "Jupyter Notebook"
+    },
+    "pushedAt": "2025-06-02T20:54:05Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/firecrawl-app-examples"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://comic-gen-six.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "comic-gen",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2025-06-01T16:49:13Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/comic-gen"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://mp4towebm-big-team.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "mp4towebm",
+    "primaryLanguage": {
+      "name": "CSS"
+    },
+    "pushedAt": "2025-05-30T10:03:13Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/mp4towebm"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "webm_to_mp4",
+    "primaryLanguage": null,
+    "pushedAt": "2025-05-30T09:12:40Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/webm_to_mp4"
+  },
+  {
+    "description": "This project aims to maintain Wappalyzer technologies",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "webappanalyzer",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2025-05-20T05:26:19Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/webappanalyzer"
+  },
+  {
+    "description": "Created with StackBlitz ⚡️",
+    "homepageUrl": "https://stackblitz.com/edit/sb1-nnr8fs",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "WebAnalyze",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2024-11-13T12:28:15Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/WebAnalyze"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://burnbook-tau.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "burnbook",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2024-10-22T15:30:35Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/burnbook"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://ozquotes.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "ozquotes",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2024-10-13T18:26:52Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/ozquotes"
+  },
+  {
+    "description": "Pseudo API for Google Trends ",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "pytrends",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2024-08-10T16:13:40Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/pytrends"
+  },
+  {
+    "description": "Simple solar system experiment",
+    "homepageUrl": "https://www.youtube.com/watch?v=7axImc1sxa0",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "Solar-System",
+    "primaryLanguage": {
+      "name": "C#"
+    },
+    "pushedAt": "2024-02-03T03:11:45Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/Solar-System"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "MsAI",
+    "primaryLanguage": null,
+    "pushedAt": "2024-01-16T01:40:32Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/MsAI"
+  },
+  {
+    "description": "Implementation of “DreamDiffusion: Generating High-Quality Images from Brain EEG Signals”",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "BrainDiffusion",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2023-07-03T07:39:52Z",
+    "stargazerCount": 1,
+    "url": "https://github.com/Big-jpg/BrainDiffusion"
+  },
+  {
+    "description": "A low-code Machine Learning platform to help developers build #AI solutions",
+    "homepageUrl": "https://mindsdb.com",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "mindsdb",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2023-04-14T06:57:44Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/mindsdb"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://nevermore-amber.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "nevermore",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2023-03-17T05:38:36Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/nevermore"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "dopefolio",
+    "primaryLanguage": {
+      "name": "HTML"
+    },
+    "pushedAt": "2023-02-10T10:00:13Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/dopefolio"
+  },
+  {
+    "description": "Implementation of Reinforcement Learning from Human Feedback (RLHF)",
+    "homepageUrl": "https://xrsrke.github.io/instructGOOSE/",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "instructGOOSE",
+    "primaryLanguage": {
+      "name": "Jupyter Notebook"
+    },
+    "pushedAt": "2023-02-04T15:08:20Z",
+    "stargazerCount": 1,
+    "url": "https://github.com/Big-jpg/instructGOOSE"
+  },
+  {
+    "description": "Implementation of AudioLM, a SOTA Language Modeling Approach to Audio Generation out of Google Research, in Pytorch",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "audiolm-pytorch",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2023-01-31T21:55:26Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/audiolm-pytorch"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "supabase-nextjs",
+    "primaryLanguage": {
+      "name": "CSS"
+    },
+    "pushedAt": "2023-01-30T02:53:40Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/supabase-nextjs"
+  },
+  {
+    "description": "Get GPT like chatGPT on your terminal",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "terminalGPT",
+    "primaryLanguage": {
+      "name": "JavaScript"
+    },
+    "pushedAt": "2023-01-16T06:51:23Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/terminalGPT"
+  },
+  {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "microlearning",
+    "primaryLanguage": null,
+    "pushedAt": "2022-11-11T06:20:13Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/microlearning"
+  },
+  {
+    "description": "Colorful Life is a Game of Life implementation in full color. It utilizes WebGL and runs in your browser.",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": true,
+    "isPrivate": false,
+    "name": "colorful-life",
+    "primaryLanguage": {
+      "name": "JavaScript"
+    },
+    "pushedAt": "2019-05-29T20:59:00Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/colorful-life"
+  }
+]

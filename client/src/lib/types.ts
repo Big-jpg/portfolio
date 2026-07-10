@@ -1,6 +1,6 @@
 // client/src/lib/types.ts
 
-export interface Repo {
+export interface RepoSummary {
   name: string;
   description: string;
   homepageUrl: string;
@@ -11,13 +11,18 @@ export interface Repo {
   pushedAt: string;
   stargazerCount: number;
   url: string;
+}
+
+export interface Repo extends RepoSummary {
   readme: string;
 }
 
 export type FilterLanguage = "All" | string;
-export type FilterType = "All" | "Deployed" | "Private" | "Fork" | "Original";
+export type FilterAvailability = "All" | "Live" | "Workshop";
+export type FilterProvenance = "All" | "Original" | "Fork";
 
 export interface Filters {
   language: FilterLanguage;
-  type: FilterType;
+  availability: FilterAvailability;
+  provenance: FilterProvenance;
 }
