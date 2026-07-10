@@ -19,7 +19,7 @@ export const LANGUAGE_COLORS: Record<string, string> = {
 export const HIGHLIGHTED_REPOS = new Set([
   "github-motion-graph",
   "modelviz",
-  "invoicepipe",
+  "fabric-apps-react-webapp-starter",
 ]);
 
 export function getLanguages(repos: RepoSummary[]): string[] {

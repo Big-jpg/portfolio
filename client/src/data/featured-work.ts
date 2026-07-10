@@ -1,7 +1,5 @@
 export interface FeaturedWork {
   name: string;
-  number: string;
-  signal: string;
   title: string;
   summary: string;
   architecture: string[];
@@ -10,8 +8,6 @@ export interface FeaturedWork {
 export const FEATURED_WORK: FeaturedWork[] = [
   {
     name: "github-motion-graph",
-    number: "01",
-    signal: "Vercel-native application architecture",
     title: "GitHub Motion Graph",
     summary:
       "A force-directed view of repository, commit, branch, and pull-request activity, designed as a modern full-stack application rather than a static visualisation.",
@@ -23,23 +19,19 @@ export const FEATURED_WORK: FeaturedWork[] = [
     ],
   },
   {
-    name: "invoicepipe",
-    number: "02",
-    signal: "Secure AI-assisted workflow",
-    title: "InvoicePipe",
+    name: "fabric-apps-react-webapp-starter",
+    title: "Fabric Semantic Model Starter",
     summary:
-      "A tenant-isolated invoice-processing platform that joins a responsive web experience to Azure AI extraction and a production-conscious service boundary.",
+      "A React and TypeScript starter for Microsoft Fabric Apps, using live DAX metadata to turn a Power BI semantic model into an explorable interface.",
     architecture: [
-      "Next.js application and typed APIs",
-      "Azure AI extraction pipeline",
-      "Containerised Python service",
-      "Validation, correlation IDs, and structured logging",
+      "React 19 and TypeScript",
+      "Microsoft Fabric Apps query bridge",
+      "Live DAX semantic-model metadata",
+      "Config-driven builds and Rayfin deployment",
     ],
   },
   {
     name: "modelviz",
-    number: "03",
-    signal: "Privacy-conscious enterprise tooling",
     title: "ModelViz",
     summary:
       "A browser-based architecture tool for inspecting Power BI and Microsoft Fabric semantic models, including relationships, data-source modes, and row-level security.",
@@ -51,10 +43,6 @@ export const FEATURED_WORK: FeaturedWork[] = [
     ],
   },
 ];
-
-export const FEATURED_WORK_NAMES = new Set(
-  FEATURED_WORK.map(project => project.name)
-);
 
 export const CURATED_PROJECT_SUMMARIES: Record<string, string> = {
   portfolio:

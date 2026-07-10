@@ -104,16 +104,10 @@ export default function Home() {
       <section className="architect-hero" aria-labelledby="hero-heading">
         <div className="architect-hero-grid">
           <div className="architect-hero-copy">
-            <p className="eyebrow">Customer-facing solution architect</p>
-            <h1 id="hero-heading">
-              Modern web, AI, and enterprise platforms—designed to work in the
-              real world.
-            </h1>
+            <h1 id="hero-heading">Modern web, AI, and systems—made real.</h1>
             <p className="architect-hero-lead">
-              I lead technical discovery, solution design, implementation, and
-              post-go-live support for enterprise clients, while remaining
-              hands-on across TypeScript, React, Next.js, cloud, AI, data,
-              integration, and identity.
+              I design and build across TypeScript, React, Next.js, cloud, AI,
+              data, integration, and identity.
             </p>
             <div className="architect-hero-actions">
               <a href="#work" className="primary-action">
@@ -135,43 +129,6 @@ export default function Home() {
               Perth, Western Australia
             </p>
           </div>
-
-          <aside className="architect-brief" aria-label="Architecture focus">
-            <p className="architect-brief-label">How I work</p>
-            <ul>
-              <li>
-                <CheckCircle2 aria-hidden="true" />
-                <span>
-                  <strong>Translate across levels</strong>
-                  Connect executive outcomes to implementation detail.
-                </span>
-              </li>
-              <li>
-                <CheckCircle2 aria-hidden="true" />
-                <span>
-                  <strong>Design for production</strong>
-                  Treat security, observability, reliability, and adoption as
-                  architecture concerns.
-                </span>
-              </li>
-              <li>
-                <CheckCircle2 aria-hidden="true" />
-                <span>
-                  <strong>Make delivery reusable</strong>
-                  Turn one-off solutions into patterns, standards, and clearer
-                  mental models.
-                </span>
-              </li>
-            </ul>
-            <div
-              className="architect-brief-tags"
-              aria-label="Experience themes"
-            >
-              <span>Customer lifecycle</span>
-              <span>Hands-on builder</span>
-              <span>Regulated delivery</span>
-            </div>
-          </aside>
         </div>
       </section>
 
@@ -180,26 +137,21 @@ export default function Home() {
         className="featured-work-section"
         aria-labelledby="work-heading"
       >
-        <div className="section-heading-row">
-          <div>
-            <p className="eyebrow">Selected architecture work</p>
-            <h2 id="work-heading">Three systems that show how I think.</h2>
-          </div>
-          <p className="section-intro">
-            These projects lead because they combine modern application
-            engineering with the concerns that matter in enterprise delivery:
-            architecture boundaries, security, operations, and understandable
-            implementation choices.
-          </p>
+        <h2 id="work-heading" className="sr-only">
+          Selected work
+        </h2>
+        <div className="work-flow-motif" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
         </div>
 
-        <ol className="featured-work-grid">
+        <ul className="featured-work-grid">
           {featuredProjects.map(({ feature, repo }) => (
             <li key={feature.name} className="featured-work-card">
-              <div className="featured-card-topline">
-                <span>{feature.number}</span>
-                <p>{feature.signal}</p>
-              </div>
+              <span className="featured-card-pulse" aria-hidden="true" />
               <div className="featured-card-copy">
                 <h3>{feature.title}</h3>
                 <p>{feature.summary}</p>
@@ -230,7 +182,7 @@ export default function Home() {
               </div>
             </li>
           ))}
-        </ol>
+        </ul>
       </section>
 
       <section
