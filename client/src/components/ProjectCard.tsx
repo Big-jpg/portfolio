@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { formatDate, LANGUAGE_COLORS } from "@/lib/repo-utils";
 import { PORTFOLIO_IDENTITY } from "@/lib/identity";
+import { CURATED_PROJECT_SUMMARIES } from "@/data/featured-work";
 import type { RepoSummary } from "@/lib/types";
 
 interface ProjectCardProps {
@@ -23,6 +24,7 @@ export function ProjectCard({ repo, interpretation, index }: ProjectCardProps) {
   const language = repo.primaryLanguage?.name || "Mixed stack";
   const languageColor = LANGUAGE_COLORS[language] || "#B7C8BD";
   const description =
+    CURATED_PROJECT_SUMMARIES[repo.name] ||
     interpretation ||
     repo.description ||
     "A repository waiting for its field notes.";

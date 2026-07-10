@@ -17,18 +17,9 @@ export const LANGUAGE_COLORS: Record<string, string> = {
 
 // Highlighted repos (have live deployments and are most impressive)
 export const HIGHLIGHTED_REPOS = new Set([
+  "github-motion-graph",
   "modelviz",
-  "print-portfolio",
   "invoicepipe",
-  "ftl",
-  "convergent",
-  "closegate",
-  "next-boids-text",
-  "orbitme",
-  "videoretarder",
-  "fuelwatch_signal",
-  "conformal-stencil-generator",
-  "pixeltovoxel-demo",
 ]);
 
 export function getLanguages(repos: RepoSummary[]): string[] {

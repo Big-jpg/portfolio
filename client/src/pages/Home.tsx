@@ -1,10 +1,18 @@
 import { useMemo, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle2,
+  ExternalLink,
+  Github,
+  MapPin,
+} from "lucide-react";
+import { Link } from "wouter";
 import repoSummaries from "@/data/repo-summaries.json";
 import interpretations from "@/data/ai-interpretations.json";
+import { FEATURED_WORK } from "@/data/featured-work";
 import { FilterBar } from "@/components/FilterBar";
 import { ProjectCard } from "@/components/ProjectCard";
-import { RepositoryTree } from "@/components/RepositoryTree";
 import { PORTFOLIO_IDENTITY } from "@/lib/identity";
 import { filterRepos, getLanguages, sortByPushedAt } from "@/lib/repo-utils";
 import type {
@@ -20,11 +28,17 @@ const interpretationMap = interpretations as Record<string, string>;
 
 const deployedCount = allRepos.filter(repo => repo.homepageUrl).length;
 const originalCount = allRepos.filter(repo => !repo.isFork).length;
+const featuredProjects = FEATURED_WORK.map(feature => {
+  const repo = allRepos.find(candidate => candidate.name === feature.name);
+  return repo ? { feature, repo } : null;
+}).filter(
+  (project): project is NonNullable<typeof project> => project !== null
+);
 
 export default function Home() {
   const [language, setLanguage] = useState<FilterLanguage>("All");
-  const [availability, setAvailability] = useState<FilterAvailability>("All");
-  const [provenance, setProvenance] = useState<FilterProvenance>("All");
+  const [availability, setAvailability] = useState<FilterAvailability>("Live");
+  const [provenance, setProvenance] = useState<FilterProvenance>("Original");
   const railRef = useRef<HTMLUListElement>(null);
 
   const filtered = useMemo(
@@ -50,7 +64,7 @@ export default function Home() {
   return (
     <main id="top" className="portfolio-shell">
       <a href="#work" className="skip-link">
-        Skip to all projects
+        Skip to selected work
       </a>
 
       <header className="site-nav-shell">
@@ -58,7 +72,7 @@ export default function Home() {
           <a
             href="#top"
             className="site-wordmark"
-            aria-label={`${PORTFOLIO_IDENTITY.handle}, ${PORTFOLIO_IDENTITY.displayName}, portfolio home`}
+            aria-label={`${PORTFOLIO_IDENTITY.displayName}, Solution Architect, portfolio home`}
           >
             <img
               src={PORTFOLIO_IDENTITY.avatarUrl}
@@ -68,12 +82,13 @@ export default function Home() {
               className="site-avatar"
             />
             <span className="site-wordmark-copy">
-              <strong>BIG—JPG</strong>
-              <small>{PORTFOLIO_IDENTITY.displayName}</small>
+              <strong>ROSS FARRELL</strong>
+              <small>Solution Architect</small>
             </span>
           </a>
           <div>
-            <a href="#work">Work</a>
+            <a href="#work">Selected work</a>
+            <a href="#archive">Archive</a>
             <a
               href={PORTFOLIO_IDENTITY.githubUrl}
               target="_blank"
@@ -86,29 +101,157 @@ export default function Home() {
         </nav>
       </header>
 
-      <RepositoryTree repos={allRepos} interpretations={interpretationMap} />
+      <section className="architect-hero" aria-labelledby="hero-heading">
+        <div className="architect-hero-grid">
+          <div className="architect-hero-copy">
+            <p className="eyebrow">Customer-facing solution architect</p>
+            <h1 id="hero-heading">
+              Modern web, AI, and enterprise platforms—designed to work in the
+              real world.
+            </h1>
+            <p className="architect-hero-lead">
+              I lead technical discovery, solution design, implementation, and
+              post-go-live support for enterprise clients, while remaining
+              hands-on across TypeScript, React, Next.js, cloud, AI, data,
+              integration, and identity.
+            </p>
+            <div className="architect-hero-actions">
+              <a href="#work" className="primary-action">
+                Explore selected work
+                <ArrowRight aria-hidden="true" />
+              </a>
+              <a
+                href={PORTFOLIO_IDENTITY.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="secondary-action"
+              >
+                <Github aria-hidden="true" />
+                View GitHub
+              </a>
+            </div>
+            <p className="architect-location">
+              <MapPin aria-hidden="true" />
+              Perth, Western Australia
+            </p>
+          </div>
+
+          <aside className="architect-brief" aria-label="Architecture focus">
+            <p className="architect-brief-label">How I work</p>
+            <ul>
+              <li>
+                <CheckCircle2 aria-hidden="true" />
+                <span>
+                  <strong>Translate across levels</strong>
+                  Connect executive outcomes to implementation detail.
+                </span>
+              </li>
+              <li>
+                <CheckCircle2 aria-hidden="true" />
+                <span>
+                  <strong>Design for production</strong>
+                  Treat security, observability, reliability, and adoption as
+                  architecture concerns.
+                </span>
+              </li>
+              <li>
+                <CheckCircle2 aria-hidden="true" />
+                <span>
+                  <strong>Make delivery reusable</strong>
+                  Turn one-off solutions into patterns, standards, and clearer
+                  mental models.
+                </span>
+              </li>
+            </ul>
+            <div
+              className="architect-brief-tags"
+              aria-label="Experience themes"
+            >
+              <span>Customer lifecycle</span>
+              <span>Hands-on builder</span>
+              <span>Regulated delivery</span>
+            </div>
+          </aside>
+        </div>
+      </section>
 
       <section
         id="work"
-        className="work-section"
+        className="featured-work-section"
         aria-labelledby="work-heading"
+      >
+        <div className="section-heading-row">
+          <div>
+            <p className="eyebrow">Selected architecture work</p>
+            <h2 id="work-heading">Three systems that show how I think.</h2>
+          </div>
+          <p className="section-intro">
+            These projects lead because they combine modern application
+            engineering with the concerns that matter in enterprise delivery:
+            architecture boundaries, security, operations, and understandable
+            implementation choices.
+          </p>
+        </div>
+
+        <ol className="featured-work-grid">
+          {featuredProjects.map(({ feature, repo }) => (
+            <li key={feature.name} className="featured-work-card">
+              <div className="featured-card-topline">
+                <span>{feature.number}</span>
+                <p>{feature.signal}</p>
+              </div>
+              <div className="featured-card-copy">
+                <h3>{feature.title}</h3>
+                <p>{feature.summary}</p>
+              </div>
+              <ul aria-label={`${feature.title} architecture signals`}>
+                {feature.architecture.map(item => (
+                  <li key={item}>
+                    <CheckCircle2 aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="featured-card-actions">
+                <Link href={`/project/${encodeURIComponent(repo.name)}`}>
+                  Read project notes
+                  <ArrowRight aria-hidden="true" />
+                </Link>
+                {repo.homepageUrl && (
+                  <a
+                    href={repo.homepageUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Live experience
+                    <ExternalLink aria-hidden="true" />
+                  </a>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section
+        id="archive"
+        className="work-section archive-section"
+        aria-labelledby="archive-heading"
       >
         <div className="work-heading-row">
           <div>
-            <p className="eyebrow">The whole garden</p>
-            <h1 id="work-heading">
-              {allRepos.length} ways of asking “what if?”
-            </h1>
+            <p className="eyebrow">Complete project archive</p>
+            <h2 id="archive-heading">Breadth, without the noise.</h2>
           </div>
           <p className="work-intro">
-            Public repositories owned by Big-jpg and selected collaborator or
-            organization work—kept together in one gently sortable place.
+            The archive starts with live, original work. Change the filters to
+            explore experiments, works in progress, collaborations, and forks.
           </p>
         </div>
 
         <dl className="repository-stats" aria-label="Portfolio overview">
           <div>
-            <dt>Public indexed</dt>
+            <dt>Public projects</dt>
             <dd>{allRepos.length}</dd>
           </div>
           <div>
@@ -139,7 +282,10 @@ export default function Home() {
         />
 
         <div className="rail-heading">
-          <p>Swipe, scroll, or use the soft arrow keys.</p>
+          <p>
+            Showing {filtered.length} projects. Swipe, scroll, or use the arrow
+            controls.
+          </p>
           <div className="rail-controls" aria-label="Repository rail controls">
             <button
               type="button"
@@ -187,8 +333,8 @@ export default function Home() {
 
       <footer className="site-footer">
         <div>
-          <p className="eyebrow">Still curious?</p>
-          <h2>Follow the next branch.</h2>
+          <p className="eyebrow">Ross Elliot Farrell</p>
+          <h2>Architecture that stays connected to delivery.</h2>
         </div>
         <a
           href={PORTFOLIO_IDENTITY.githubUrl}

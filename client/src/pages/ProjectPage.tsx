@@ -25,6 +25,7 @@ import {
   formatDate,
 } from "@/lib/repo-utils";
 import { PORTFOLIO_IDENTITY } from "@/lib/identity";
+import { CURATED_PROJECT_SUMMARIES } from "@/data/featured-work";
 import type { Repo } from "@/lib/types";
 
 const allRepos = repos as Repo[];
@@ -71,7 +72,8 @@ export default function ProjectPage() {
   const langColor = repo.primaryLanguage?.name
     ? LANGUAGE_COLORS[repo.primaryLanguage.name] || "#6b7280"
     : "#6b7280";
-  const interpretation = interpMap[repo.name];
+  const interpretation =
+    CURATED_PROJECT_SUMMARIES[repo.name] || interpMap[repo.name];
   const isHighlighted = HIGHLIGHTED_REPOS.has(repo.name);
 
   const statusItems = [

@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { RotateCcw } from "lucide-react";
+import { ListFilter } from "lucide-react";
 import type {
   FilterAvailability,
   FilterLanguage,
@@ -84,8 +84,8 @@ export function FilterBar({
         </output>
         {isFiltered && (
           <button type="button" onClick={onReset} className="filter-reset">
-            <RotateCcw aria-hidden="true" />
-            Reset
+            <ListFilter aria-hidden="true" />
+            Show all
           </button>
         )}
       </div>
