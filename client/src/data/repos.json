@@ -1,15 +1,17 @@
 [
   {
-    "description": "Developer portfolio for Big-jpg — 74 repos with AI-generated interpretations",
+    "description": "Developer portfolio for Big-jpg -Dynamic Github Repo Refresh via GraphQL API",
     "homepageUrl": "https://case-studies-big-team.vercel.app",
     "isArchived": false,
     "isFork": false,
     "isPrivate": false,
     "name": "portfolio",
+    "nameWithOwner": "Big-jpg/portfolio",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
-    "pushedAt": "2026-07-09T13:18:50Z",
+    "pushedAt": "2026-07-10T11:15:40Z",
     "stargazerCount": 0,
     "url": "https://github.com/Big-jpg/portfolio",
     "readme": ""
@@ -21,13 +23,15 @@
     "isFork": false,
     "isPrivate": false,
     "name": "github-motion-graph",
+    "nameWithOwner": "Big-jpg/github-motion-graph",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
-    "pushedAt": "2026-07-09T08:25:41Z",
+    "pushedAt": "2026-07-10T07:27:05Z",
     "stargazerCount": 0,
     "url": "https://github.com/Big-jpg/github-motion-graph",
-    "readme": "# GitHub Motion Graph\n\nInteractive force-directed visualization of GitHub activity — repositories, commits, pull requests, and human/AI collaboration patterns.\n\n![Next.js](https://img.shields.io/badge/Next.js-16-black)\n![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue)\n![Vercel](https://img.shields.io/badge/Deploy-Vercel-black)\n\n## Architecture\n\n```\n┌─────────────────────────────────────────────┐\n│  Client (react-force-graph-2d)              │\n│  Force-directed canvas visualization        │\n├─────────────────────────────────────────────┤\n│  Next.js App Router                         │\n│  ├── / (landing)                            │\n│  ├── /graph (full visualization)            │\n│  └── /graph/[repo] (filtered view)          │\n├─────────────────────────────────────────────┤\n│  API Routes                                 │\n│  ├── POST /api/ingest (Node.js runtime)     │\n│  ├── GET  /api/graph  (Edge runtime)        │\n│  └── GET  /api/stats  (Edge runtime)        │\n├─────────────────────────────────────────────┤\n│  Neon Postgres + Drizzle ORM                │\n│  Relational graph model                     │\n└─────────────────────────────────────────────┘\n```\n\n## Stack\n\n- **Next.js 16** — App Router, React Server Components\n- **TypeScript** — Strict mode\n- **Neon Serverless Postgres** — `@neondatabase/serverless`\n- **Drizzle ORM** — Type-safe schema and queries\n- **react-force-graph-2d** — Canvas-based force simulation\n- **Edge Runtime** — Lightweight read endpoints\n- **Tailwind CSS v4** — Styling\n- **@vercel/analytics** — Deployment analytics\n\n## Data Model\n\nNodes: Repository, Branch, Commit, PullRequest, User  \nEdges: AUTHORED, OPENED, MERGED, BELONGS_TO, TARGETS, FROM, PART_OF\n\n## Getting Started\n\n```bash\npnpm install\ncp .env.example .env.local\n# Fill in DATABASE_URL and GH_TOKEN\npnpm dev\n```\n\n## Ingestion\n\n```bash\ncurl -X POST http://localhost:3000/api/ingest \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"username\": \"Big-jpg\"}'\n```\n\n## Environment Variables\n\n| Variable | Description |\n|----------|-------------|\n| `DATABASE_URL` | Neon Postgres connection string |\n| `GH_TOKEN` | GitHub Personal Access Token |\n| `NEXT_PUBLIC_APP_URL` | Application URL |\n\n## Deploy\n\n[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Big-jpg/github-motion-graph)\n"
+    "readme": "# GitHub Motion Graph\n\nInteractive force-directed visualization of GitHub activity — repositories, commits, pull requests, and human/AI collaboration patterns.\n\n![Next.js](https://img.shields.io/badge/Next.js-16-black)\n![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue)\n![Vercel](https://img.shields.io/badge/Deploy-Vercel-black)\n\n## Architecture\n\n```\n┌─────────────────────────────────────────────┐\n│  Client (react-force-graph-2d)              │\n│  Force-directed canvas visualization        │\n├─────────────────────────────────────────────┤\n│  Next.js App Router                         │\n│  ├── / (landing)                            │\n│  ├── /graph (full visualization)            │\n│  └── /graph/[repo] (filtered view)          │\n├─────────────────────────────────────────────┤\n│  API Routes                                 │\n│  ├── POST /api/ingest (Node.js runtime)     │\n│  ├── GET  /api/graph  (Edge runtime)        │\n│  └── GET  /api/stats  (Edge runtime)        │\n├─────────────────────────────────────────────┤\n│  Neon Postgres + Drizzle ORM                │\n│  Relational graph model                     │\n└─────────────────────────────────────────────┘\n```\n\n## Stack\n\n- **Next.js 16** — App Router, React Server Components\n- **TypeScript** — Strict mode\n- **Neon Serverless Postgres** — `@neondatabase/serverless`\n- **Drizzle ORM** — Type-safe schema and queries\n- **react-force-graph-2d** — Canvas-based force simulation\n- **Edge Runtime** — Lightweight read endpoints\n- **Tailwind CSS v4** — Styling\n- **@vercel/analytics** — Deployment analytics\n\n## Data Model\n\nNodes: Repository, Branch, Commit, PullRequest, User  \nEdges: AUTHORED, OPENED, MERGED, BELONGS_TO, TARGETS, FROM, PART_OF\n\n## Getting Started\n\n```bash\npnpm install\ncp .env.example .env.local\n# Fill in DATABASE_URL, GH_TOKEN, and INGEST_SECRET\npnpm dev\n```\n\n## Ingestion\n\n```bash\ncurl -X POST http://localhost:3000/api/ingest \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $INGEST_SECRET\" \\\n  -d '{\"username\": \"Big-jpg\"}'\n```\n\n## Environment Variables\n\n| Variable | Description |\n|----------|-------------|\n| `DATABASE_URL` | Neon Postgres connection string |\n| `GH_TOKEN` | GitHub Personal Access Token |\n| `INGEST_SECRET` | Shared secret required for `POST /api/ingest` |\n| `NEXT_PUBLIC_APP_URL` | Application URL |\n\n## Deploy\n\n[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Big-jpg/github-motion-graph)\n"
   },
   {
     "description": "",
@@ -36,6 +40,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "paint_by",
+    "nameWithOwner": "Big-jpg/paint_by",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -51,6 +57,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "private-compute",
+    "nameWithOwner": "Big-jpg/private-compute",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -60,12 +68,31 @@
     "readme": "# Private Compute\n\n**Privacy by architecture, not policy.**\n\nPrivate Compute demonstrates client-side analytics over sensitive datasets. Files are loaded into a browser-local PGlite database, persisted in IndexedDB, queried using PostgreSQL syntax, and summarized through aggregate-only reasoning tools. The server only delivers static application assets.\n\n---\n\n## Architecture\n\n```\n┌─────────────────────────────────────────────────────────────────┐\n│  BROWSER (client-side execution boundary)                       │\n│                                                                 │\n│  ┌──────────────┐    ┌──────────────────────────────────────┐   │\n│  │ User Input   │    │ PGlite WASM (Postgres in browser)    │   │\n│  │ CSV / JSON / │───▶│ IndexedDB persistence (idb://)       │   │\n│  │ Synthetic    │    │ SQL execution, views, aggregates     │   │\n│  └──────────────┘    └──────────────────────────────────────┘   │\n│                               │                                 │\n│                               ▼                                 │\n│                      ┌────────────────────┐                     │\n│                      │ Bounded Reasoning  │                     │\n│                      │ Predefined tools   │                     │\n│                      │ Aggregate-only     │                     │\n│                      └────────────────────┘                     │\n│                                                                 │\n├─────────────────────────────────────────────────────────────────┤\n│  PRIVACY BOUNDARY — raw records do not cross this line          │\n├─────────────────────────────────────────────────────────────────┤\n│                                                                 │\n│  SERVER (static assets only)                                    │\n│  HTML, JS, CSS, WASM binaries                                   │\n│  No API routes. No serverless functions.                        │\n│  No telemetry containing uploaded data.                         │\n│                                                                 │\n└─────────────────────────────────────────────────────────────────┘\n```\n\n## Core Claim\n\n> A browser-delivered application can perform meaningful structured operations on sensitive records while keeping the raw dataset local to the user's machine.\n\nThe application demonstrates:\n\n1. Data loaded locally (CSV upload, JSON paste, synthetic generator)\n2. Data persisted locally using IndexedDB via PGlite `idb://` protocol\n3. SQL queries executed locally using PGlite WASM\n4. Derived summaries generated locally (risk bands, missingness, regional breakdowns)\n5. No patient-level data sent to server endpoints\n6. Reasoning agent constrained to aggregate-only predefined query tools\n\n---\n\n## Technology\n\n| Component | Implementation |\n|-----------|---------------|\n| Runtime | Vite + React 19 (static client-side app) |\n| Database | PGlite WASM (`@electric-sql/pglite`) — full Postgres in the browser |\n| Persistence | IndexedDB (`idb://patient-demo`) |\n| Validation | Zod schema contracts |\n| Deployment | Static assets only (Vercel, Netlify, or any static host) |\n\n---\n\n## Privacy Guarantees\n\n| Guarantee | Implementation |\n|-----------|---------------|\n| No patient upload requests | No API routes exist; server serves only static files |\n| No PHI transmitted | PGlite runs entirely in-browser; data never leaves IndexedDB |\n| Reasoning is bounded | Agent uses predefined aggregate tools only; cannot access raw rows |\n| No arbitrary SQL via agent | Agent cannot execute custom SQL; only predefined queries |\n| User SQL is local-only | SQL console executes against local PGlite; never transmitted |\n| Clear data is complete | Deletes IndexedDB store; no server-side records exist |\n\n---\n\n## Agent Capability Matrix\n\n| Can | Cannot |\n|-----|--------|\n| Query predefined aggregate views | Access raw patient rows |\n| Report risk band distributions | Execute arbitrary SQL |\n| Summarise missingness rates | Transmit data to external endpoints |\n| Compare regional/age-band aggregates | Receive patient_id or row-level observations |\n\n---\n\n## DevTools Verification\n\n1. Open browser DevTools → **Network** tab\n2. Load sample data or upload a CSV\n3. Observe: **no POST/PUT requests** are made after initial page load\n4. All network activity is limited to static asset fetches (JS, CSS, WASM, fonts)\n5. Filter by `Fetch/XHR` — should show zero requests after page load\n6. The PGlite WASM binary is fetched once on first load, then cached\n\n---\n\n## Synthetic Data\n\nThe app generates ~200 realistic synthetic patient observations with:\n\n- Correlated vitals (BP correlates with age, LDL with smoking status)\n- Realistic missing data patterns (10-30% per field)\n- ~60 distinct patients with multiple observations\n- Postcode regions, diagnosis codes (ICD-10), medication counts\n\n---\n\n## Local Development\n\n```bash\npnpm install\npnpm dev\n```\n\n## Build & Deploy\n\n```bash\npnpm build\n# Output: dist/public/ — deploy as static site\n```\n\nNo environment variables required. No backend configuration needed.\n\n---\n\n## Data Contract\n\nPatient observations are validated against this Zod schema before insertion:\n\n| Field | Type | Required | Constraints |\n|-------|------|----------|-------------|\n| patient_id | string | yes | min 1 char |\n| age_years | number | yes | 0–120 |\n| sex | enum | yes | female, male, other, unknown |\n| postcode_region | string | yes | min 1 char |\n| observation_date | string | yes | date string |\n| systolic_bp | number | no | nullable |\n| diastolic_bp | number | no | nullable |\n| heart_rate | number | no | nullable |\n| hba1c | number | no | nullable |\n| ldl_cholesterol | number | no | nullable |\n| smoker | boolean | no | nullable |\n| diagnosis_code | string | no | nullable |\n| medication_count | number | no | nullable |\n\nRecords failing validation are rejected with field-level error messages.\n\n---\n\n## What This Is Not\n\n- Not a healthcare product\n- Not a production system\n- Not a replacement for proper data governance\n- Not a packet sniffer or network monitor\n\nIt is a proof of concept demonstrating an architectural pattern where sensitive data processing happens entirely client-side.\n"
   },
   {
+    "description": "Client-side sensitive data operations POC using PGlite WASM - Patient Risk Review Demo",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "pglite-patient-risk",
+    "nameWithOwner": "atom-rossf/pglite-patient-risk",
+    "ownerLogin": "atom-rossf",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-06-25T05:13:14Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/atom-rossf/pglite-patient-risk",
+    "readme": "# Patient Risk Review — PGlite WASM POC\n\nA proof of concept demonstrating that sensitive user-supplied data can be loaded, validated, queried, analysed, and reasoned over **inside the user's browser** without the raw data being transmitted to a backend service.\n\n---\n\n## Core Claim\n\n> A browser-delivered application can perform meaningful structured operations on sensitive records while keeping the raw dataset local to the user's machine.\n\n---\n\n## Architecture\n\n```\nUser-supplied data → Browser → PGlite WASM Postgres → Local SQL operations → Bounded reasoning interface → Results\n```\n\nThe server provides **only** static application assets (HTML, JS, CSS, WASM). It does not receive, store, or process patient-level data.\n\n### Privacy Boundary\n\n| Layer | Location | What it handles |\n|-------|----------|-----------------|\n| Static assets | Server → Browser | Application code, WASM binaries, CSS |\n| Data ingestion | Browser only | CSV/JSON parsing, Zod validation |\n| SQL engine | Browser only | PGlite WASM (full Postgres in IndexedDB) |\n| Analysis | Browser only | Aggregate queries, risk banding, missingness |\n| Reasoning agent | Browser only | Predefined aggregate-only query tools |\n\n**No patient-level data crosses the privacy boundary.**\n\n---\n\n## What This Demonstrates\n\n1. **Data loaded locally** — CSV/JSON parsed in-browser, validated with Zod schemas\n2. **Data persisted locally** — PGlite uses IndexedDB (`idb://patient-demo`) for durable storage\n3. **SQL queries executed locally** — Full Postgres SQL via WASM, including views, aggregates, FILTER clauses\n4. **Derived summaries generated locally** — Risk banding, missingness rates, regional breakdowns\n5. **No patient-level data sent to server** — Verifiable via DevTools Network tab\n6. **Bounded AI reasoning** — Agent receives only aggregate summaries from predefined query tools\n\n---\n\n## Technology Stack\n\n| Component | Implementation |\n|-----------|---------------|\n| Framework | React 19 + Vite |\n| SQL Engine | `@electric-sql/pglite` (Postgres WASM) |\n| Persistence | IndexedDB via PGlite `idb://` protocol |\n| Validation | Zod schemas with strict typing |\n| Styling | Tailwind CSS 4 + shadcn/ui |\n| Reasoning | Local deterministic agent (no LLM API calls) |\n\n---\n\n## Bounded Reasoning Agent\n\nThe \"Local Data Reasoning\" panel implements a constrained reasoning pattern:\n\n- The agent **cannot** access raw patient rows\n- The agent **cannot** execute arbitrary SQL\n- The agent **can only** invoke predefined aggregate query tools:\n\n```ts\ngetRiskBandDistribution()   // → { high: 168, critical: 94, ... }\ngetMissingnessSummary()      // → { systolic: 10, hba1c: 23, ... }\ngetRegionalRiskSummary()     // → postcode_region × risk_band counts\ngetAgeBandRiskSummary()      // → age_decade × risk_band counts\n```\n\nAll tool implementations execute against the local PGlite instance. Results are aggregate counts only — no patient IDs, no row-level observations.\n\n---\n\n## Synthetic Data\n\nThe sample dataset generates ~200 realistic patient observations with:\n\n- 60 distinct synthetic patient IDs (format: `PAT-XXXX`)\n- Ages 25–85, sex M/F, Australian postcode regions\n- Clinical observations: BP, heart rate, HbA1c, LDL cholesterol\n- Intentional missingness (10–27% per field) to demonstrate data quality detection\n- Risk banding derived via SQL view (critical/high/metabolic/lipid/normal)\n\n**No real patient data is used or required.**\n\n---\n\n## DevTools Verification\n\nTo verify the privacy boundary:\n\n1. Open browser DevTools → **Network** tab\n2. Load sample data or upload your own CSV\n3. Run queries and interact with the reasoning agent\n4. **Observe**: No POST/PUT requests carrying patient data appear\n5. All network activity after initial page load is limited to:\n   - Static asset fetches (JS chunks, WASM binary, CSS)\n   - Vite HMR websocket (dev mode only)\n\nThe application explicitly labels the privacy boundary in the UI with a dashed orange line: \"CLIENT-SIDE BOUNDARY — NO DATA LEAVES BROWSER BELOW THIS LINE\"\n\n---\n\n## Running Locally\n\n```bash\npnpm install\npnpm dev\n```\n\nOpen `http://localhost:3000`. The app works offline after initial load (for queries against already-loaded data).\n\n---\n\n## Data Contract\n\nPatient observations are validated against this schema before insertion:\n\n| Field | Type | Required | Constraints |\n|-------|------|----------|-------------|\n| patient_id | string | yes | 3–50 chars |\n| age_years | number | yes | 0–120 |\n| sex | enum | yes | \"M\" or \"F\" |\n| postcode_region | string | yes | 3–10 chars |\n| observation_date | string | yes | ISO date |\n| systolic_bp | number | no | 60–300 |\n| diastolic_bp | number | no | 30–200 |\n| heart_rate | number | no | 20–250 |\n| hba1c | number | no | 3–20 |\n| ldl_cholesterol | number | no | 0–15 |\n| smoker | boolean | no | — |\n| diagnosis_code | string | no | — |\n| medication_count | number | no | 0–50 |\n\nRecords failing validation are rejected with field-level error messages.\n\n---\n\n## Limitations\n\n- This is a **proof of concept**, not a healthcare product\n- The reasoning agent uses deterministic pattern matching, not an LLM\n- PGlite WASM has a cold-start time (~2–5s on first load)\n- IndexedDB storage is browser-specific and clearable by the user\n- No encryption at rest (relies on browser sandboxing)\n\n"
+  },
+  {
     "description": "",
     "homepageUrl": "https://www.invoicepipe.site/",
     "isArchived": false,
     "isFork": false,
     "isPrivate": false,
     "name": "invoicepipe",
+    "nameWithOwner": "Big-jpg/invoicepipe",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -81,6 +108,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "arcvane-studio",
+    "nameWithOwner": "Big-jpg/arcvane-studio",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -96,6 +125,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "fabric-apps-react-webapp-starter",
+    "nameWithOwner": "Big-jpg/fabric-apps-react-webapp-starter",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -111,6 +142,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "test",
+    "nameWithOwner": "Big-jpg/test",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -126,6 +159,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "plankzdeckz",
+    "nameWithOwner": "Big-jpg/plankzdeckz",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -141,6 +176,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "modelviz",
+    "nameWithOwner": "Big-jpg/modelviz",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -156,6 +193,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "rayfin",
+    "nameWithOwner": "Big-jpg/rayfin",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2026-06-02T18:55:16Z",
     "stargazerCount": 0,
@@ -169,6 +208,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "next-sim",
+    "nameWithOwner": "Big-jpg/next-sim",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -184,6 +225,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "ModelViz-PowerBI",
+    "nameWithOwner": "Big-jpg/ModelViz-PowerBI",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -199,6 +242,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "conformal-stencil-generator",
+    "nameWithOwner": "Big-jpg/conformal-stencil-generator",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -214,6 +259,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "fuelwatch_signal",
+    "nameWithOwner": "Big-jpg/fuelwatch_signal",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -229,6 +276,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "Pixeltovoxelprojector",
+    "nameWithOwner": "Big-jpg/Pixeltovoxelprojector",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -244,6 +293,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "hyperbolic_paraboloid_generator",
+    "nameWithOwner": "Big-jpg/hyperbolic_paraboloid_generator",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -259,6 +310,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "drawtalk",
+    "nameWithOwner": "Big-jpg/drawtalk",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -274,6 +327,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "untap",
+    "nameWithOwner": "Big-jpg/untap",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -289,6 +344,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "ftl",
+    "nameWithOwner": "Big-jpg/ftl",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -304,6 +361,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "swipehire",
+    "nameWithOwner": "Big-jpg/swipehire",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -319,6 +378,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "kitforge-military",
+    "nameWithOwner": "Big-jpg/kitforge-military",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -334,6 +395,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "kitforge",
+    "nameWithOwner": "Big-jpg/kitforge",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -349,6 +412,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "print-cost-evaluator",
+    "nameWithOwner": "Big-jpg/print-cost-evaluator",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -364,6 +429,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "WaveFunctionCollapse",
+    "nameWithOwner": "Big-jpg/WaveFunctionCollapse",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "C#"
     },
@@ -379,6 +446,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "MarkovJunior",
+    "nameWithOwner": "Big-jpg/MarkovJunior",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "C#"
     },
@@ -394,6 +463,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "keychain-maker",
+    "nameWithOwner": "Big-jpg/keychain-maker",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -409,6 +480,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "gsap-parallax-scroll",
+    "nameWithOwner": "Big-jpg/gsap-parallax-scroll",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -424,6 +497,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "linkedin-post-generator",
+    "nameWithOwner": "Big-jpg/linkedin-post-generator",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -439,6 +514,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "video-agent-v1",
+    "nameWithOwner": "Big-jpg/video-agent-v1",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -454,6 +531,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "infinite-scroll-gsap",
+    "nameWithOwner": "Big-jpg/infinite-scroll-gsap",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -469,6 +548,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "vehicle-affordability-finder",
+    "nameWithOwner": "Big-jpg/vehicle-affordability-finder",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -484,6 +565,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "convergent",
+    "nameWithOwner": "Big-jpg/convergent",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -499,6 +582,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "openai-key-guardian",
+    "nameWithOwner": "Big-jpg/openai-key-guardian",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -514,6 +599,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "key-guardian-sandbox",
+    "nameWithOwner": "Big-jpg/key-guardian-sandbox",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2025-10-15T08:42:06Z",
     "stargazerCount": 0,
@@ -527,6 +614,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "expressive-state-mapper",
+    "nameWithOwner": "Big-jpg/expressive-state-mapper",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -542,6 +631,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "databricks-lakehouse-pipeline",
+    "nameWithOwner": "Big-jpg/databricks-lakehouse-pipeline",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Jupyter Notebook"
     },
@@ -557,6 +648,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "closegate",
+    "nameWithOwner": "Big-jpg/closegate",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -572,6 +665,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "Big-jpg",
+    "nameWithOwner": "Big-jpg/Big-jpg",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2025-10-08T02:41:43Z",
     "stargazerCount": 0,
@@ -585,6 +680,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "next-boids-text",
+    "nameWithOwner": "Big-jpg/next-boids-text",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -600,6 +697,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "orbitme",
+    "nameWithOwner": "Big-jpg/orbitme",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -615,6 +714,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "NeuralNet",
+    "nameWithOwner": "Big-jpg/NeuralNet",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "JavaScript"
     },
@@ -630,6 +731,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "recupare",
+    "nameWithOwner": "Big-jpg/recupare",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -645,6 +748,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "explain-this",
+    "nameWithOwner": "Big-jpg/explain-this",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -660,6 +765,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "ever-gauzy",
+    "nameWithOwner": "Big-jpg/ever-gauzy",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -675,6 +782,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "the-book-of-secret-knowledge",
+    "nameWithOwner": "Big-jpg/the-book-of-secret-knowledge",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2025-08-27T15:32:58Z",
     "stargazerCount": 0,
@@ -688,6 +797,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "minima",
+    "nameWithOwner": "Big-jpg/minima",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "PowerShell"
     },
@@ -703,6 +814,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "ai-elements",
+    "nameWithOwner": "Big-jpg/ai-elements",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -718,6 +831,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "swaptube",
+    "nameWithOwner": "Big-jpg/swaptube",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "C++"
     },
@@ -733,6 +848,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "openai-agents-js",
+    "nameWithOwner": "Big-jpg/openai-agents-js",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -748,6 +865,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "firegeo",
+    "nameWithOwner": "Big-jpg/firegeo",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2025-07-22T01:48:04Z",
     "stargazerCount": 0,
@@ -761,6 +880,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "side-projects",
+    "nameWithOwner": "Big-jpg/side-projects",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "JavaScript"
     },
@@ -776,6 +897,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "slidePacker",
+    "nameWithOwner": "Big-jpg/slidePacker",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "JavaScript"
     },
@@ -791,6 +914,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "inference-knowledge-engine",
+    "nameWithOwner": "Big-jpg/inference-knowledge-engine",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -806,6 +931,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "firecrawl-app-examples",
+    "nameWithOwner": "Big-jpg/firecrawl-app-examples",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Jupyter Notebook"
     },
@@ -821,6 +948,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "comic-gen",
+    "nameWithOwner": "Big-jpg/comic-gen",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -836,6 +965,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "mp4towebm",
+    "nameWithOwner": "Big-jpg/mp4towebm",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "CSS"
     },
@@ -851,6 +982,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "webm_to_mp4",
+    "nameWithOwner": "Big-jpg/webm_to_mp4",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2025-05-30T09:12:40Z",
     "stargazerCount": 0,
@@ -864,6 +997,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "webappanalyzer",
+    "nameWithOwner": "Big-jpg/webappanalyzer",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -879,6 +1014,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "WebAnalyze",
+    "nameWithOwner": "Big-jpg/WebAnalyze",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -894,6 +1031,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "burnbook",
+    "nameWithOwner": "Big-jpg/burnbook",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -909,6 +1048,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "ozquotes",
+    "nameWithOwner": "Big-jpg/ozquotes",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -918,12 +1059,31 @@
     "readme": "Favicon sourced from:\n\n<a href=\"https://www.flaticon.com/free-icons/solar-cell\" title=\"solar cell icons\">Solar cell icons created by photo3idea_studio - Flaticon</a>\n"
   },
   {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "oz-quotes-landing",
+    "nameWithOwner": "five0nit/oz-quotes-landing",
+    "ownerLogin": "five0nit",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2024-10-03T08:19:04Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/five0nit/oz-quotes-landing",
+    "readme": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).\n\n## Getting Started\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n# or\npnpm dev\n# or\nbun dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\nYou can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.\n\nThis project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.\n\n## Learn More\n\nTo learn more about Next.js, take a look at the following resources:\n\n- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.\n- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.\n\nYou can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!\n\n## Deploy on Vercel\n\nThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.\n\nCheck out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.\n"
+  },
+  {
     "description": "Pseudo API for Google Trends ",
     "homepageUrl": "",
     "isArchived": false,
     "isFork": true,
     "isPrivate": false,
     "name": "pytrends",
+    "nameWithOwner": "Big-jpg/pytrends",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -933,12 +1093,31 @@
     "readme": "# pytrends\n\n## Introduction\n\nUnofficial API for Google Trends\n\nAllows simple interface for automating downloading of reports from Google Trends. \nOnly good until Google changes their backend again :-P. When that happens feel free to contribute!\n\n**Looking for maintainers!** Please open an issue with a method of contacting you if you're interested.\n\n\n## Table of Contents\n\n* [Installation](#installation)\n\n* [API](#api)\n\n  * [API Methods](#api-methods)\n\n  * [Common API Parameters](#common-api-parameters)\n\n    * [Interest Over Time](#interest-over-time)\n    * [Multirange Interest Over Time](#multirange-interest-over-time)\n    * [Historical Hourly Interest](#historical-hourly-interest)\n    * [Interest by Region](#interest-by-region)\n    * [Related Topics](#related-topics)\n    * [Related Queries](#related-queries)\n    * [Trending Searches](#trending-searches)\n    * [Realtime Search Trends](#realtime-search-trends)\n    * [Top Charts](#top-charts)\n    * [Suggestions](#suggestions)\n\n  * [Caveats](#caveats)\n\n* [Credits](#credits)\n\n## Installation\n\n    pip install pytrends\n\n## Requirements\n\n* Written for Python 3.3+\n* Requires Requests, lxml, Pandas\n\n<sub><sup>[back to top](#pytrends)</sub></sup>\n\n## API\n\n### Connect to Google\n\n    from pytrends.request import TrendReq\n\n    pytrends = TrendReq(hl='en-US', tz=360)\n\nor if you want to use proxies as you are blocked due to Google rate limit:\n\n\n    from pytrends.request import TrendReq\n\n    pytrends = TrendReq(hl='en-US', tz=360, timeout=(10,25), proxies=['https://34.203.233.13:80',], retries=2, backoff_factor=0.1, requests_args={'verify':False})\n\n* `timeout(connect, read)`\n  - See explantation on this on [requests docs](https://requests.readthedocs.io/en/master/user/advanced/#timeouts)\n* tz\n  - Timezone Offset\n  - For example US CST is ```'360'``` (note **NOT** -360, Google uses timezone this way...)\n\n* `proxies`\n\n  - https proxies Google passed ONLY\n  - list ```['https://34.203.233.13:80','https://35.201.123.31:880', ..., ...]```\n  \n* `retries`\n\n  - number of retries total/connect/read all represented by one scalar\n\n* `backoff_factor`\n\n  - A backoff factor to apply between attempts after the second try (most errors are resolved immediately by a second try without a delay). urllib3 will sleep for: ```{backoff factor} * (2 ^ ({number of total retries} - 1))``` seconds. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, …] between retries. It will never be longer than Retry.BACKOFF_MAX. By default, backoff is disabled (set to 0).\n\n* `requests_args`\n  - A dict with additional parameters to pass along to the underlying requests library, for example verify=False to ignore SSL errors\n\nNote: the parameter `hl` specifies host language for accessing Google Trends. \nNote: only https proxies will work, and you need to add the port number after the proxy ip address\n\n### Build Payload\n    kw_list = [\"Blockchain\"]\n    pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='', gprop='')\n\nParameters\n\n* `kw_list`\n\n  - *Required*\n  - Keywords to get data for\n\n\n<sub><sup>[back to top](#API)</sub></sup>\n\n## API Methods\n\nThe following API methods are available:\n\n* [Interest Over Time](#interest-over-time): returns historical, indexed data for when the keyword was searched most as shown on Google Trends' Interest Over Time section.\n\n* [Multirange Interest Over Time](#multirange_interest_over_time): returns historical, indexed data similar to interest over time, but across multiple time date ranges. \n\n* [Historical Hourly Interest](#historical-hourly-interest): returns historical, indexed, hourly data for when the keyword was searched most as shown on Google Trends' Interest Over Time section. It sends multiple requests to Google, each retrieving one week of hourly data. It seems like this would be the only way to get historical, hourly data. \n\n* [Interest by Region](#interest-by-region): returns data for where the keyword is most searched as shown on Google Trends' Interest by Region section.\n\n* [Related Topics](#related-topics): returns data for the related keywords to a provided keyword shown on Google Trends' Related Topics section.\n\n* [Related Queries](#related-queries): returns data for the related keywords to a provided keyword shown on Google Trends' Related Queries section.\n\n* [Trending Searches](#trending-searches): returns data for latest trending searches shown on Google Trends' Trending Searches section.\n\n* [Top Charts](#top-charts): returns the data for a given topic shown in Google Trends' Top Charts section.\n\n* [Suggestions](#suggestions): returns a list of additional suggested keywords that can be used to refine a trend search.\n\n<sub><sup>[back to top](#api-methods)</sub></sup>\n\n## Common API parameters\n\nMany API methods use the following:\n\n* `kw_list`\n\n  - keywords to get data for\n  - Example ```['Pizza']```\n  - Up to five terms in a list: ```['Pizza', 'Italian', 'Spaghetti', 'Breadsticks', 'Sausage']```\n\n    * Advanced Keywords\n\n      - When using Google Trends dashboard Google may provide suggested narrowed search terms.\n      - For example ```\"iron\"``` will have a drop down of ```\"Iron Chemical Element, Iron Cross, Iron Man, etc\"```.\n      - Find the encoded topic by using the get_suggestions() function and choose the most relevant one for you.\n      - For example: ```https://www.google.com/trends/explore#q=%2Fm%2F025rw19&cmpt=q```\n      - ```\"/m/025rw19\"``` is the topic \"Iron Chemical Element\" to use this with pytrends\n      - You can also use `pytrends.suggestions()` to automate this.\n\n* `cat`\n\n  - Category to narrow results\n  - Find available categories by inspecting the url when manually using Google Trends. The category starts after ```cat=``` and ends before the next ```&``` or view this [wiki page containing all available categories](https://github.com/pat310/google-trends-api/wiki/Google-Trends-Categories)\n  - For example: ```\"https://www.google.com/trends/explore#q=pizza&cat=71\"```\n  - ```'71'``` is the category\n  - Defaults to no category\n\n* `geo`\n\n  - Two letter country abbreviation\n  - For example United States is ```'US'```\n  - Defaults to World\n  - More detail available for States/Provinces by specifying additional abbreviations\n  - For example: Alabama would be ```'US-AL'```\n  - For example: England would be ```'GB-ENG'```\n  - Can also be a list of up to five regions\n\n* `tz`\n\n  - Timezone Offset (in minutes)\n  - For more information of Timezone Offset, [view this wiki page containing about UCT offset](https://en.wikipedia.org/wiki/UTC_offset)\n  - For example US CST is ```'360'``` \n\n* `timeframe`\n\n  - Date to start from\n  - Defaults to last 5yrs, `'today 5-y'`.\n  - Everything `'all'`\n  - Specific dates, 'YYYY-MM-DD YYYY-MM-DD' example `'2016-12-14 2017-01-25'`\n  - Specific datetimes, 'YYYY-MM-DDTHH YYYY-MM-DDTHH' example `'2017-02-06T10 2017-02-12T07'`\n      - Note Time component is based off UTC\n\n  - Current Time Minus Time Pattern:\n\n    - By Month: ```'today #-m'``` where # is the number of months from that date to pull data for\n      - For example: ``'today 3-m'`` would get data from today to 3months ago\n      - **NOTE** Google uses UTC date as *'today'*\n      - **Works for 1, 3, 12 months only!**\n\n    - Daily: ```'now #-d'``` where # is the number of days from that date to pull data for\n      - For example: ``'now 7-d'`` would get data from the last week\n      - **Works for 1, 7 days only!**\n\n    - Hourly: ```'now #-H'``` where # is the number of hours from that date to pull data for\n      - For example: ``'now 1-H'`` would get data from the last hour\n      - **Works for 1, 4 hours only!**\n\n* `gprop`\n\n  - What Google property to filter to\n  - Example ```'images'```\n  - Defaults to web searches\n  - Can be ```images```, ```news```, ```youtube``` or ```froogle``` (for Google Shopping results)\n\n\n<sub><sup>[back to top](#api-payload-keys)</sub></sup>\n\n### Interest Over Time\n\n    pytrends.interest_over_time()\n\nReturns pandas.Dataframe\n\n<sub><sup>[back to top](#interest_over_time)</sub></sup>\n\n### Multirange Interest Over Time\n\n    pytrends.build_payload(kw_list=['pizza', 'bagel'], timeframe=['2022-09-04 2022-09-10', '2022-09-18 2022-09-24']))\n    pytrends.multirange_interest_over_time()\n\nReturns pandas.Dataframe. It includes the average in the first row.\n\n<sub><sup>[back to top](#multirange_interest_over_time)</sub></sup>\n\n### Historical Hourly Interest\n\n    pytrends.get_historical_interest(kw_list, year_start=2018, month_start=1, day_start=1, hour_start=0, year_end=2018, month_end=2, day_end=1, hour_end=0, cat=0, geo='', gprop='', sleep=0)\n    \nParameters \n\n* `kw_list`\n\n  - *Required*\n  - list of keywords that you would like the historical data\n\n* `year_start, month_start, day_start, hour_start, year_end, month_end, day_end, hour_end`\n\n  - the time period for which you would like the historical data\n  \n* `sleep`\n\n  - If you are rate-limited by Google, you should set this parameter to something (i.e. 60) to space off each API call. \n  \nReturns pandas.Dataframe\n\n<sub><sup>[back to top](#historical-hourly-interest)</sub></sup>\n\n### Interest by Region\n\n    pytrends.interest_by_region(resolution='COUNTRY', inc_low_vol=True, inc_geo_code=False)\n\nParameters\n\n* `resolution`\n\n  - 'CITY' returns city level data\n  - 'COUNTRY' returns country level data\n  - 'DMA'  returns Metro level data\n  - 'REGION'  returns Region level data\n\n* `inc_low_vol`\n\n  - True/False (includes google trends data for low volume countries/regions as well)\n\n* `inc_geo_code`\n  \n  - True/False (includes ISO codes of countries along with the names in the data)\n\nReturns pandas.DataFrame\n\n<sub><sup>[back to top](#interest_by_region)</sub></sup>\n\n### Related Topics\n\n    pytrends.related_topics()\n\nReturns dictionary of pandas.DataFrames\n\n<sub><sup>[back to top](#related_topics)</sub></sup>\n\n### Related Queries\n\n    pytrends.related_queries()\n\nReturns dictionary of pandas.DataFrames\n\n<sub><sup>[back to top](#related_queries)</sub></sup>\n\n### Trending Searches\n\n\tpytrends.trending_searches(pn='united_states') # trending searches in real time for United States\n\tpytrends.trending_searches(pn='japan') # Japan\n\nReturns pandas.DataFrame\n\n<sub><sup>[back to top](#trending_searches)</sub></sup>\n\n### Realtime Search Trends\n\n\tpytrends.realtime_trending_searches(pn='US') # realtime search trends for United States\n\tpytrends.realtime_trending_searches(pn='IN') # India\n\nReturns pandas.DataFrame\n\n<sub><sup>[back to top](#realtime-search-trends)</sub></sup>\n\n### Top Charts\n\n    pytrends.top_charts(date, hl='en-US', tz=300, geo='GLOBAL')\n\nParameters\n\n* `date`\n\n  - *Required*\n  - YYYY integer\n  - Example `2019` for the year 2019 Top Chart data\n  - **Note** Google removed support for monthly queries (e.g. YYYY-MM)\n  - **Note** Google does not return data for the current year\n\nReturns pandas.DataFrame\n\n<sub><sup>[back to top](#top_charts)</sub></sup>\n\n### Suggestions\n\n    pytrends.suggestions(keyword)\n\nParameters\n\n* `keyword`\n\n  - *Required*\n  - keyword to get suggestions for\n\nReturns dictionary\n\n<sub><sup>[back to top](#suggestions)</sub></sup>\n\n### Categories\n\n    pytrends.categories()\n\nReturns dictionary\n\n<sub><sup>[back to top](#suggestions)</sub></sup>\n\n# Caveats\n\n* This is not an official or supported API\n* Google may change aggregation level for items with very large or very small search volume\n* Rate Limit is not publicly known, let me know if you have a consistent estimate\n  * One user reports that 1,400 sequential requests of a 4 hours timeframe got them to the limit. (Replicated on 2 networks)\n  * It has been tested, and 60 seconds of sleep between requests (successful or not) appears to be the correct amount once you reach the limit.\n* For certain configurations the dependency lib certifi requires the environment variable REQUESTS_CA_BUNDLE to be explicitly set and exported. This variable must contain the path where the ca-certificates are saved or a SSLError: [SSL: CERTIFICATE_VERIFY_FAILED] error is given at runtime. \n\n# Contributing\n\nSee the [CONTRIBUTING](CONTRIBUTING.md) file.\n\n# Credits\n\n* Major JSON revision ideas taken from pat310's JavaScript library\n\n  - https://github.com/pat310/google-trends-api\n\n* Connecting to google code heavily based off Stack Overflow post\n\n  - http://stackoverflow.com/questions/6754709/logging-in-to-google-using-python\n\n* With some ideas pulled from Matt Reid's Google Trends API\n\n  - https://bitbucket.org/mattreid9956/google-trend-api/overview\n"
   },
   {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "py-template",
+    "nameWithOwner": "AAG-RF/py-template",
+    "ownerLogin": "AAG-RF",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2024-06-04T05:43:29Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/AAG-RF/py-template",
+    "readme": ""
+  },
+  {
     "description": "Simple solar system experiment",
     "homepageUrl": "https://www.youtube.com/watch?v=7axImc1sxa0",
     "isArchived": false,
     "isFork": true,
     "isPrivate": false,
     "name": "Solar-System",
+    "nameWithOwner": "Big-jpg/Solar-System",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "C#"
     },
@@ -954,6 +1133,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "MsAI",
+    "nameWithOwner": "Big-jpg/MsAI",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2024-01-16T01:40:32Z",
     "stargazerCount": 0,
@@ -967,6 +1148,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "BrainDiffusion",
+    "nameWithOwner": "Big-jpg/BrainDiffusion",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -982,6 +1165,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "mindsdb",
+    "nameWithOwner": "Big-jpg/mindsdb",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -997,6 +1182,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "nevermore",
+    "nameWithOwner": "Big-jpg/nevermore",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -1012,6 +1199,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "dopefolio",
+    "nameWithOwner": "Big-jpg/dopefolio",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "HTML"
     },
@@ -1027,6 +1216,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "instructGOOSE",
+    "nameWithOwner": "Big-jpg/instructGOOSE",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Jupyter Notebook"
     },
@@ -1042,6 +1233,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "audiolm-pytorch",
+    "nameWithOwner": "Big-jpg/audiolm-pytorch",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -1057,6 +1250,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "supabase-nextjs",
+    "nameWithOwner": "Big-jpg/supabase-nextjs",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "CSS"
     },
@@ -1072,6 +1267,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "terminalGPT",
+    "nameWithOwner": "Big-jpg/terminalGPT",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "JavaScript"
     },
@@ -1087,6 +1284,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "microlearning",
+    "nameWithOwner": "Big-jpg/microlearning",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2022-11-11T06:20:13Z",
     "stargazerCount": 0,
@@ -1100,6 +1299,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "colorful-life",
+    "nameWithOwner": "Big-jpg/colorful-life",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "JavaScript"
     },

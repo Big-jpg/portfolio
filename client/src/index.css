@@ -213,7 +213,7 @@ a {
   width: min(100%, 1320px);
   min-height: 3.55rem;
   margin-inline: auto;
-  padding: 0.4rem 0.5rem 0.4rem 1.15rem;
+  padding: 0.35rem 0.5rem 0.35rem 0.65rem;
   border: 2px solid rgba(223, 234, 226, 0.9);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.82);
@@ -228,17 +228,38 @@ a {
   gap: 0.55rem;
   min-height: 2.5rem;
   font-family: var(--font-display);
-  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+.site-avatar {
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: 0 0 auto;
+  border: 2px solid #91cbbb;
+  border-radius: 50%;
+  background: var(--color-eddie-green);
+  object-fit: cover;
+}
+
+.site-wordmark-copy {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.site-wordmark-copy strong {
+  font-size: 0.8rem;
   font-weight: 650;
   letter-spacing: 0.08em;
 }
 
-.site-wordmark > span {
-  width: 0.7rem;
-  height: 0.7rem;
-  border: 2px solid #6eab9c;
-  border-radius: 50%;
-  background: var(--color-eddie-green);
+.site-wordmark-copy small {
+  color: #789086;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .site-nav > div {
@@ -273,7 +294,7 @@ a {
 /* Scroll-driven repository tree */
 .repo-tree-story {
   position: relative;
-  height: 380svh;
+  height: 300svh;
   background: #fff;
 }
 
@@ -352,8 +373,11 @@ a {
   right: clamp(1.5rem, 5vw, 5rem);
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.55rem;
+  max-width: 48vw;
   letter-spacing: 0.08em;
+  text-align: right;
 }
 
 .tree-index-status > span {
@@ -362,6 +386,16 @@ a {
   border: 2px solid #7cb7a8;
   border-radius: 50%;
   background: var(--color-eddie-green);
+}
+
+.tree-index-status > b {
+  border: 1px solid #cddfd4;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 0.18rem 0.42rem;
+  color: #688177;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
 }
 
 .tree-node-position {
@@ -400,23 +434,20 @@ a {
 
 .tree-root-node {
   gap: 0.75rem;
-  width: 15.5rem;
+  width: clamp(20rem, 29vw, 24rem);
   min-height: 4.6rem;
   padding: 0.7rem 1.15rem;
   border-radius: 999px;
 }
 
-.tree-root-mark {
-  display: grid;
-  place-items: center;
+.tree-root-avatar {
   width: 2.7rem;
   height: 2.7rem;
   flex: 0 0 auto;
   border: 2px solid #75b5a5;
   border-radius: 50%;
   background: var(--color-eddie-green);
-  color: #598f81;
-  font-size: 0.65rem;
+  object-fit: cover;
 }
 
 .tree-root-node > span:last-child,
@@ -430,6 +461,24 @@ a {
 .tree-node strong {
   font-family: var(--font-display);
   font-weight: 620;
+}
+
+.tree-root-node strong {
+  display: flex;
+  align-items: baseline;
+  gap: 0.48rem;
+  min-width: 0;
+}
+
+.tree-root-node strong em {
+  overflow: hidden;
+  color: #82968d;
+  font-family: var(--font-sans);
+  font-size: 0.67rem;
+  font-style: normal;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .tree-node small {
@@ -1083,6 +1132,13 @@ a {
   margin-top: clamp(2.5rem, 5vw, 4.2rem);
 }
 
+.project-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.75rem;
+}
+
 .project-language {
   display: inline-flex;
   align-items: center;
@@ -1098,6 +1154,16 @@ a {
   width: 0.62rem;
   height: 0.62rem;
   border-radius: 50%;
+}
+
+.project-owner {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0.2rem 0.48rem;
+  color: #71867b;
+  font-size: 0.66rem;
+  font-weight: 800;
 }
 
 .project-card h3 {
@@ -1401,7 +1467,28 @@ a {
 
   .site-nav {
     min-height: 3.25rem;
-    padding-left: 0.9rem;
+    padding-left: 0.45rem;
+  }
+
+  .site-avatar {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .site-wordmark-copy {
+    gap: 0.35rem;
+  }
+
+  .site-wordmark-copy strong {
+    font-size: 0.7rem;
+  }
+
+  .site-wordmark-copy small {
+    max-width: 8.5rem;
+    overflow: hidden;
+    font-size: 0.6rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .site-nav > div a:first-child {
@@ -1451,6 +1538,7 @@ a {
   }
 
   .mobile-tree-intro .tree-root-node {
+    width: min(100%, 22rem);
     text-align: left;
   }
 
@@ -1468,12 +1556,21 @@ a {
 
   .mobile-tree-flow > h2 {
     max-width: 12ch;
-    margin: 0 0 3rem;
+    margin: 0 0 1rem;
     font-family: var(--font-display);
     font-size: clamp(2.3rem, 11vw, 3.5rem);
     font-weight: 540;
     letter-spacing: -0.04em;
     line-height: 0.98;
+  }
+
+  .mobile-tree-context {
+    max-width: 34rem;
+    margin: 0 0 3rem;
+    color: var(--muted-foreground);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.65;
   }
 
   .mobile-availability {

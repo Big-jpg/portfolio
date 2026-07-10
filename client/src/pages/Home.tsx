@@ -5,6 +5,7 @@ import interpretations from "@/data/ai-interpretations.json";
 import { FilterBar } from "@/components/FilterBar";
 import { ProjectCard } from "@/components/ProjectCard";
 import { RepositoryTree } from "@/components/RepositoryTree";
+import { PORTFOLIO_IDENTITY } from "@/lib/identity";
 import { filterRepos, getLanguages, sortByPushedAt } from "@/lib/repo-utils";
 import type {
   FilterAvailability,
@@ -57,15 +58,24 @@ export default function Home() {
           <a
             href="#top"
             className="site-wordmark"
-            aria-label="Big-jpg portfolio home"
+            aria-label={`${PORTFOLIO_IDENTITY.handle}, ${PORTFOLIO_IDENTITY.displayName}, portfolio home`}
           >
-            <span aria-hidden="true" />
-            BIG—JPG
+            <img
+              src={PORTFOLIO_IDENTITY.avatarUrl}
+              alt=""
+              width="36"
+              height="36"
+              className="site-avatar"
+            />
+            <span className="site-wordmark-copy">
+              <strong>BIG—JPG</strong>
+              <small>{PORTFOLIO_IDENTITY.displayName}</small>
+            </span>
           </a>
           <div>
             <a href="#work">Work</a>
             <a
-              href="https://github.com/Big-jpg"
+              href={PORTFOLIO_IDENTITY.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -86,17 +96,19 @@ export default function Home() {
         <div className="work-heading-row">
           <div>
             <p className="eyebrow">The whole garden</p>
-            <h1 id="work-heading">Seventy-five ways of asking “what if?”</h1>
+            <h1 id="work-heading">
+              {allRepos.length} ways of asking “what if?”
+            </h1>
           </div>
           <p className="work-intro">
-            Data systems, playful experiments, agent workflows, geometry tools,
-            and production apps—kept together in one gently sortable place.
+            Public repositories owned by Big-jpg and selected collaborator or
+            organization work—kept together in one gently sortable place.
           </p>
         </div>
 
         <dl className="repository-stats" aria-label="Portfolio overview">
           <div>
-            <dt>Repositories</dt>
+            <dt>Public indexed</dt>
             <dd>{allRepos.length}</dd>
           </div>
           <div>
@@ -179,7 +191,7 @@ export default function Home() {
           <h2>Follow the next branch.</h2>
         </div>
         <a
-          href="https://github.com/Big-jpg"
+          href={PORTFOLIO_IDENTITY.githubUrl}
           target="_blank"
           rel="noopener noreferrer"
         >

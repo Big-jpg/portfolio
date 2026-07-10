@@ -24,6 +24,7 @@ import {
   HIGHLIGHTED_REPOS,
   formatDate,
 } from "@/lib/repo-utils";
+import { PORTFOLIO_IDENTITY } from "@/lib/identity";
 import type { Repo } from "@/lib/types";
 
 const allRepos = repos as Repo[];
@@ -127,6 +128,12 @@ export default function ProjectPage() {
                       Featured
                     </Badge>
                   )}
+                  {repo.ownerLogin &&
+                    repo.ownerLogin !== PORTFOLIO_IDENTITY.handle && (
+                      <Badge className="rounded-full border-2 border-border bg-secondary px-3 py-1 text-xs font-semibold text-muted-foreground shadow-none hover:bg-secondary">
+                        With {repo.ownerLogin}
+                      </Badge>
+                    )}
                 </div>
 
                 {(interpretation || repo.description) && (

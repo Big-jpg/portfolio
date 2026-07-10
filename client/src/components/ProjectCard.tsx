@@ -8,6 +8,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { formatDate, LANGUAGE_COLORS } from "@/lib/repo-utils";
+import { PORTFOLIO_IDENTITY } from "@/lib/identity";
 import type { RepoSummary } from "@/lib/types";
 
 interface ProjectCardProps {
@@ -25,6 +26,10 @@ export function ProjectCard({ repo, interpretation, index }: ProjectCardProps) {
     interpretation ||
     repo.description ||
     "A repository waiting for its field notes.";
+  const affiliatedOwner =
+    repo.ownerLogin && repo.ownerLogin !== PORTFOLIO_IDENTITY.handle
+      ? repo.ownerLogin
+      : null;
 
   return (
     <li className="repo-rail-item">
@@ -50,12 +55,17 @@ export function ProjectCard({ repo, interpretation, index }: ProjectCardProps) {
         </div>
 
         <div className="project-card-copy">
-          <div className="project-language">
-            <span
-              style={{ backgroundColor: languageColor }}
-              aria-hidden="true"
-            />
-            {language}
+          <div className="project-meta-row">
+            <div className="project-language">
+              <span
+                style={{ backgroundColor: languageColor }}
+                aria-hidden="true"
+              />
+              {language}
+            </div>
+            {affiliatedOwner && (
+              <span className="project-owner">with {affiliatedOwner}</span>
+            )}
           </div>
           <h3>{repo.name}</h3>
           <p>{description}</p>

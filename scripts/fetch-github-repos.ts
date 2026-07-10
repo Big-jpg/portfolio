@@ -20,6 +20,8 @@ type RepoNode = {
   isFork: boolean;
   isPrivate: boolean;
   name: string;
+  nameWithOwner: string;
+  owner: { login: string };
   primaryLanguage: { name: string } | null;
   pushedAt: string | null;
   updatedAt: string;
@@ -38,6 +40,8 @@ type Repo = {
   isFork: boolean;
   isPrivate: boolean;
   name: string;
+  nameWithOwner: string;
+  ownerLogin: string;
   primaryLanguage: { name: string } | null;
   pushedAt: string;
   stargazerCount: number;
@@ -67,7 +71,7 @@ const REPOS_QUERY = `
       repositories(
         first: 100
         after: $cursor
-        ownerAffiliations: OWNER
+        ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER]
         privacy: PUBLIC
         orderBy: { field: PUSHED_AT, direction: DESC }
       ) {
@@ -83,6 +87,10 @@ const REPOS_QUERY = `
           isFork
           isPrivate
           name
+          nameWithOwner
+          owner {
+            login
+          }
           primaryLanguage {
             name
           }
@@ -146,19 +154,27 @@ function loadLocalEnv() {
 }
 
 function getToken() {
-  const envToken = process.env.GH_TOKEN || process.env.GITHUB_TOKEN || process.env.GITHUB_PAT;
+  const envToken =
+    process.env.GH_TOKEN || process.env.GITHUB_TOKEN || process.env.GITHUB_PAT;
   if (envToken) {
     return envToken;
   }
 
   try {
-    return execFileSync("gh", ["auth", "token"], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim();
+    return execFileSync("gh", ["auth", "token"], {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
   } catch {
     return "";
   }
 }
 
-async function githubGraphQL<T>(token: string, query: string, variables: Record<string, unknown>): Promise<T> {
+async function githubGraphQL<T>(
+  token: string,
+  query: string,
+  variables: Record<string, unknown>
+): Promise<T> {
   const response = await fetch(GITHUB_GRAPHQL_URL, {
     method: "POST",
     headers: {
@@ -170,12 +186,16 @@ async function githubGraphQL<T>(token: string, query: string, variables: Record<
   });
 
   if (!response.ok) {
-    throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+    throw new Error(
+      `GitHub API error: ${response.status} ${response.statusText}`
+    );
   }
 
   const json = (await response.json()) as GraphQLResponse<T>;
   if (json.errors?.length) {
-    throw new Error(`GitHub GraphQL errors: ${json.errors.map((error) => error.message).join(", ")}`);
+    throw new Error(
+      `GitHub GraphQL errors: ${json.errors.map(error => error.message).join(", ")}`
+    );
   }
   if (!json.data) {
     throw new Error("GitHub GraphQL response did not include data");
@@ -185,7 +205,12 @@ async function githubGraphQL<T>(token: string, query: string, variables: Record<
 }
 
 function readmeFrom(repo: RepoNode) {
-  const text = repo.readmeMd?.text || repo.readmeMarkdown?.text || repo.readmeMD?.text || repo.readmeTxt?.text || "";
+  const text =
+    repo.readmeMd?.text ||
+    repo.readmeMarkdown?.text ||
+    repo.readmeMD?.text ||
+    repo.readmeTxt?.text ||
+    "";
   if (README_MAX_CHARS > 0 && text.length > README_MAX_CHARS) {
     return `${text.slice(0, README_MAX_CHARS).trimEnd()}\n\n[README truncated for portfolio build.]`;
   }
@@ -200,6 +225,8 @@ function normalizeRepo(repo: RepoNode): Repo {
     isFork: repo.isFork,
     isPrivate: repo.isPrivate,
     name: repo.name,
+    nameWithOwner: repo.nameWithOwner,
+    ownerLogin: repo.owner.login,
     primaryLanguage: repo.primaryLanguage,
     pushedAt: repo.pushedAt || repo.updatedAt,
     stargazerCount: repo.stargazerCount,
@@ -226,12 +253,18 @@ async function fetchRepos(token: string) {
     const connection = data.user.repositories;
     totalCount = connection.totalCount;
     repos.push(...connection.nodes.map(normalizeRepo));
-    cursor = connection.pageInfo.hasNextPage ? connection.pageInfo.endCursor : null;
+    cursor = connection.pageInfo.hasNextPage
+      ? connection.pageInfo.endCursor
+      : null;
 
-    console.log(`Fetched ${repos.length}/${totalCount} public repos. Rate limit remaining: ${data.rateLimit.remaining}.`);
+    console.log(
+      `Fetched ${repos.length}/${totalCount} affiliated public repos. Rate limit remaining: ${data.rateLimit.remaining}.`
+    );
   } while (cursor);
 
-  return repos.sort((a, b) => new Date(b.pushedAt).getTime() - new Date(a.pushedAt).getTime());
+  return repos.sort(
+    (a, b) => new Date(b.pushedAt).getTime() - new Date(a.pushedAt).getTime()
+  );
 }
 
 async function main() {
@@ -239,7 +272,8 @@ async function main() {
 
   const token = getToken();
   if (!token) {
-    const message = "No GH_TOKEN, GITHUB_TOKEN, GITHUB_PAT, or GitHub CLI token found; using existing checked-in repo data.";
+    const message =
+      "No GH_TOKEN, GITHUB_TOKEN, GITHUB_PAT, or GitHub CLI token found; using existing checked-in repo data.";
     if (OPTIONAL_TOKEN) {
       console.log(message);
       return;
@@ -250,8 +284,10 @@ async function main() {
   const repos = await fetchRepos(token);
   fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(repos, null, 2)}\n`, "utf8");
 
-  const forkCount = repos.filter((repo) => repo.isFork).length;
-  console.log(`Wrote ${repos.length} public repos to ${OUTPUT_PATH} (${forkCount} forks).`);
+  const forkCount = repos.filter(repo => repo.isFork).length;
+  console.log(
+    `Wrote ${repos.length} affiliated public repos to ${OUTPUT_PATH} (${forkCount} forks).`
+  );
 }
 
 main().catch((error: unknown) => {

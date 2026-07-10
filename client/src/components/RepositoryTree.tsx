@@ -16,6 +16,7 @@ import {
   type RepoTreeRepoNode,
   type RepoTreeTerminalNode,
 } from "@/lib/repo-tree";
+import { PORTFOLIO_IDENTITY } from "@/lib/identity";
 import { LANGUAGE_COLORS } from "@/lib/repo-utils";
 import type { RepoSummary } from "@/lib/types";
 
@@ -42,21 +43,21 @@ export function RepositoryTree({
     offset: ["start start", "end end"],
   });
   const progress = useSpring(storyScroll, {
-    stiffness: 72,
-    damping: 30,
-    mass: 0.85,
+    stiffness: 110,
+    damping: 32,
+    mass: 0.6,
   });
 
   useMotionValueEvent(progress, "change", value => {
     if (reduceMotion) return;
     const nextStage =
-      value >= 0.84
+      value >= 0.62
         ? 4
-        : value >= 0.6
+        : value >= 0.36
           ? 3
-          : value >= 0.38
+          : value >= 0.24
             ? 2
-            : value >= 0.18
+            : value >= 0.12
               ? 1
               : 0;
     setStage(current => (current === nextStage ? current : nextStage));
@@ -67,22 +68,29 @@ export function RepositoryTree({
     [0, 0.42, 1],
     ["#FFFFFF", "#FAFCFA", "#F5F9F6"]
   );
-  const rootY = useTransform(progress, [0, 0.18], ["26vh", "0vh"]);
-  const rootScale = useTransform(progress, [0, 0.18], [1.08, 1]);
-  const introOpacity = useTransform(progress, [0, 0.12, 0.2], [1, 1, 0]);
-  const firstOpacity = useTransform(progress, [0.16, 0.27], [0, 1]);
-  const firstScale = useTransform(progress, [0.16, 0.27], [0.86, 1]);
-  const secondOpacity = useTransform(progress, [0.34, 0.48], [0, 1]);
-  const secondScale = useTransform(progress, [0.34, 0.48], [0.86, 1]);
-  const leafOpacity = useTransform(progress, [0.52, 0.69], [0, 1]);
-  const leafScale = useTransform(progress, [0.52, 0.69], [0.82, 1]);
-  const leafMetaOpacity = useTransform(progress, [0.68, 0.79], [0, 1]);
-  const finishOpacity = useTransform(progress, [0.82, 0.93], [0, 1]);
+  const rootY = useTransform(progress, [0, 0.12], ["26vh", "0vh"]);
+  const rootScale = useTransform(progress, [0, 0.12], [1.08, 1]);
+  const introOpacity = useTransform(progress, [0, 0.08, 0.13], [1, 1, 0]);
+  const firstOpacity = useTransform(progress, [0.12, 0.18], [0, 1]);
+  const firstScale = useTransform(progress, [0.12, 0.18], [0.9, 1]);
+  const secondOpacity = useTransform(progress, [0.24, 0.3], [0, 1]);
+  const secondScale = useTransform(progress, [0.24, 0.3], [0.9, 1]);
+  const leafOpacity = useTransform(progress, [0.36, 0.44], [0, 1]);
+  const leafScale = useTransform(progress, [0.36, 0.44], [0.88, 1]);
+  const leafMetaOpacity = useTransform(progress, [0.42, 0.48], [0, 1]);
+  const finishOpacity = useTransform(progress, [0.62, 0.7], [0, 1]);
   const ambientShift = useTransform(progress, [0, 1], [0, 42]);
   const ambientShiftBlue = useTransform(progress, [0, 1], [0, -36]);
 
   const terminalNodes = tree.children.flatMap(branch => branch.children);
   const repoNodes = terminalNodes.flatMap(branch => branch.children);
+  const stageLabels = [
+    `${tree.count} public repositories indexed`,
+    `2 paths across ${tree.count} public repositories`,
+    `4 groups across ${tree.count} public repositories`,
+    `${repoNodes.length} featured here · ${tree.count} indexed`,
+    `All ${tree.count} public repositories are below`,
+  ];
 
   return (
     <section
@@ -111,9 +119,8 @@ export function RepositoryTree({
           </motion.p>
           <div className="tree-index-status" aria-hidden="true">
             <span />
-            {stage < 3
-              ? "Opening the archive"
-              : `${repoNodes.length} repositories retrieved`}
+            <b>{stage + 1}/5</b>
+            {stageLabels[stage]}
           </div>
 
           <div className="tree-node-position tree-root-position">
@@ -124,12 +131,19 @@ export function RepositoryTree({
                 scale: reduceMotion ? 1 : rootScale,
               }}
             >
-              <span className="tree-root-mark" aria-hidden="true">
-                ●
-              </span>
+              <img
+                src={PORTFOLIO_IDENTITY.avatarUrl}
+                alt=""
+                width="44"
+                height="44"
+                className="tree-root-avatar"
+              />
               <span>
-                <strong>Big-jpg</strong>
-                <small>{tree.count} repositories</small>
+                <strong>
+                  {PORTFOLIO_IDENTITY.handle}
+                  <em>{PORTFOLIO_IDENTITY.displayName}</em>
+                </strong>
+                <small>{tree.count} public repositories indexed</small>
               </span>
             </motion.div>
           </div>
@@ -140,7 +154,7 @@ export function RepositoryTree({
           >
             <p>One small place to begin.</p>
             <span>
-              Scroll to let the work branch out
+              Scroll to reveal {repoNodes.length} featured paths
               <ArrowDown aria-hidden="true" />
             </span>
           </motion.div>
@@ -224,7 +238,7 @@ export function RepositoryTree({
             style={{ opacity: reduceMotion ? 1 : finishOpacity }}
             tabIndex={stage >= 4 || reduceMotion ? 0 : -1}
           >
-            Explore all {tree.count} projects
+            Browse all {tree.count} public repositories
             <ArrowDown aria-hidden="true" />
           </motion.a>
         </div>
@@ -386,12 +400,19 @@ function MobileTree({ branches, count, reduceMotion }: MobileTreeProps) {
     <div className="tree-mobile">
       <div className="mobile-tree-intro">
         <div className="tree-node tree-root-node">
-          <span className="tree-root-mark" aria-hidden="true">
-            ●
-          </span>
+          <img
+            src={PORTFOLIO_IDENTITY.avatarUrl}
+            alt=""
+            width="44"
+            height="44"
+            className="tree-root-avatar"
+          />
           <span>
-            <strong>Big-jpg</strong>
-            <small>{count} repositories</small>
+            <strong>
+              {PORTFOLIO_IDENTITY.handle}
+              <em>{PORTFOLIO_IDENTITY.displayName}</em>
+            </strong>
+            <small>{count} public repositories indexed</small>
           </span>
         </div>
         <p>One small place to begin.</p>
@@ -404,6 +425,10 @@ function MobileTree({ branches, count, reduceMotion }: MobileTreeProps) {
       <div className="mobile-tree-flow">
         <p className="eyebrow">A living map of the work</p>
         <h2>Each branch opens into something real.</h2>
+        <p className="mobile-tree-context">
+          Eight featured projects from {count} public repositories. The complete
+          archive follows below.
+        </p>
 
         {branches.map((branch, branchIndex) => (
           <motion.section
@@ -436,7 +461,7 @@ function MobileTree({ branches, count, reduceMotion }: MobileTreeProps) {
         ))}
 
         <a href="#work" className="mobile-tree-finish">
-          Explore all {count} projects
+          Browse all {count} public repositories
           <ArrowDown aria-hidden="true" />
         </a>
       </div>

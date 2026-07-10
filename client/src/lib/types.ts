@@ -2,6 +2,8 @@
 
 export interface RepoSummary {
   name: string;
+  nameWithOwner?: string;
+  ownerLogin?: string;
   description: string;
   homepageUrl: string;
   isArchived: boolean;
