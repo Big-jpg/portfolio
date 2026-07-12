@@ -3,9 +3,23 @@ export interface FeaturedWork {
   title: string;
   summary: string;
   architecture: string[];
+  liveUrl?: string;
 }
 
 export const FEATURED_WORK: FeaturedWork[] = [
+  {
+    name: "real-data-for-all",
+    title: "Real Data for All",
+    summary:
+      "Open, auditable Perth house-sales data, rebuilt from a Fabric medallion pipeline into durable Vercel workflows, canonical Neon records, and MotherDuck analytics.",
+    architecture: [
+      "Immutable Vercel Blob sources with SHA-256 lineage",
+      "Durable, idempotent Vercel Workflow ingestion",
+      "Canonical property and sale records in Neon Postgres",
+      "MotherDuck OLAP and deterministic report exports",
+    ],
+    liveUrl: "https://perthhousedata.com",
+  },
   {
     name: "github-motion-graph",
     title: "GitHub Motion Graph",
@@ -19,27 +33,15 @@ export const FEATURED_WORK: FeaturedWork[] = [
     ],
   },
   {
-    name: "fabric-apps-react-webapp-starter",
-    title: "Fabric Semantic Model Starter",
+    name: "invoicepipe",
+    title: "InvoicePipe",
     summary:
-      "A React and TypeScript starter for Microsoft Fabric Apps, using live DAX metadata to turn a Power BI semantic model into an explorable interface.",
+      "An end-to-end invoice system joining a Next.js application, Azure AI extraction, and automated document routing through clear service boundaries.",
     architecture: [
-      "React 19 and TypeScript",
-      "Microsoft Fabric Apps query bridge",
-      "Live DAX semantic-model metadata",
-      "Config-driven builds and Rayfin deployment",
-    ],
-  },
-  {
-    name: "modelviz",
-    title: "ModelViz",
-    summary:
-      "A browser-based architecture tool for inspecting Power BI and Microsoft Fabric semantic models, including relationships, data-source modes, and row-level security.",
-    architecture: [
-      "Next.js and TypeScript",
-      "Deterministic local TMDL parsing",
-      "Interactive architecture diagrams",
-      "Security and data-source inspection",
+      "Next.js, Prisma, PostgreSQL, and NextAuth",
+      "FastAPI and Azure Content Understanding",
+      "Power Automate email-to-pipeline workflow",
+      "Validation, correlation IDs, and structured logging",
     ],
   },
 ];

@@ -169,9 +169,9 @@ export default function Home() {
                   Read project notes
                   <ArrowRight aria-hidden="true" />
                 </Link>
-                {repo.homepageUrl && (
+                {(feature.liveUrl || repo.homepageUrl) && (
                   <a
-                    href={repo.homepageUrl}
+                    href={feature.liveUrl || repo.homepageUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

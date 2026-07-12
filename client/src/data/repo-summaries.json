@@ -1,17 +1,33 @@
 [
   {
-    "description": "Developer portfolio for Big-jpg — 74 repos with AI-generated interpretations",
-    "homepageUrl": "https://case-studies-big-team.vercel.app",
+    "description": "",
+    "homepageUrl": "",
     "isArchived": false,
     "isFork": false,
     "isPrivate": false,
-    "name": "portfolio",
-    "primaryLanguage": {
-      "name": "TypeScript"
-    },
-    "pushedAt": "2026-07-09T13:18:50Z",
+    "name": "Big-jpg",
+    "nameWithOwner": "Big-jpg/Big-jpg",
+    "ownerLogin": "Big-jpg",
+    "primaryLanguage": null,
+    "pushedAt": "2026-07-12T18:28:10Z",
     "stargazerCount": 0,
-    "url": "https://github.com/Big-jpg/portfolio"
+    "url": "https://github.com/Big-jpg/Big-jpg"
+  },
+  {
+    "description": "",
+    "homepageUrl": "https://real-data-for-all.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "real-data-for-all",
+    "nameWithOwner": "Big-jpg/real-data-for-all",
+    "ownerLogin": "Big-jpg",
+    "primaryLanguage": {
+      "name": "Jupyter Notebook"
+    },
+    "pushedAt": "2026-07-12T18:21:41Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/real-data-for-all"
   },
   {
     "description": "",
@@ -20,12 +36,30 @@
     "isFork": false,
     "isPrivate": false,
     "name": "github-motion-graph",
+    "nameWithOwner": "Big-jpg/github-motion-graph",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
-    "pushedAt": "2026-07-09T08:25:41Z",
+    "pushedAt": "2026-07-12T05:28:11Z",
     "stargazerCount": 0,
     "url": "https://github.com/Big-jpg/github-motion-graph"
+  },
+  {
+    "description": "Developer portfolio for Big-jpg -Dynamic Github Repo Refresh via GraphQL API",
+    "homepageUrl": "https://case-studies-big-team.vercel.app",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "portfolio",
+    "nameWithOwner": "Big-jpg/portfolio",
+    "ownerLogin": "Big-jpg",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-07-10T16:48:02Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/Big-jpg/portfolio"
   },
   {
     "description": "",
@@ -34,6 +68,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "paint_by",
+    "nameWithOwner": "Big-jpg/paint_by",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -48,6 +84,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "private-compute",
+    "nameWithOwner": "Big-jpg/private-compute",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -56,12 +94,30 @@
     "url": "https://github.com/Big-jpg/private-compute"
   },
   {
+    "description": "Client-side sensitive data operations POC using PGlite WASM - Patient Risk Review Demo",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "pglite-patient-risk",
+    "nameWithOwner": "atom-rossf/pglite-patient-risk",
+    "ownerLogin": "atom-rossf",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2026-06-25T05:13:14Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/atom-rossf/pglite-patient-risk"
+  },
+  {
     "description": "",
     "homepageUrl": "https://www.invoicepipe.site/",
     "isArchived": false,
     "isFork": false,
     "isPrivate": false,
     "name": "invoicepipe",
+    "nameWithOwner": "Big-jpg/invoicepipe",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -76,6 +132,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "arcvane-studio",
+    "nameWithOwner": "Big-jpg/arcvane-studio",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -90,6 +148,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "fabric-apps-react-webapp-starter",
+    "nameWithOwner": "Big-jpg/fabric-apps-react-webapp-starter",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -104,6 +164,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "test",
+    "nameWithOwner": "Big-jpg/test",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -118,6 +180,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "plankzdeckz",
+    "nameWithOwner": "Big-jpg/plankzdeckz",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -132,6 +196,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "modelviz",
+    "nameWithOwner": "Big-jpg/modelviz",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -146,6 +212,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "rayfin",
+    "nameWithOwner": "Big-jpg/rayfin",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2026-06-02T18:55:16Z",
     "stargazerCount": 0,
@@ -158,6 +226,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "next-sim",
+    "nameWithOwner": "Big-jpg/next-sim",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -172,6 +242,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "ModelViz-PowerBI",
+    "nameWithOwner": "Big-jpg/ModelViz-PowerBI",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -186,6 +258,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "conformal-stencil-generator",
+    "nameWithOwner": "Big-jpg/conformal-stencil-generator",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -200,6 +274,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "fuelwatch_signal",
+    "nameWithOwner": "Big-jpg/fuelwatch_signal",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -214,6 +290,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "Pixeltovoxelprojector",
+    "nameWithOwner": "Big-jpg/Pixeltovoxelprojector",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -228,6 +306,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "hyperbolic_paraboloid_generator",
+    "nameWithOwner": "Big-jpg/hyperbolic_paraboloid_generator",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -242,6 +322,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "drawtalk",
+    "nameWithOwner": "Big-jpg/drawtalk",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -256,6 +338,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "untap",
+    "nameWithOwner": "Big-jpg/untap",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -270,6 +354,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "ftl",
+    "nameWithOwner": "Big-jpg/ftl",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -284,6 +370,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "swipehire",
+    "nameWithOwner": "Big-jpg/swipehire",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -298,6 +386,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "kitforge-military",
+    "nameWithOwner": "Big-jpg/kitforge-military",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -312,6 +402,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "kitforge",
+    "nameWithOwner": "Big-jpg/kitforge",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -326,6 +418,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "print-cost-evaluator",
+    "nameWithOwner": "Big-jpg/print-cost-evaluator",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -340,6 +434,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "WaveFunctionCollapse",
+    "nameWithOwner": "Big-jpg/WaveFunctionCollapse",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "C#"
     },
@@ -354,6 +450,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "MarkovJunior",
+    "nameWithOwner": "Big-jpg/MarkovJunior",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "C#"
     },
@@ -368,6 +466,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "keychain-maker",
+    "nameWithOwner": "Big-jpg/keychain-maker",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -382,6 +482,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "gsap-parallax-scroll",
+    "nameWithOwner": "Big-jpg/gsap-parallax-scroll",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -396,6 +498,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "linkedin-post-generator",
+    "nameWithOwner": "Big-jpg/linkedin-post-generator",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -410,6 +514,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "video-agent-v1",
+    "nameWithOwner": "Big-jpg/video-agent-v1",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -424,6 +530,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "infinite-scroll-gsap",
+    "nameWithOwner": "Big-jpg/infinite-scroll-gsap",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -438,6 +546,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "vehicle-affordability-finder",
+    "nameWithOwner": "Big-jpg/vehicle-affordability-finder",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -452,6 +562,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "convergent",
+    "nameWithOwner": "Big-jpg/convergent",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -466,6 +578,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "openai-key-guardian",
+    "nameWithOwner": "Big-jpg/openai-key-guardian",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -480,6 +594,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "key-guardian-sandbox",
+    "nameWithOwner": "Big-jpg/key-guardian-sandbox",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2025-10-15T08:42:06Z",
     "stargazerCount": 0,
@@ -492,6 +608,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "expressive-state-mapper",
+    "nameWithOwner": "Big-jpg/expressive-state-mapper",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -506,6 +624,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "databricks-lakehouse-pipeline",
+    "nameWithOwner": "Big-jpg/databricks-lakehouse-pipeline",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Jupyter Notebook"
     },
@@ -520,6 +640,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "closegate",
+    "nameWithOwner": "Big-jpg/closegate",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -529,23 +651,13 @@
   },
   {
     "description": "",
-    "homepageUrl": "",
-    "isArchived": false,
-    "isFork": false,
-    "isPrivate": false,
-    "name": "Big-jpg",
-    "primaryLanguage": null,
-    "pushedAt": "2025-10-08T02:41:43Z",
-    "stargazerCount": 0,
-    "url": "https://github.com/Big-jpg/Big-jpg"
-  },
-  {
-    "description": "",
     "homepageUrl": "https://next-boids-text.vercel.app",
     "isArchived": false,
     "isFork": false,
     "isPrivate": false,
     "name": "next-boids-text",
+    "nameWithOwner": "Big-jpg/next-boids-text",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -560,6 +672,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "orbitme",
+    "nameWithOwner": "Big-jpg/orbitme",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -574,6 +688,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "NeuralNet",
+    "nameWithOwner": "Big-jpg/NeuralNet",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "JavaScript"
     },
@@ -588,6 +704,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "recupare",
+    "nameWithOwner": "Big-jpg/recupare",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -602,6 +720,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "explain-this",
+    "nameWithOwner": "Big-jpg/explain-this",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -616,6 +736,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "ever-gauzy",
+    "nameWithOwner": "Big-jpg/ever-gauzy",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -630,6 +752,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "the-book-of-secret-knowledge",
+    "nameWithOwner": "Big-jpg/the-book-of-secret-knowledge",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2025-08-27T15:32:58Z",
     "stargazerCount": 0,
@@ -642,6 +766,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "minima",
+    "nameWithOwner": "Big-jpg/minima",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "PowerShell"
     },
@@ -656,6 +782,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "ai-elements",
+    "nameWithOwner": "Big-jpg/ai-elements",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -670,6 +798,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "swaptube",
+    "nameWithOwner": "Big-jpg/swaptube",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "C++"
     },
@@ -684,6 +814,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "openai-agents-js",
+    "nameWithOwner": "Big-jpg/openai-agents-js",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -698,6 +830,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "firegeo",
+    "nameWithOwner": "Big-jpg/firegeo",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2025-07-22T01:48:04Z",
     "stargazerCount": 0,
@@ -710,6 +844,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "side-projects",
+    "nameWithOwner": "Big-jpg/side-projects",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "JavaScript"
     },
@@ -724,6 +860,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "slidePacker",
+    "nameWithOwner": "Big-jpg/slidePacker",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "JavaScript"
     },
@@ -738,6 +876,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "inference-knowledge-engine",
+    "nameWithOwner": "Big-jpg/inference-knowledge-engine",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -752,6 +892,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "firecrawl-app-examples",
+    "nameWithOwner": "Big-jpg/firecrawl-app-examples",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Jupyter Notebook"
     },
@@ -766,6 +908,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "comic-gen",
+    "nameWithOwner": "Big-jpg/comic-gen",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -780,6 +924,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "mp4towebm",
+    "nameWithOwner": "Big-jpg/mp4towebm",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "CSS"
     },
@@ -794,6 +940,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "webm_to_mp4",
+    "nameWithOwner": "Big-jpg/webm_to_mp4",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2025-05-30T09:12:40Z",
     "stargazerCount": 0,
@@ -806,6 +954,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "webappanalyzer",
+    "nameWithOwner": "Big-jpg/webappanalyzer",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -820,6 +970,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "WebAnalyze",
+    "nameWithOwner": "Big-jpg/WebAnalyze",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -834,6 +986,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "burnbook",
+    "nameWithOwner": "Big-jpg/burnbook",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -848,6 +1002,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "ozquotes",
+    "nameWithOwner": "Big-jpg/ozquotes",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -856,12 +1012,30 @@
     "url": "https://github.com/Big-jpg/ozquotes"
   },
   {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "oz-quotes-landing",
+    "nameWithOwner": "five0nit/oz-quotes-landing",
+    "ownerLogin": "five0nit",
+    "primaryLanguage": {
+      "name": "TypeScript"
+    },
+    "pushedAt": "2024-10-03T08:19:04Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/five0nit/oz-quotes-landing"
+  },
+  {
     "description": "Pseudo API for Google Trends ",
     "homepageUrl": "",
     "isArchived": false,
     "isFork": true,
     "isPrivate": false,
     "name": "pytrends",
+    "nameWithOwner": "Big-jpg/pytrends",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -870,12 +1044,30 @@
     "url": "https://github.com/Big-jpg/pytrends"
   },
   {
+    "description": "",
+    "homepageUrl": "",
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "name": "py-template",
+    "nameWithOwner": "AAG-RF/py-template",
+    "ownerLogin": "AAG-RF",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "pushedAt": "2024-06-04T05:43:29Z",
+    "stargazerCount": 0,
+    "url": "https://github.com/AAG-RF/py-template"
+  },
+  {
     "description": "Simple solar system experiment",
     "homepageUrl": "https://www.youtube.com/watch?v=7axImc1sxa0",
     "isArchived": false,
     "isFork": true,
     "isPrivate": false,
     "name": "Solar-System",
+    "nameWithOwner": "Big-jpg/Solar-System",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "C#"
     },
@@ -890,6 +1082,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "MsAI",
+    "nameWithOwner": "Big-jpg/MsAI",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2024-01-16T01:40:32Z",
     "stargazerCount": 0,
@@ -902,6 +1096,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "BrainDiffusion",
+    "nameWithOwner": "Big-jpg/BrainDiffusion",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -916,6 +1112,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "mindsdb",
+    "nameWithOwner": "Big-jpg/mindsdb",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -930,6 +1128,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "nevermore",
+    "nameWithOwner": "Big-jpg/nevermore",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "TypeScript"
     },
@@ -944,6 +1144,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "dopefolio",
+    "nameWithOwner": "Big-jpg/dopefolio",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "HTML"
     },
@@ -958,6 +1160,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "instructGOOSE",
+    "nameWithOwner": "Big-jpg/instructGOOSE",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Jupyter Notebook"
     },
@@ -972,6 +1176,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "audiolm-pytorch",
+    "nameWithOwner": "Big-jpg/audiolm-pytorch",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "Python"
     },
@@ -986,6 +1192,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "supabase-nextjs",
+    "nameWithOwner": "Big-jpg/supabase-nextjs",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "CSS"
     },
@@ -1000,6 +1208,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "terminalGPT",
+    "nameWithOwner": "Big-jpg/terminalGPT",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "JavaScript"
     },
@@ -1014,6 +1224,8 @@
     "isFork": false,
     "isPrivate": false,
     "name": "microlearning",
+    "nameWithOwner": "Big-jpg/microlearning",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": null,
     "pushedAt": "2022-11-11T06:20:13Z",
     "stargazerCount": 0,
@@ -1026,6 +1238,8 @@
     "isFork": true,
     "isPrivate": false,
     "name": "colorful-life",
+    "nameWithOwner": "Big-jpg/colorful-life",
+    "ownerLogin": "Big-jpg",
     "primaryLanguage": {
       "name": "JavaScript"
     },
