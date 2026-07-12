@@ -11,7 +11,7 @@ export const FEATURED_WORK: FeaturedWork[] = [
     name: "real-data-for-all",
     title: "Real Data for All",
     summary:
-      "Open, auditable Perth house-sales data, rebuilt from a Fabric medallion pipeline into durable Vercel workflows, canonical Neon records, and MotherDuck analytics.",
+      "Open, auditable Perth house-sales data, constructed as Vercel Workflows, canonical Neon records, and MotherDuck analytics.",
     architecture: [
       "Immutable Vercel Blob sources with SHA-256 lineage",
       "Durable, idempotent Vercel Workflow ingestion",
