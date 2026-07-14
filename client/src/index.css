@@ -192,8 +192,10 @@ a {
 }
 
 .portfolio-shell {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
-  background: var(--background);
+  background: transparent;
 }
 
 .site-nav-shell {
@@ -748,38 +750,51 @@ a {
 /* Architect introduction */
 .architect-hero {
   position: relative;
+  z-index: 1;
   display: flex;
   min-height: min(100svh, 58rem);
   align-items: center;
   overflow: hidden;
   padding: clamp(8rem, 13vw, 11rem) clamp(1rem, 6vw, 6rem)
     clamp(5rem, 8vw, 8rem);
-  background:
-    radial-gradient(
-      circle at 12% 18%,
-      rgba(163, 217, 201, 0.42),
-      transparent 28rem
-    ),
-    radial-gradient(
-      circle at 88% 78%,
-      rgba(169, 210, 240, 0.34),
-      transparent 27rem
-    ),
-    #f8fbf9;
+  background: transparent;
 }
 
-.architect-hero::after {
+.portfolio-ambient {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 20%, #d8eee7, transparent 45%),
+    linear-gradient(160deg, #b8dcda, #eef3df);
+}
+
+.portfolio-ambient canvas,
+.portfolio-ambient::after {
   position: absolute;
-  right: -8rem;
-  bottom: -10rem;
-  width: 30rem;
-  aspect-ratio: 1;
-  border: 3px solid rgba(130, 199, 182, 0.18);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 4rem rgba(130, 199, 182, 0.05),
-    0 0 0 8rem rgba(169, 210, 240, 0.05);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-ambient canvas {
+  display: block;
+  opacity: 0.84;
+}
+
+.portfolio-ambient::after {
+  background:
+    linear-gradient(90deg, rgba(246, 250, 246, 0.32), transparent 72%),
+    linear-gradient(180deg, rgba(245, 250, 247, 0.04), rgba(245, 250, 247, 0.2));
   content: "";
+  pointer-events: none;
+  transition: background 1.8s ease;
+}
+
+.portfolio-ambient[data-phase="night"]::after {
+  background:
+    linear-gradient(90deg, rgba(8, 19, 30, 0.17), transparent 70%),
+    linear-gradient(180deg, rgba(8, 19, 30, 0.02), rgba(8, 19, 30, 0.18));
 }
 
 .architect-hero-grid {
@@ -794,6 +809,7 @@ a {
 
 .architect-hero-copy {
   max-width: 74rem;
+  transition: color 1.8s ease;
 }
 
 .architect-hero-copy h1 {
@@ -812,6 +828,30 @@ a {
   color: var(--muted-foreground);
   font-size: clamp(1.05rem, 1.55vw, 1.3rem);
   line-height: 1.72;
+  transition: color 1.8s ease;
+}
+
+.portfolio-shell[data-ambient-phase="night"] .architect-hero-grid {
+  color: #f1f8f5;
+}
+
+.portfolio-shell[data-ambient-phase="night"]
+  .architect-hero-grid
+  .architect-hero-lead,
+.portfolio-shell[data-ambient-phase="night"]
+  .architect-hero-grid
+  .architect-location {
+  color: rgba(229, 241, 237, 0.78);
+}
+
+.portfolio-shell[data-ambient-phase="night"]
+  .architect-hero-grid
+  .secondary-action {
+  border-color: rgba(226, 241, 236, 0.35);
+  background: rgba(9, 31, 38, 0.42);
+  box-shadow: 0 5px 0 rgba(4, 17, 23, 0.42);
+  color: #f1f8f5;
+  backdrop-filter: blur(12px);
 }
 
 .architect-hero-actions {
@@ -893,7 +933,7 @@ a {
   position: relative;
   z-index: 2;
   padding: clamp(6rem, 10vw, 10rem) clamp(1rem, 6vw, 6rem);
-  background: #fff;
+  background: transparent;
 }
 
 .work-flow-motif,
@@ -994,18 +1034,29 @@ a {
   border: 3px solid var(--border);
   border-radius: 2.1rem;
   background: #f4faf7;
+  color: var(--foreground);
   padding: clamp(1.25rem, 2.5vw, 2rem);
-  box-shadow: 0 7px 0 #dce8e0;
+  box-shadow:
+    0 7px 0 #dce8e0,
+    0 18px 42px rgba(18, 55, 47, 0.09);
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.5s ease,
+    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .featured-work-card:nth-child(2) {
   background: #fff8e5;
-  box-shadow: 0 7px 0 #eee0b5;
+  box-shadow:
+    0 7px 0 #eee0b5,
+    0 18px 42px rgba(85, 66, 18, 0.09);
 }
 
 .featured-work-card:nth-child(3) {
   background: #eef7fc;
-  box-shadow: 0 7px 0 #d6e7f1;
+  box-shadow:
+    0 7px 0 #d6e7f1,
+    0 18px 42px rgba(24, 61, 88, 0.09);
 }
 
 .featured-card-pulse {
@@ -1016,6 +1067,9 @@ a {
   border-radius: 50%;
   background: #83c5b4;
   box-shadow: 0 0 0 2px #b6d9cc;
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s ease;
 }
 
 .featured-work-card:nth-child(2) .featured-card-pulse {
@@ -1106,6 +1160,7 @@ a {
 .featured-card-actions svg {
   width: 0.85rem;
   height: 0.85rem;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Work browser */
@@ -1114,7 +1169,8 @@ a {
   z-index: 2;
   padding: clamp(6rem, 10vw, 10rem) clamp(1rem, 6vw, 6rem)
     clamp(6rem, 9vw, 9rem);
-  background: var(--background);
+  background: transparent;
+  transition: color 1.8s ease;
 }
 
 .work-heading-row,
@@ -1155,7 +1211,7 @@ a {
 }
 
 .archive-section {
-  border-top: 2px solid var(--border);
+  border-top: 0;
 }
 
 .work-intro {
@@ -1163,6 +1219,27 @@ a {
   color: var(--muted-foreground);
   font-size: clamp(1rem, 1.35vw, 1.18rem);
   line-height: 1.75;
+  transition: color 1.8s ease;
+}
+
+.portfolio-shell[data-ambient-phase="night"] .work-section {
+  color: #f1f8f5;
+}
+
+.portfolio-shell[data-ambient-phase="night"] .work-intro,
+.portfolio-shell[data-ambient-phase="night"] .rail-heading > p {
+  color: rgba(229, 241, 237, 0.8);
+}
+
+.portfolio-shell[data-ambient-phase="night"] .eyebrow {
+  color: #9cd4c5;
+}
+
+.repository-stats,
+.repo-toolbar,
+.project-card,
+.empty-projects {
+  color: var(--foreground);
 }
 
 .repository-stats {
@@ -1423,13 +1500,13 @@ a {
   border-radius: 2rem;
   background: #fff;
   padding: clamp(1.25rem, 2.4vw, 2rem);
-  box-shadow: 0 7px 0 #dce8e0;
-  transition: var(--physics-click);
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 0 #dce8e0;
+  box-shadow:
+    0 7px 0 #dce8e0,
+    0 18px 38px rgba(18, 55, 47, 0.1);
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.5s ease,
+    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .project-card:active {
@@ -1447,6 +1524,68 @@ a {
   background: radial-gradient(circle, var(--card-tint), transparent 70%);
   opacity: 0.82;
   pointer-events: none;
+  transition:
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.7s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .featured-work-card:hover,
+  .featured-work-card:focus-within {
+    transform: translateY(-10px) rotate(-0.35deg);
+    border-color: #b8d8cc;
+    box-shadow:
+      0 12px 0 #d3e5dc,
+      0 30px 64px rgba(10, 40, 34, 0.2);
+  }
+
+  .featured-work-card:nth-child(2):hover,
+  .featured-work-card:nth-child(2):focus-within {
+    transform: translateY(-10px) rotate(0.35deg);
+    border-color: #ead89c;
+    box-shadow:
+      0 12px 0 #eadfb8,
+      0 30px 64px rgba(74, 56, 14, 0.18);
+  }
+
+  .featured-work-card:nth-child(3):hover,
+  .featured-work-card:nth-child(3):focus-within {
+    border-color: #bcd9ea;
+    box-shadow:
+      0 12px 0 #d1e4ef,
+      0 30px 64px rgba(16, 52, 79, 0.18);
+  }
+
+  .featured-work-card:hover .featured-card-pulse,
+  .featured-work-card:focus-within .featured-card-pulse {
+    transform: scale(1.25);
+    box-shadow: 0 0 0 8px rgba(131, 197, 180, 0.2);
+  }
+
+  .featured-work-card:hover .featured-card-actions svg,
+  .featured-work-card:focus-within .featured-card-actions svg {
+    transform: translate(2px, -2px);
+  }
+
+  .project-card:hover,
+  .project-card:focus-within {
+    transform: translateY(-9px) rotate(-0.3deg);
+    border-color: #bad7cb;
+    box-shadow:
+      0 12px 0 #d3e4da,
+      0 30px 60px rgba(10, 40, 34, 0.2);
+  }
+
+  .repo-rail-item:nth-child(even) .project-card:hover,
+  .repo-rail-item:nth-child(even) .project-card:focus-within {
+    transform: translateY(-9px) rotate(0.3deg);
+  }
+
+  .project-card:hover .project-card-wash,
+  .project-card:focus-within .project-card-wash {
+    transform: scale(1.16) translate(-0.35rem, 0.4rem);
+    opacity: 1;
+  }
 }
 
 .project-card-topline,
@@ -1636,6 +1775,8 @@ a {
 }
 
 .site-footer {
+  position: relative;
+  z-index: 2;
   display: flex;
   width: min(calc(100% - 2rem), 1320px);
   align-items: center;
@@ -1644,7 +1785,8 @@ a {
   margin: 0 auto 1rem;
   border: 3px solid #cfe1d5;
   border-radius: 2.5rem;
-  background: #e3f3ec;
+  background: rgba(227, 243, 236, 0.88);
+  backdrop-filter: blur(8px);
   padding: clamp(2rem, 5vw, 4rem);
   box-shadow: 0 7px 0 #cbded2;
 }

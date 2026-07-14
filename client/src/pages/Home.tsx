@@ -13,6 +13,7 @@ import interpretations from "@/data/ai-interpretations.json";
 import { FEATURED_WORK } from "@/data/featured-work";
 import { FilterBar } from "@/components/FilterBar";
 import { ProjectCard } from "@/components/ProjectCard";
+import { AmbientCaustics } from "@/components/AmbientCaustics";
 import { PORTFOLIO_IDENTITY } from "@/lib/identity";
 import { filterRepos, getLanguages, sortByPushedAt } from "@/lib/repo-utils";
 import type {
@@ -63,6 +64,7 @@ export default function Home() {
 
   return (
     <main id="top" className="portfolio-shell">
+      <AmbientCaustics />
       <a href="#work" className="skip-link">
         Skip to selected work
       </a>
